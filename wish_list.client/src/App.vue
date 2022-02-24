@@ -1,9 +1,11 @@
 <template>
   <div id="app">
+    <img src="https://i.gifer.com/6nr.gif">
+    <h1>My WishList</h1>
     <navbar/>
     <b-container>
 
-      <h1>My WishList</h1>
+
     </b-container>
 
   </div>
@@ -23,13 +25,17 @@ export default {
   #app{
     height: 100%;
     min-height: 100vh;
+    padding-top: 1%;
   }
-  body{
-    margin: 0 !important;
-    padding: 0 !important;
+  h1{
+    text-align: center;
+    font-size: 3.5rem !important;
+    font-family: 'Roboto Serif', sans-serif;
   }
-  .flex-container {
-    display: flex;
-    flex-wrap: wrap;
+  img{
+    height: 50px;
+    width: 50px;
+    display: block;
+    margin: 0 auto;
   }
 </style>
