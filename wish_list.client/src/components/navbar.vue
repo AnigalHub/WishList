@@ -19,7 +19,7 @@
 <style scoped lang="scss">
     .menu-main {
         list-style: none;
-        padding: 20px 0 5px;
+        padding: 20px 0 0;
         text-align: center;
         background: white;
     }
@@ -36,7 +36,7 @@
         font-family: 'Ubuntu Condensed', sans-serif;
         letter-spacing: 2px;
         position: relative;
-        padding-bottom: 20px;
+        padding-bottom: 15px;
         margin: 0 34px 0 30px;
         font-size: 17px;
         text-transform: uppercase;
@@ -72,16 +72,7 @@
         width: 100%;
         height: 66px;
         margin: 0 auto;
-        box-shadow: 0 1px 16px rgba(0, 0, 0, 0.05);
+        box-shadow: 0px 8px 5px -5px rgba(99, 101, 102, 0.6);
         border-radius: 0 0 8px 8px;
-    }
-    #TestList{
-        width: 72px;
-        height: 28px;
-        font-size: 22px;
-        line-height: 28px;
-        color: #59606D;
-        float: left;
-        padding: 18px 0 0 88px;
     }
 </style>
