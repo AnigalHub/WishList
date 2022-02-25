@@ -5,7 +5,8 @@
     <navbar/>
     <div class="content">
     <b-container>
-      <create-wishlist/>
+      <!-- <create-wishlist/> -->
+       <account/>
     </b-container>
     </div>
 
@@ -17,9 +18,10 @@
 
 import Navbar from "@/components/navbar";
 import CreateWishlist from "@/components/createWishlist";
+import Account from "@/components/account";
 export default {
   name: 'App',
-  components: {CreateWishlist, Navbar}
+  components: {Account, CreateWishlist, Navbar}
 }
 </script>
 
@@ -32,9 +34,9 @@ export default {
   .content{
     margin-top: .1%;
     padding-top: 1.5%;
-    background: rgba(252, 181, 206, 0.3);
+    background: rgba(252, 214, 181, 0.3);
     height: 100%;
-    min-height: 80.5vh;
+    min-height: 84vh;
   }
   h1{
     text-align: center;
