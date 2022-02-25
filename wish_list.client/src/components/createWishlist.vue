@@ -24,8 +24,8 @@
                     <b-col class="whois">
                         <input type="radio" class="custom-checkbox" id="all" name="all" value="yes">
                         <label for="all">All</label>
-                        <input type="radio" class="custom-checkbox" id="i" name="all" value="yes">
-                        <label for="i">I</label>
+                        <input type="radio" class="custom-checkbox" id="me" name="me" value="yes">
+                        <label for="me">Me</label>
                     </b-col>
                 </b-row>
             </b-col>
@@ -109,17 +109,18 @@
      }
      .circle{
          background: rgba(234, 234, 234, 0.5);
-         width: 125px;
-         height: 125px;
+         width: 160px;
+         height: 150px;
          display: block;
          margin: 0 auto;
+         border-radius: 50%;
      }
      .descr{
          background: rgba(234, 234, 234, 0.5);
          width: 100%;
          height: 125px !important;
          display: block;
-         margin: 0 auto;
+         margin: 2% auto;
      }
      .add,.save{
          width: 100%;
