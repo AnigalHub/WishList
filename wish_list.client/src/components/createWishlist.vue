@@ -22,9 +22,9 @@
                 <b-row>
                     <b-col cols="4" class="who">Who can see:</b-col>
                     <b-col class="whois">
-                        <input type="radio" class="custom-checkbox" id="all" name="all" value="yes">
+                        <input type="checkbox" class="custom-checkbox" id="all" name="all" value="yes">
                         <label for="all">All</label>
-                        <input type="radio" class="custom-checkbox" id="me" name="me" value="yes">
+                        <input type="checkbox" class="custom-checkbox" id="me" name="me" value="yes">
                         <label for="me">Me</label>
                     </b-col>
                 </b-row>
@@ -69,7 +69,6 @@
         background-color: #198754;
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
     }
-
     .custom-checkbox {
         position: absolute;
         z-index: -1;
@@ -103,12 +102,12 @@
          box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.35);
      }
      .input-group-text{
-         font-size: 1.5rem !important;
+         font-size: 1.25rem !important;
          font-family: 'Roboto Serif', sans-serif;
          font-weight: 500;
      }
      .circle{
-         background: rgba(234, 234, 234, 0.5);
+         background: #f7f9fc;
          width: 160px;
          height: 150px;
          display: block;
@@ -116,11 +115,11 @@
          border-radius: 50%;
      }
      .descr{
-         background: rgba(234, 234, 234, 0.5);
+         background: #f7f9fc;
          width: 100%;
          height: 125px !important;
          display: block;
-         margin: 2% auto;
+         margin: 2% -5% auto;
      }
      .add,.save{
          width: 100%;
@@ -138,10 +137,10 @@
          font-family: 'Roboto Serif', sans-serif;
      }
      table input, table textarea{
-         border: none !important;
+         border: 1px solid #bdc0c2 !important;
      }
      table{
-         box-shadow: 4px 3px 3px -3px rgba(34, 60, 80, 0.6);
+         box-shadow: 4px 3px 3px -3px rgba(34, 60, 80, .9);
          margin-top: 3%;
          font-size: 1.25rem !important;
          font-family: 'Roboto Serif', sans-serif;
@@ -155,9 +154,9 @@
      }
      button{
          height: 45px;
-         box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
+         box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.7);
      }
      .input-group{
-         box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
+         box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.7);
      }
 </style>
