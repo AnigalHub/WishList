@@ -3,10 +3,11 @@
     <img src="https://i.gifer.com/6nr.gif">
     <h1>My WishList</h1>
     <navbar/>
+    <div class="content">
     <b-container>
-
-
+      <create-wishlist/>
     </b-container>
+    </div>
 
   </div>
 </template>
@@ -15,26 +16,34 @@
 
 
 import Navbar from "@/components/navbar";
+import CreateWishlist from "@/components/createWishlist";
 export default {
   name: 'App',
-  components: {Navbar}
+  components: {CreateWishlist, Navbar}
 }
 </script>
 
 <style lang="scss">
   #app{
     height: 100%;
-    min-height: 100vh;
+    min-height: 90vh;
     padding-top: 1%;
+  }
+  .content{
+    margin-top: .1%;
+    padding-top: 1.5%;
+    background: rgba(252, 181, 206, 0.3);
+    height: 100%;
+    min-height: 80.5vh;
   }
   h1{
     text-align: center;
-    font-size: 3.5rem !important;
+    font-size: 3rem !important;
     font-family: 'Roboto Serif', sans-serif;
   }
   img{
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     display: block;
     margin: 0 auto;
   }
