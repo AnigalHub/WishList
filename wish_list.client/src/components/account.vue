@@ -1,6 +1,5 @@
 <template>
     <div class="account">
-
         <div id="worksheet">
             <h2>My account</h2>
             <input class="circle">
@@ -21,7 +20,8 @@
                     <b-button class="show" variant="outline-secondary">Show</b-button>
                 </b-col>
            </b-row>
-            <b-button class="exit" variant="secondary">Exit</b-button>
+            <b-button class="save" variant="outline-success">Save</b-button>
+           <b-button class="exit" variant="secondary">Exit</b-button>
         </div>
 
     </div>
@@ -43,7 +43,7 @@
 
 <style scoped lang="scss">
     #worksheet{
-        background: #e9ecef;
+        background: #f7f9fc;
         padding: 7% 4% 5%;
         margin: 2% auto 0 ;
         max-width: 750px;
@@ -54,8 +54,19 @@
     .row{
         padding-bottom: 3%;
     }
+    .show{
+        font-size: 1.5rem !important;
+        font-family: 'Roboto Serif', sans-serif;
+    }
+    .save{
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        font-size: 1.5rem !important;
+        font-family: 'Roboto Serif', sans-serif;
+    }
     .exit{
-        margin-top: 10%;
+        margin-top: 6%;
         width: 100%;
         font-size: 1.5rem !important;
         font-family: 'Roboto Serif', sans-serif;
@@ -80,10 +91,13 @@
         box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
     }
     input,button{
+
         height: 45px;
     }
+    input,.circle{
+        border: 1px solid #bdc0c2 !important;
+    }
     .circle{
-        border: none !important;
         background: white;
         width: 250px;
         height: 250px;
