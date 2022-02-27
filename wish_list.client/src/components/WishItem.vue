@@ -30,9 +30,10 @@
             }
     }
     .descr{
+        resize: none;
         background: #f7f9fc;
         width: 130%;
-        height: 120px !important;
+        height: 125px !important;
         display: block;
         margin: 20% 0 auto -10%;
     }
