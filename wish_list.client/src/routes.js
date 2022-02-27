@@ -1,5 +1,10 @@
 export default [
     {
+        path:'/',
+        name:'Registration',
+        component:() => import('./components/registration')
+    },
+    {
         path:'/createWishlist',
         name:'CreateWishList',
         component:() => import('./components/createWishlist')
