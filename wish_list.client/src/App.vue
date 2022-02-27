@@ -4,11 +4,10 @@
     <h1>My WishList</h1>
     <navbar/>
     <div id="content">
-    <b-container>
-        <router-view></router-view>
-    </b-container>
+      <b-container>
+          <router-view></router-view>
+      </b-container>
     </div>
-
   </div>
 </template>
 
@@ -16,12 +15,9 @@
 
 
 import Navbar from "@/components/navbar";
-import CreateWishlist from "@/components/createWishlist";
-import Account from "@/components/account";
-import Wishlists from "@/components/wishlists";
 export default {
   name: 'App',
-  components: {Wishlists, Account, CreateWishlist, Navbar}
+  components: {Navbar}
 }
 </script>
 
