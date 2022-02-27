@@ -7,7 +7,6 @@
             </template>
             <template #cell(edit)='{item}'>
                 <b-button type="submit" variant="outline-primary">Show</b-button>
-                <b-button type="submit" variant="outline-success">Save</b-button>
                 <b-button type="submit" variant="outline-danger">Delete</b-button>
             </template>
         </b-table>
