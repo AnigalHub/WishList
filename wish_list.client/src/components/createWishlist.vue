@@ -1,19 +1,11 @@
 <template>
-    <div class="createWishlist">
+    <div id="createWishlist">
         <b-input-group class="w-100" prepend="Wishlist Title" ><b-form-input></b-form-input></b-input-group>
-        <b-table :fields="fields" :items="items">
-            <template #cell(name)='{item}'>
-                <input v-model="item.name" class="circle">
-            </template>
-            <template #cell(description)='{item}' >
-                <textarea v-model="item.description" class="descr"/>
-            </template>
-            <template #cell(edit)='{item}'>
-                <b-button type="submit" variant="outline-success">✓</b-button>
-                <b-button type="submit" variant="outline-danger">X</b-button>
-            </template>
-        </b-table>
-        <b-button class="add" variant="outline-secondary">Add Product</b-button>
+        <b-table :fields="fields"></b-table>
+        <div v-for="(wishItem, index) in wishItems" :key="index">
+            <WishItem />
+        </div>
+        <b-button class="add" @click="addProduct()" variant="outline-secondary">Add Product</b-button>
         <b-row>
             <b-col>
                 <b-button class="save" variant="outline-success">Save WishList</b-button>
@@ -34,8 +26,12 @@
 </template>
 
 <script>
+    import WishItem from "@/components/WishItem";
+    import ImageToUpload from "@/components/ImageToUpload";
+
     export default {
         name: "createWishlist",
+        components: {WishItem, ImageToUpload},
         data(){
             return{
                 /**Столбцы таблицы */
@@ -45,11 +41,26 @@
                     { key: "edit", label: "Edit | Delete" },
                 ],
                 items: [
-                    {name: '', description: '' },
-                    {name: '', description: '' },
-                    {name: '', description: '' },
-                ]
+                    {id: 1, name: 'A', description: '' },
+                    {id: 2, name: 'B', description: '' },
+                    {id: 3, name: 'C', description: '' },
+                ],
+                wishItems:[],
+                file: [],
             }
+        },
+        methods:{
+            onFileChange(id, image){
+                console.log("Мы должны сохранить вот это", id, image)
+            },
+            addProduct(){
+                this.wishItems.push({})
+            }
+        },
+        created() {
+            this.wishItems = [
+                {id: "1"},
+            ]
         }
     }
 </script>
@@ -64,6 +75,30 @@
     }
 </style>
 <style scoped lang="scss">
+    .input-group-text{
+        font-size: 1.25rem !important;
+        font-family: 'Roboto Serif', sans-serif;
+        font-weight: 500;
+    }
+    .input-group{margin-bottom: 3%;}
+    .add,.save{
+        width: 100%;
+        font-size: 1.5rem !important;
+        font-family: 'Ubuntu Condensed', sans-serif;
+        margin-bottom: 2%;
+    }
+    .who{padding-top: 2%;}
+    .whois,.who{
+        font-size: 1.5rem !important;
+        font-family: 'Roboto Serif', sans-serif;
+    }
+    table{
+        font-size: 1.25rem !important;
+        font-family: 'Roboto Serif', sans-serif;
+        margin-bottom: 0 !important;
+    }
+    button{height: 45px;}
+    button,.input-group,table{box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.8);}
     .custom-checkbox:checked+label::before {
         border-color: #198754;
         background-color: #198754;
@@ -94,69 +129,4 @@
         background-position: center center;
         background-size: 50% 50%;
     }
-     .createWishlist{
-         padding: 3%;
-         min-height: 75vh;
-         height: 100%;
-         background: white;
-         box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.35);
-     }
-     .input-group-text{
-         font-size: 1.25rem !important;
-         font-family: 'Roboto Serif', sans-serif;
-         font-weight: 500;
-     }
-     .circle{
-         background: #f7f9fc;
-         width: 160px;
-         height: 150px;
-         display: block;
-         margin: 0 auto;
-         border-radius: 50%;
-     }
-     .descr{
-         background: #f7f9fc;
-         width: 100%;
-         height: 125px !important;
-         display: block;
-         margin: 2% -5% auto;
-     }
-     .add,.save{
-         width: 100%;
-         font-size: 1.25rem !important;
-         font-family: 'Roboto Serif', sans-serif;
-         margin-bottom: 2%;
-     }
-     .who{
-         padding-top: 2%;
-         font-size: 1.5rem !important;
-         font-family: 'Roboto Serif', sans-serif;
-     }
-     .whois{
-         font-size: 1.5rem !important;
-         font-family: 'Roboto Serif', sans-serif;
-     }
-     table input, table textarea{
-         border: 1px solid #bdc0c2 !important;
-     }
-     table{
-         box-shadow: 4px 3px 3px -3px rgba(34, 60, 80, .9);
-         margin-top: 3%;
-         font-size: 1.25rem !important;
-         font-family: 'Roboto Serif', sans-serif;
-     }
-     table button{
-         font-size: 1.5rem !important;
-         font-family: 'Ubuntu Condensed', sans-serif;
-         width: 40%;
-         margin-top: 15%;
-         margin-right: 8%;
-     }
-     button{
-         height: 45px;
-         box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.7);
-     }
-     .input-group{
-         box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.7);
-     }
 </style>
