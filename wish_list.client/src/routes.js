@@ -1,6 +1,6 @@
 export default [
     {
-        path:'/',
+        path:'/createWishlist',
         name:'CreateWishList',
         component:() => import('./components/createWishlist')
     },
