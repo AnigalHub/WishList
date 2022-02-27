@@ -8,5 +8,10 @@ export default [
         path:'/account',
         name:'Account',
         component:() => import('./components/account')
+    },
+    {
+        path:'/wishlists',
+        name:'Wishlists',
+        component:() => import('./components/wishlists')
     }
 ]
