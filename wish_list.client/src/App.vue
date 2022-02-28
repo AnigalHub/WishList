@@ -22,22 +22,31 @@ export default {
 </script>
 
 <style lang="scss">
+  /*Компонент в котором вызываются все другие компоненты*/
   #app{
     height: 100%;
     min-height: 90vh;
     padding-top: 1%;
   }
+  /*заголовоки*/
+  h1{
+    text-align: center;
+    font-size: 3rem !important;
+    font-family: 'Roboto Serif', sans-serif;
+  }
   h2{
       font-size: 2rem !important;
       font-weight: 500;
   }
-  #createWishlist, #wishlists, #account{
+  /*создание списка желаний; списки желаний; аккаунт; регистрация*/
+  #createWishlist, #wishlists, #account,#registration{
     padding: 3%;
     min-height: 75vh;
     height: 100%;
     background: white;
     box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.35);
   }
+  /*контент - место где меняются компоненты*/
   #content{
     margin-top: .1%;
     padding-top: 1.5%;
@@ -45,11 +54,7 @@ export default {
     height: 100%;
     min-height: 84vh;
   }
-  h1{
-    text-align: center;
-    font-size: 3rem !important;
-    font-family: 'Roboto Serif', sans-serif;
-  }
+  /*gif-картинка в меню - шапке*/
   #heart{
     height: 40px;
     width: 40px;
