@@ -48,19 +48,19 @@
     }
 </style>
 <style scoped lang="scss">
-    thead td:first-child{
-        background: #198754 !important;
-    }
+    /*таблица*/
     table{
         margin-top: 2%;
         font-size: 1.25rem !important;
         font-family: 'Roboto Serif', sans-serif;
     }
+    /*кнопки в таблице*/
     table button{
         font-size: 1.5rem !important;
         font-family: 'Ubuntu Condensed', sans-serif;
         width: 30%;
         margin-right: 2%;
     }
+    /*кнопки, таблица*/
     button,table{box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.8);}
 </style>
