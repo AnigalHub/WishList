@@ -1,14 +1,14 @@
 <template>
     <div id="registration">
+        <navbar-log-in-and-sing-up/>
         <div id="worksheet">
-            <h2>Log In / Registration</h2>
             <b-row>
                 <b-col class="headlines" cols="3">Nickname:</b-col>
-                <b-col><input v-model="name"></b-col>
+                <b-col><input></b-col>
             </b-row>
             <b-row>
                 <b-col class="headlines" cols="3">Password:</b-col>
-                <b-col><input v-model="password"></b-col>
+                <b-col><input></b-col>
             </b-row>
             <b-button class="save" variant="outline-success">Log In</b-button>
         </div>
@@ -17,8 +17,10 @@
 </template>
 
 <script>
+    import NavbarLogInAndSingUp from "@/components/navbarLogInAndSingUp";
     export default {
-        name: "registration"
+        name: "registration",
+        components: {NavbarLogInAndSingUp}
     }
 </script>
 
@@ -28,8 +30,8 @@
         border: 1px solid #bdc0c2 !important;
         background: #f7f9fc;
         padding: 5% 4%;
-        margin: 16% auto;
         max-width: 750px;
+        margin: 0 auto;
     }
     h2{
         text-align: center;
