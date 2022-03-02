@@ -40,11 +40,6 @@
                     { key: "description", label: "Description" },
                     { key: "edit", label: "Edit | Delete" },
                 ],
-                items: [
-                    {id: 1, name: 'A', description: '' },
-                    {id: 2, name: 'B', description: '' },
-                    {id: 3, name: 'C', description: '' },
-                ],
                 wishItems:[],
                 file: [],
             }
@@ -70,9 +65,7 @@
         background: #e9ecef !important;
         text-align: center !important;
     }
-    .table > :not(:first-child) {
-        border-top: none !important;
-    }
+    .table > :not(:first-child) {border-top: none !important;}
 </style>
 <style scoped lang="scss">
     .input-group-text{
