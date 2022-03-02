@@ -18,5 +18,15 @@ export default [
         path:'/wishlists',
         name:'Wishlists',
         component:() => import('./components/wishlists')
+    },
+    {
+        path:'/signUp',
+        name:'SignUp',
+        component:() => import('./components/singUp')
+    },
+    {
+        path:'/logIn',
+        name:'LogIn',
+        component:() => import('./components/logIn')
     }
 ]
