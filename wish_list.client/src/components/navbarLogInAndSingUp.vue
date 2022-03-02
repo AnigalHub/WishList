@@ -2,9 +2,9 @@
     <div class="navbarLogInAndSingUp">
         <b-container>
             <ul class="menu-main">
-                <router-link :to="{name: 'CreateWishList'}" tag="a">Log In</router-link>
+                <router-link :to="{name: 'LogIn'}" tag="a">Log In</router-link>
                 <span>/</span>
-                <router-link :to="{name: 'Wishlists'}" tag="a">Sign up</router-link>
+                <router-link :to="{name: 'SignUp'}" tag="a">Sign up</router-link>
             </ul>
         </b-container>
     </div>
