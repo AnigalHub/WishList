@@ -2,17 +2,12 @@
     <div id="registration">
         <navbar-log-in-and-sing-up/>
         <div id="worksheet">
-            <b-row>
-                <b-col class="headlines" cols="3">Nickname:</b-col>
-                <b-col><input></b-col>
-            </b-row>
-            <b-row>
-                <b-col class="headlines" cols="3">Password:</b-col>
-                <b-col><input></b-col>
-            </b-row>
+            <label class="text">Nickname:</label>
+            <input>
+            <label class="text">Password:</label>
+            <input>
             <b-button class="save" variant="outline-success">Log In</b-button>
         </div>
-
     </div>
 </template>
 
@@ -37,7 +32,10 @@
         text-align: center;
     }
     #worksheet,button{box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.8);}
-    input{width: 100%;}
+    input{
+        width: 100%;
+        margin-bottom: 3%;
+    }
     .row{padding-bottom: 3%;}
     .add,.save,.exit{
         font-size: 1.5rem !important;
