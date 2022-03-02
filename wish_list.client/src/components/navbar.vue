@@ -3,7 +3,9 @@
         <b-container>
             <ul class="menu-main">
                 <router-link :to="{name: 'CreateWishList'}" tag="a">Create a wishlist</router-link>
+                <span>|</span>
                 <router-link :to="{name: 'Wishlists'}" tag="a">Your wishlists</router-link>
+                <span>|</span>
                 <router-link :to="{name: 'Account'}" tag="a">My account</router-link>
             </ul>
         </b-container>
@@ -28,9 +30,6 @@
         text-align: center;
         background: white;
     }
-    .menu-main li {display: inline-block;}
-    .menu-main li:after {content: "|";}
-    .menu-main li:last-child:after {content: none;}
     .menu-main a {
         text-decoration: none;
         font-family: 'Ubuntu Condensed', sans-serif;
