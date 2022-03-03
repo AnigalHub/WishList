@@ -1,6 +1,6 @@
 <template>
     <div id="registration">
-        <navbar-log-in-and-sing-up/>
+        <navbar-log-in-and-sign-up/>
         <div id="worksheet">
             <router-view/>
         </div>
@@ -8,10 +8,10 @@
 </template>
 
 <script>
-    import NavbarLogInAndSingUp from "@/components/navbarLogInAndSingUp";
+    import NavbarLogInAndSignUp from "@/components/navbarLogInAndSignUp";
     export default {
         name: "registration",
-        components: {NavbarLogInAndSingUp}
+        components: {NavbarLogInAndSignUp}
     }
 </script>
 
