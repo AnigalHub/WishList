@@ -1,13 +1,13 @@
 <template>
     <div>
-        <h2>Sing Up</h2>
+        <h2>Sign Up</h2>
         <label class="text">Nickname:</label>
         <input>
         <label class="text">Password:</label>
         <input>
         <label class="text">Password again:</label>
         <input>
-        <b-button class="save" variant="outline-success">Sing Up</b-button>
+        <b-button class="save" variant="outline-success">Sign Up</b-button>
     </div>
 </template>
 
@@ -18,5 +18,5 @@
 </script>
 
 <style scoped lang="scss">
- 
+
 </style>
