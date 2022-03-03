@@ -22,6 +22,13 @@ export default {
 </script>
 
 <style lang="scss">
+  th{
+    background: #e9ecef !important;
+    text-align: center !important;
+  }
+  .table > :not(:first-child) {border-top: none !important;}
+</style>
+<style lang="scss">
   /*Компонент в котором вызываются все другие компоненты*/
   #app{
     height: 100%;
