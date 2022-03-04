@@ -126,9 +126,6 @@
         .add,.save,button{
             font-size: 1.2rem !important;
         }
-        input{
-            height: auto;
-        }
         button{height: 38px;}
         .col-4 {
             width: 60% !important;
