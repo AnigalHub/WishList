@@ -57,4 +57,16 @@
     }
     /*подпись к элементу, кнопки*/
     label,button{font-family: 'Ubuntu Condensed', sans-serif;}
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+        /*область, куда можно ввести текст с множеством строк*/
+        textarea{
+            margin: 10% 0 auto -6%;
+        }
+    }
+    @media screen and (min-width: 500px) and (max-width: 768px) {
+        /*область, куда можно ввести текст с множеством строк*/
+        textarea{
+            margin: 5% 0 auto -2%;
+        }
+    }
 </style>
