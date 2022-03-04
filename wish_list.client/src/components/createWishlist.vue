@@ -116,4 +116,15 @@
         background-position: center center;
         background-size: 50% 50%;
     }
+    @media screen and (min-width: 500px) and (max-width: 768px) {
+        table,.input-group-text{
+            font-size: 1rem !important;
+        }
+        .add,.save, .whois,.who{
+            font-size: 1.2rem !important;
+        }
+        input{
+            height: auto;
+        }
+    }
 </style>
