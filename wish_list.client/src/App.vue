@@ -72,8 +72,14 @@ export default {
     table,.input-group-text{
       font-size: 1rem !important;
     }
+    h1{
+      font-size: 2rem !important;
+    }
     h2{
       font-size: 1.5rem !important;
+    }
+    input{
+      height: auto;
     }
     .add,.save,button{
       font-size: 1.1rem !important;
