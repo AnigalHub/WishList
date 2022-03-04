@@ -62,4 +62,38 @@
     }
     /*Круг, где картинка (input) и подпись к элементу*/
     .circle{margin: 4% auto 4%;}
+
+    @media screen and (min-width: 992px) and (max-width: 1200px) {
+        /*Круг, где картинка (input) и подпись к элементу; картинка, которую загрузили*/
+        .circle, img {
+            width: 200px;
+            height: 200px;
+        }
+    }
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+        /*Круг, где картинка (input) и подпись к элементу; картинка, которую загрузили*/
+        .circle, img {
+            width: 150px;
+            height: 150px;
+        }
+        /*подпись к элементу*/
+        label{
+            padding-left: 45%;
+            padding-top: 30%;
+            font-size: 2.5rem;
+        }
+    }
+    @media screen and (min-width: 500px) and (max-width: 768px) {
+        /*Круг, где картинка (input) и подпись к элементу; картинка, которую загрузили*/
+        .circle, img {
+            width: 120px;
+            height: 120px;
+        }
+        /*подпись к элементу*/
+        label{
+            padding-left: 42%;
+            padding-top: 25%;
+            font-size: 2.5rem;
+        }
+    }
 </style>
