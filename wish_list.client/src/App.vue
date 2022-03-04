@@ -68,4 +68,15 @@ export default {
     display: block;
     margin: 0 auto;
   }
+  @media screen and (min-width: 500px) and (max-width: 768px) {
+    table,.input-group-text{
+      font-size: 1rem !important;
+    }
+    h2{
+      font-size: 1.5rem !important;
+    }
+    .add,.save,button{
+      font-size: 1.1rem !important;
+    }
+  }
 </style>
