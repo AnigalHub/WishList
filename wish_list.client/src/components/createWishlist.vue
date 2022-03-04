@@ -118,13 +118,20 @@
     }
     @media screen and (min-width: 500px) and (max-width: 768px) {
         table,.input-group-text{
-            font-size: 1rem !important;
+            font-size: 1.05rem !important;
         }
-        .add,.save, .whois,.who{
+        .whois,.who{
+            font-size: 1.05rem !important;
+        }
+        .add,.save,button{
             font-size: 1.2rem !important;
         }
         input{
             height: auto;
+        }
+        button{height: 38px;}
+        .col-4 {
+            width: 60% !important;
         }
     }
 </style>
