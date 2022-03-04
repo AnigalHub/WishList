@@ -60,13 +60,7 @@
     }
 </script>
 
-<style lang="scss">
-    th{
-        background: #e9ecef !important;
-        text-align: center !important;
-    }
-    .table > :not(:first-child) {border-top: none !important;}
-</style>
+
 <style scoped lang="scss">
     .input-group-text{
         font-size: 1.25rem !important;
