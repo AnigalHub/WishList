@@ -22,9 +22,19 @@ export default {
 </script>
 
 <style lang="scss">
+  /*картинка (input), которую загрузили*/
+  .upload-photo {
+    opacity: 0;
+    z-index: -1;
+  }
   th{
     background: #e9ecef !important;
     text-align: center !important;
+  }
+  #wishlists{
+    thead th:first-child{
+      width: 60%;
+    }
   }
   .table > :not(:first-child) {border-top: none !important;}
 </style>
@@ -42,8 +52,16 @@ export default {
     font-family: 'Roboto Serif', sans-serif;
   }
   h2{
-      font-size: 2rem !important;
+      font-size: 1.7rem !important;
+      font-family: 'Roboto Serif', sans-serif;
       font-weight: 500;
+  }
+  #signUp h2,#logIn h2,#account h2{text-align: center;}
+  .text{
+    font-size: 1.25rem ;
+    text-align: center;
+    display: block;
+    font-family: 'Roboto Serif', sans-serif;
   }
   /*создание списка желаний; списки желаний; аккаунт; регистрация*/
   #createWishlist, #wishlists, #account,#registration{
@@ -68,21 +86,226 @@ export default {
     display: block;
     margin: 0 auto;
   }
+  #nav {
+    margin: 0 auto;
+    box-shadow: 0 8px 5px -5px rgba(99, 101, 102, 0.6);
+  }
+  #nav,#navbarLogInAndSignUp{
+    width: 100%;
+    height: 48px;
+  }
+  #navbarLogInAndSignUp {margin: 1% auto;}
+  .menu-main {
+    text-align: center;
+    background: white;
+    a{
+      text-decoration: none;
+      font-family: 'Ubuntu Condensed', sans-serif;
+      letter-spacing: 2px;
+      position: relative;
+      padding-bottom: 10px;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      display: inline-block;
+      transition: color .2s;
+    }
+  }
+  span{font-size: 1.4rem;}
+  .menu-main a, .menu-main a:visited {color: #9d999d;}
+  .menu-main a.current, .menu-main a:hover{color: #e06565;}
+  .menu-main a:before, .menu-main a:after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    top: auto;
+    right: 50%;
+    bottom: -4px;
+    left: 50%;
+    background: #e06565;
+    transition: .8s;
+  }
+  .menu-main a:hover:before, .menu-main .current:before {left: 0;}
+  .menu-main a:hover:after, .menu-main .current:after {right: 0;}
+  .input-group-text{
+    font-size: 1.25rem !important;
+    font-family: 'Roboto Serif', sans-serif;
+    font-weight: 500;
+  }
+  .input-group{margin-bottom: 3%;}
+  /*таблица*/
+  table{
+    margin-top: 2%;
+    font-size: 1.25rem ;
+    font-family: 'Roboto Serif', sans-serif;
+    /*кнопки в таблице*/
+    button{
+      width: 46%;
+      margin-right: 3%;
+    }
+  }
+  /*кнопки, таблица*/
+  button, table, #worksheet{box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.8);}
+  #worksheet{
+    border: 1px solid #bdc0c2 !important;
+    background: #f7f9fc;
+    padding: 4% 4% 5%;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  label{padding-top: 1%;}
+  input{
+    width: 100%;
+    height: auto;
+    font-size: 1.5rem !important;
+  }
+  #logIn input, #signUp input{height: 35px;}
+  #createWishlist button,
+  #logIn button, #signUp button,
+  #account button, #wishlists button,
+  #wishItem button {
+    font-size: 1.5rem;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    margin-bottom: 1%;
+  }
+  #account .exit{margin-top: 3%;}
+  #createWishlist .save, #createWishlist .add,
+  #account .add, #account .exit{width: 100%;}
+  #account .save, #logIn .send, #signUp .send{
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+  }
+  #logIn .send, #signUp .send{margin-top: 3%;}
+  #account{
+    .row{padding-bottom: 3%;}
+    .circle{
+      background: white !important;
+      margin: 0 auto 6% !important;
+    }
+  }
+  /*пункт из списка желаний*/
+  #wishItem{
+    display: flex;
+    box-shadow: 4px 4px 5px -5px rgba(34, 60, 80, 0.8);
+    flex-wrap: wrap;
+    /*элементы (картинка, текст, кнопки)*/
+    & > div {
+      width: 33%;
+      margin-bottom: 2%;
+      /*последний элемент*/
+      &:last-child{padding-left: 10%;}
+    }
+    button{
+      width: 40%;
+      margin: 40% 2% 0;
+    }
+    /*область, куда можно ввести текст с множеством строк*/
+    textarea{
+      resize: none;
+      background: #f7f9fc;
+      width: 130%;
+      height: 125px !important;
+      display: block;
+      margin: 20% 0 auto -10%;
+    }
+  }
+  #imageToUpload{
+    label{
+      padding-left: 45%;
+      padding-top: 35%;
+      font-weight: 400 !important;
+      font-size: 3rem;
+      font-family: 'Ubuntu Condensed', sans-serif;
+    }
+    /*Круг, где картинка (input) и подпись к элементу; картинка, которую загрузили*/
+    .circle, img {
+      border: 1px solid #bdc0c2 !important;
+      background: #f7f9fc;
+      background-size: cover;
+      width: 250px;
+      height: 250px;
+      display: block;
+      border-radius: 50%;
+    }
+    /*Круг, где картинка (input) и подпись к элементу*/
+    .circle{margin: 4% auto 4%;}
+  }
+  #imageToUpload .circle,#wishItem textarea,#worksheet input{border: 1px solid #bdc0c2 !important;}
+
+  @media (max-width: 500px) {
+    .menu-main a:before, .menu-main a:after {
+      display: none;
+    }
+  }
+  @media (max-width: 768px) {
+    h1{margin-bottom: 0 !important;}
+    .menu-main {padding-top: 0;}
+    .menu-main li {display: block;}
+    .menu-main li:after {content: none;}
+    .menu-main a {
+      padding: 4px 0 10px;
+      margin: 0 6px;
+    }
+    span{font-size: 1rem;}
+    ul{padding-left: 0 !important;}
+    .menu-main a {
+      font-size: 1.25rem;
+      letter-spacing: .5px;
+    }
+    .navbarLogInAndSignUp a,.navbarLogInAndSignUp span  {
+      font-size: 1.3rem;
+    }
+  }
+  @media (max-width: 992px) {
+    table,.input-group-text{font-size: 1rem !important;}
+    h1{font-size: 2.2rem !important;}
+    h2{font-size: 1.5rem !important;}
+  }
   @media screen and (min-width: 500px) and (max-width: 768px) {
-    table,.input-group-text{
-      font-size: 1rem !important;
+    input{height: auto;}
+    .text{font-size: 1rem ;}
+    button{font-size: 1.1rem !important;}
+    /*область, куда можно ввести текст с множеством строк*/
+    #wishItem textarea{margin: 10% 0 auto -2%;}
+    #imageToUpload{
+      /*Круг, где картинка (input) и подпись к элементу; картинка, которую загрузили*/
+      .circle, img {
+        width: 135px;
+        height: 135px;
+      }
+      /*подпись к элементу*/
+      label{
+        padding-left: 42%;
+        padding-top: 25%;
+        font-size: 2.5rem;
+      }
     }
-    h1{
-      font-size: 2rem !important;
+  }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    /*область, куда можно ввести текст с множеством строк*/
+    #wishItem textarea{margin: 10% 0 auto -6%;}
+    #imageToUpload{
+      /*Круг, где картинка (input) и подпись к элементу; картинка, которую загрузили*/
+      .circle, img {
+        width: 150px;
+        height: 150px;
+      }
+      /*подпись к элементу*/
+      label{
+        padding-left: 45%;
+        padding-top: 30%;
+        font-size: 2.5rem;
+      }
     }
-    h2{
-      font-size: 1.5rem !important;
-    }
-    input{
-      height: auto;
-    }
-    .add,.save,button{
-      font-size: 1.1rem !important;
+  }
+  @media screen and (min-width: 992px) and (max-width: 1200px) {
+    #imageToUpload{
+      /*Круг, где картинка (input) и подпись к элементу; картинка, которую загрузили*/
+      .circle, img {
+        width: 200px;
+        height: 200px;
+      }
     }
   }
 </style>
