@@ -7,7 +7,7 @@ export default [
             {
                 path:'',
                 name:'SignUp',
-                component:() => import('./components/singUp'),
+                component:() => import('./components/signUp'),
             },
             {
                 path:'/logIn',
