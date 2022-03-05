@@ -68,12 +68,6 @@
         font-weight: 500;
     }
     .input-group{margin-bottom: 3%;}
-    .add,.save{
-        width: 100%;
-        font-size: 1.5rem !important;
-        font-family: 'Ubuntu Condensed', sans-serif;
-        margin-bottom: 2%;
-    }
     .who{padding-top: 2%;}
     .whois,.who{
         font-size: 1.5rem !important;
@@ -84,7 +78,6 @@
         font-family: 'Roboto Serif', sans-serif;
         margin-bottom: 0 !important;
     }
-    button{height: 45px;}
     button,.input-group,table{box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.8);}
     .custom-checkbox:checked+label::before {
         border-color: #198754;
@@ -92,11 +85,13 @@
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
     }
     .custom-checkbox {
-        position: absolute;
         z-index: -1;
         opacity: 0;
+        display: block;
     }
     .custom-checkbox+label {
+        margin-top: -3%;
+        float: left;
         width: 100%;
         display: block;
         align-items: center;
@@ -107,10 +102,8 @@
         display: inline-block;
         width: 1em;
         height: 1em;
-        flex-shrink: 0;
-        flex-grow: 0;
         border: 1px solid #adb5bd;
-        border-radius: 0.25em;
+        border-radius: 0.2em;
         margin-right: 0.5em;
         background-repeat: no-repeat;
         background-position: center center;
@@ -126,7 +119,7 @@
         .add,.save,button{
             font-size: 1.2rem !important;
         }
-        button{height: 38px;}
+        button{height: auto;}
         .col-4 {
             width: 60% !important;
         }
