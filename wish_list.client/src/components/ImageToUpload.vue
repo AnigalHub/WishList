@@ -37,7 +37,6 @@
     /*картинка (input), которую загрузили*/
     .upload-photo {
         opacity: 0;
-        position: absolute;
         z-index: -1;
     }
 </style>
@@ -45,7 +44,7 @@
     /*подпись к элементу*/
     label{
         padding-left: 45%;
-        padding-top: 33%;
+        padding-top: 35%;
         font-weight: 400 !important;
         font-size: 3rem;
         font-family: 'Ubuntu Condensed', sans-serif;
@@ -86,8 +85,8 @@
     @media screen and (min-width: 500px) and (max-width: 768px) {
         /*Круг, где картинка (input) и подпись к элементу; картинка, которую загрузили*/
         .circle, img {
-            width: 120px;
-            height: 120px;
+            width: 135px;
+            height: 135px;
         }
         /*подпись к элементу*/
         label{
