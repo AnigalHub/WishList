@@ -1,11 +1,11 @@
 <template>
-    <div>
+    <div id="logIn">
         <h2>Log In</h2>
-        <label class="text">Nickname:</label>
+        <label class="text">Nickname</label>
         <input>
-        <label class="text">Password:</label>
+        <label class="text">Password</label>
         <input>
-        <b-button class="save" variant="outline-success">Log In</b-button>
+        <b-button class="send" variant="outline-success">Log In</b-button>
     </div>
 </template>
 
