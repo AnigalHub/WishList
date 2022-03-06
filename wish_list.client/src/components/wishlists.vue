@@ -1,15 +1,16 @@
 <template>
     <div id="wishlists">
         <h2>My wishlists</h2>
-        <b-table :fields="fields" v-for="item in Wishlists">
-            <template #cell(name)='{item}'>
-                <input v-model="item.name" class="circle">
+        <b-table :fields="fields" :items="items" v-for="it in Wishlists">
+            <template #cell(title)='{item}'>
+                {{it.title}}
             </template>
-            <template #cell(edit)='{item}'>
+            <template #cell(edit)='{item}' >
                 <b-button type="submit" variant="outline-primary">Show</b-button>
                 <b-button type="submit" variant="outline-danger">Delete</b-button>
             </template>
         </b-table>
+
         <h2>Other wishlists</h2>
         <b-table :fields="fields" :items="items">
             <template #cell(name)='{item}'>
@@ -34,13 +35,13 @@
                     { key: "edit", label: "Control buttons" },
                 ],
                 items: [
-                    {name: ''},
+                   {name: ''},
                 ]
             }
         },
         computed:{
             Wishlists:function () {
-                return this.$store.getters['wishlists/Wishlist']
+                return this.$store.getters['wishlists/Wishlists']
             },
         },
     }
