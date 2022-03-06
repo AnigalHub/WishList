@@ -7,16 +7,16 @@
         </div>
         <b-button class="add" @click="addProduct()" variant="outline-secondary">Add Product</b-button>
         <b-row>
-            <b-col>
+            <b-col cols="7">
                 <b-button class="save" variant="outline-success">Save WishList</b-button>
             </b-col>
             <b-col>
                 <b-row>
-                    <b-col cols="4" class="who">Who can see:</b-col>
-                    <b-col class="whois">
-                        <input type="checkbox" class="custom-checkbox" id="all" name="all" value="yes">
+                    <b-col class="text" cols="7">Who can see this wishlist:</b-col>
+                    <b-col class="text">
+                        <input class="custom-radio" type="radio" id="all" name="color" value="indigo">
                         <label for="all">All</label>
-                        <input type="checkbox" class="custom-checkbox" id="me" name="me" value="yes">
+                        <input class="custom-radio" type="radio" id="me" name="color" value="indigo">
                         <label for="me">Me</label>
                     </b-col>
                 </b-row>
@@ -62,66 +62,5 @@
 
 
 <style scoped lang="scss">
-    .input-group-text{
-        font-size: 1.25rem !important;
-        font-family: 'Roboto Serif', sans-serif;
-        font-weight: 500;
-    }
-    .input-group{margin-bottom: 3%;}
-    .who{padding-top: 2%;}
-    .whois,.who{
-        font-size: 1.5rem !important;
-        font-family: 'Roboto Serif', sans-serif;
-    }
-    table{
-        font-size: 1.25rem !important;
-        font-family: 'Roboto Serif', sans-serif;
-        margin-bottom: 0 !important;
-    }
-    button,.input-group,table{box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.8);}
-    .custom-checkbox:checked+label::before {
-        border-color: #198754;
-        background-color: #198754;
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
-    }
-    .custom-checkbox {
-        z-index: -1;
-        opacity: 0;
-        display: block;
-    }
-    .custom-checkbox+label {
-        margin-top: -3%;
-        float: left;
-        width: 100%;
-        display: block;
-        align-items: center;
-        user-select: none;
-    }
-    .custom-checkbox+label::before {
-        content: '';
-        display: inline-block;
-        width: 1em;
-        height: 1em;
-        border: 1px solid #adb5bd;
-        border-radius: 0.2em;
-        margin-right: 0.5em;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: 50% 50%;
-    }
-    @media screen and (min-width: 500px) and (max-width: 768px) {
-        table,.input-group-text{
-            font-size: 1.05rem !important;
-        }
-        .whois,.who{
-            font-size: 1.05rem !important;
-        }
-        .add,.save,button{
-            font-size: 1.2rem !important;
-        }
-        button{height: auto;}
-        .col-4 {
-            width: 60% !important;
-        }
-    }
+
 </style>
