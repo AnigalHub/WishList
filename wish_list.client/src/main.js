@@ -13,6 +13,18 @@ Vue.config.productionTip = false
 
 import routes from './routes';
 
+import vuex from 'vuex'
+Vue.use(vuex)
+import newWishList from './store/NewWishlist'
+import wishlistsAll from './store/Wishlists'
+
+const store = new vuex.Store({
+    modules:{
+        newWishlist: newWishList,
+        wishlistsAll: wishlistsAll,
+    }
+})
+
 const router = new VueRouter(
     {
         mode:'history',
@@ -21,5 +33,6 @@ const router = new VueRouter(
 
 new Vue({
     router,
-    render: function (h) { return h(App) },
+    store,
+    render: function (h) { return h(App) }
 }).$mount('#app')
