@@ -8,7 +8,7 @@
         <b-button class="add" @click="addProduct()" variant="outline-secondary">Add Product</b-button>
         <b-row>
             <b-col cols="7">
-                <b-button class="save" variant="outline-success">Save WishList</b-button>
+                <b-button class="save" variant="outline-success" @click="saveProduct()">Save WishList</b-button>
             </b-col>
             <b-col>
                 <b-row>
@@ -50,6 +50,9 @@
             },
             addProduct(){
                 this.$store.dispatch('newWishlist/addProduct',{})
+            },
+            saveProduct(){
+                this.$store.dispatch('wishlists/addWishlist',{title})
             }
         },
         computed:{
