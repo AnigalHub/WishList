@@ -228,7 +228,7 @@ export default {
     /*элементы (картинка, текст, кнопки)*/
     & > div {
       width: 33%;
-      margin-bottom: 2%;
+      margin-bottom: 1%;
       /*последний элемент*/
       &:last-child{padding-left: 10%;}
     }
