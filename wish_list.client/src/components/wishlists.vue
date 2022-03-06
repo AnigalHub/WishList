@@ -1,7 +1,7 @@
 <template>
     <div id="wishlists">
         <h2>My wishlists</h2>
-        <b-table :fields="fields" :items="items">
+        <b-table :fields="fields" v-for="item in Wishlists">
             <template #cell(name)='{item}'>
                 <input v-model="item.name" class="circle">
             </template>
@@ -34,10 +34,15 @@
                     { key: "edit", label: "Control buttons" },
                 ],
                 items: [
-                    {name: '', description: '' },
+                    {name: ''},
                 ]
             }
-        }
+        },
+        computed:{
+            Wishlists:function () {
+                return this.$store.getters['wishlists/Wishlist']
+            },
+        },
     }
 </script>
 
