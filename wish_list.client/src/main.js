@@ -16,12 +16,12 @@ import routes from './routes';
 import vuex from 'vuex'
 Vue.use(vuex)
 import newWishList from './store/NewWishlist'
-import wishlistsAll from './store/Wishlists'
+import wishlists from './store/Wishlists'
 
 const store = new vuex.Store({
     modules:{
         newWishlist: newWishList,
-        wishlistsAll: wishlistsAll,
+        wishlists:wishlists,
     }
 })
 
