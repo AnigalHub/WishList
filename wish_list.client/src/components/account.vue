@@ -12,11 +12,8 @@
                <b-col><input v-model="password"></b-col>
            </b-row>
            <b-row>
-                <b-col class="text" cols="6">Wishlists from other users</b-col>
+                <b-col class="text" cols="6">Wishlists from other users: {{wishlists}}</b-col>
                 <b-col>
-                    <input v-model="wishlists">
-                </b-col>
-                <b-col cols="5">
                     <b-button class="add" variant="outline-primary">Add to Wishlists</b-button>
                 </b-col>
            </b-row>
