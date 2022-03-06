@@ -40,8 +40,6 @@
                     { key: "description", label: "Description" },
                     { key: "edit", label: "Edit | Delete" },
                 ],
-                //wishItems:[],
-                file: [],
             }
         },
         methods:{
@@ -53,7 +51,6 @@
             },
             saveProduct(title){
                 this.$store.dispatch('wishlists/addWishlist',{title})
-                console.log(title)
             }
         },
         computed:{
@@ -68,11 +65,6 @@
                     return this.$store.dispatch('newWishlist/setTitle',value)
                 }
             }
-        },
-        created() {
-            // this.WishItems = [
-            //     {id: "1"},
-            // ]
         }
     }
 </script>
