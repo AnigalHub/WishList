@@ -1,9 +1,9 @@
 <template>
     <div id="wishlists">
         <h2>My wishlists</h2>
-        <b-table :fields="fields" :items="items" v-for="it in Wishlists">
+        <b-table :fields="fields" :items="items" v-for="wishlist in Wishlists">
             <template #cell(title)='{item}'>
-                {{it.title}}
+                {{wishlist.title}}
             </template>
             <template #cell(edit)='{item}' >
                 <b-button type="submit" variant="outline-primary">Show</b-button>
