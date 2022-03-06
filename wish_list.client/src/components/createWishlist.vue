@@ -7,13 +7,13 @@
         </div>
         <b-button class="add" @click="addProduct()" variant="outline-secondary">Add Product</b-button>
         <b-row>
-            <b-col cols="7">
+            <b-col >
                 <b-button class="save" variant="outline-success" @click="saveProduct(title)">Save WishList</b-button>
             </b-col>
             <b-col>
                 <b-row>
-                    <b-col class="text" cols="7">Who can see this wishlist:</b-col>
-                    <b-col class="text">
+                    <b-col class="text" cols="12">
+                        Who can see this wishlist:
                         <input class="custom-radio" type="radio" id="all" name="color" value="indigo">
                         <label for="all">All</label>
                         <input class="custom-radio" type="radio" id="me" name="color" value="indigo">
