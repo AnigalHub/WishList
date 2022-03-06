@@ -45,6 +45,13 @@ export default {
     min-height: 90vh;
     padding-top: 1%;
   }
+  /*gif-картинка в меню - шапке*/
+  #heart{
+    height: 40px;
+    width: 40px;
+    display: block;
+    margin: 0 auto;
+  }
   /*заголовоки*/
   h1{
     text-align: center;
@@ -56,13 +63,24 @@ export default {
       font-family: 'Roboto Serif', sans-serif;
       font-weight: 500;
   }
+  /*контент - место где меняются компоненты*/
+  #content{
+    margin-top: .1%;
+    padding-top: 1.5%;
+    background: rgba(250, 182, 125, 0.3);
+    height: 100%;
+    min-height: 84vh;
+  }
   #signUp h2,#logIn h2,#account h2{text-align: center;}
   .text{
     font-size: 1.25rem ;
-    text-align: center;
     display: block;
     font-family: 'Roboto Serif', sans-serif;
   }
+  #account .text{
+    padding-top: 1.5%;
+  }
+  #logIn .text,#signUp .text{text-align: center;}
   /*создание списка желаний; списки желаний; аккаунт; регистрация*/
   #createWishlist, #wishlists, #account,#registration{
     padding: 3%;
@@ -70,21 +88,6 @@ export default {
     height: 100%;
     background: white;
     box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.35);
-  }
-  /*контент - место где меняются компоненты*/
-  #content{
-    margin-top: .1%;
-    padding-top: 1.5%;
-    background: rgba(252, 214, 181, 0.3);
-    height: 100%;
-    min-height: 84vh;
-  }
-  /*gif-картинка в меню - шапке*/
-  #heart{
-    height: 40px;
-    width: 40px;
-    display: block;
-    margin: 0 auto;
   }
   #nav {
     margin: 0 auto;
@@ -130,9 +133,42 @@ export default {
   .input-group-text{
     font-size: 1.25rem !important;
     font-family: 'Roboto Serif', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
+    height: 50px;
   }
   .input-group{margin-bottom: 3%;}
+  /* для элемента input c type="radio" */
+  .custom-radio {
+    display: contents;
+    z-index: -1;
+    opacity: 0;
+  }
+  /* для элемента label связанного с .custom-radio */
+  .custom-radio+label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 5%;
+  }
+  /* создание в label псевдоэлемента  before со следующими стилями */
+  .custom-radio+label::before {
+    content: '';
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #bdc0c2;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+  /* стили для радиокнопки, находящейся в состоянии checked */
+  .custom-radio:checked+label::before {
+    border-color: #0b76ef;
+    background-color: #0b76ef;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+  }
   /*таблица*/
   table{
     margin-top: 2%;
@@ -145,7 +181,7 @@ export default {
     }
   }
   /*кнопки, таблица*/
-  button, table, #worksheet{box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.8);}
+  button, table,.input-group, #worksheet{box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.8);}
   #worksheet{
     border: 1px solid #bdc0c2 !important;
     background: #f7f9fc;
@@ -153,7 +189,7 @@ export default {
     max-width: 750px;
     margin: 0 auto;
   }
-  label{padding-top: 1%;}
+  #logIn label, #signUp label,#account label{padding-top: 1%;}
   input{
     width: 100%;
     height: auto;
@@ -166,7 +202,6 @@ export default {
   #wishItem button {
     font-size: 1.5rem;
     font-family: 'Ubuntu Condensed', sans-serif;
-    margin-bottom: 1%;
   }
   #account .exit{margin-top: 3%;}
   #createWishlist .save, #createWishlist .add,
@@ -181,9 +216,10 @@ export default {
     .row{padding-bottom: 3%;}
     .circle{
       background: white !important;
-      margin: 0 auto 6% !important;
+      margin: 0 auto 4% !important;
     }
   }
+  #createWishlist .row{padding-top: 1.5%;}
   /*пункт из списка желаний*/
   #wishItem{
     display: flex;
@@ -198,7 +234,7 @@ export default {
     }
     button{
       width: 40%;
-      margin: 40% 2% 0;
+      margin: 30% 2% 0;
     }
     /*область, куда можно ввести текст с множеством строк*/
     textarea{
@@ -207,13 +243,13 @@ export default {
       width: 130%;
       height: 125px !important;
       display: block;
-      margin: 20% 0 auto -10%;
+      margin: 15% 0 auto -10%;
     }
   }
   #imageToUpload{
     label{
       padding-left: 45%;
-      padding-top: 35%;
+      padding-top: 30%;
       font-weight: 400 !important;
       font-size: 3rem;
       font-family: 'Ubuntu Condensed', sans-serif;
@@ -223,8 +259,8 @@ export default {
       border: 1px solid #bdc0c2 !important;
       background: #f7f9fc;
       background-size: cover;
-      width: 250px;
-      height: 250px;
+      width: 200px;
+      height: 200px;
       display: block;
       border-radius: 50%;
     }
@@ -244,15 +280,13 @@ export default {
     .menu-main li {display: block;}
     .menu-main li:after {content: none;}
     .menu-main a {
+      font-size: 1.25rem;
+      letter-spacing: .5px;
       padding: 4px 0 10px;
       margin: 0 6px;
     }
     span{font-size: 1rem;}
     ul{padding-left: 0 !important;}
-    .menu-main a {
-      font-size: 1.25rem;
-      letter-spacing: .5px;
-    }
     .navbarLogInAndSignUp a,.navbarLogInAndSignUp span  {
       font-size: 1.3rem;
     }
@@ -265,9 +299,18 @@ export default {
   @media screen and (min-width: 500px) and (max-width: 768px) {
     input{height: auto;}
     .text{font-size: 1rem ;}
-    button{font-size: 1.1rem !important;}
-    /*область, куда можно ввести текст с множеством строк*/
-    #wishItem textarea{margin: 10% 0 auto -2%;}
+    button{
+      font-size: 1.1rem !important;
+      height: auto;
+    }
+    #wishItem{
+      textarea{
+        width: 125%;
+        margin: 10% 0 auto 2%;
+      }
+      button {margin: 45% 2% 0;}
+    }
+    table,.input-group-text{font-size: 1.05rem !important;}
     #imageToUpload{
       /*Круг, где картинка (input) и подпись к элементу; картинка, которую загрузили*/
       .circle, img {
