@@ -1,8 +1,8 @@
 <template>
     <div id="createWishlist">
-        <b-input-group class="w-100" prepend="Wishlist Title" ><b-form-input></b-form-input></b-input-group>
+        <b-input-group class="w-100" prepend="Wishlist Title" ><b-form-input v-model="title"></b-form-input></b-input-group>
         <b-table :fields="fields"></b-table>
-        <div v-for="(wishItem, index) in wishItems" :key="index">
+        <div v-for="(wishItem, index) in WishItems" :key="index">
             <WishItem />
         </div>
         <b-button class="add" @click="addProduct()" variant="outline-secondary">Add Product</b-button>
@@ -40,7 +40,7 @@
                     { key: "description", label: "Description" },
                     { key: "edit", label: "Edit | Delete" },
                 ],
-                wishItems:[],
+                //wishItems:[],
                 file: [],
             }
         },
@@ -49,13 +49,26 @@
                 console.log("Мы должны сохранить вот это", id, image)
             },
             addProduct(){
-                this.wishItems.push({})
+                this.$store.dispatch('newWishlist/addProduct',{})
+            }
+        },
+        computed:{
+            WishItems:function () {
+                return this.$store.getters['newWishlist/WishItems']
+            },
+            title: {
+                get(){
+                    return this.$store.getters['newWishlist/title']
+                },
+                set(value){
+                    return this.$store.dispatch('newWishlist/setTitle',value)
+                }
             }
         },
         created() {
-            this.wishItems = [
-                {id: "1"},
-            ]
+            // this.WishItems = [
+            //     {id: "1"},
+            // ]
         }
     }
 </script>
