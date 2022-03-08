@@ -45,6 +45,13 @@ export default {
   .table > :not(:first-child) {border-top: none !important;}
 </style>
 <style lang="scss">
+  /*"крестик" (размер) - кнопка закрытия модального окна*/
+  .close {
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    font-size: 30px;
+  }
   /*модальное окно*/
   .modal-dialog:first-child{margin-top: 5% !important;}
   /*заголовок модального окна*/
