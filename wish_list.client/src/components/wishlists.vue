@@ -1,26 +1,32 @@
 <template>
     <div id="wishlists">
         <h2>My wishlists</h2>
-        <b-table :fields="fields" :items="items" v-for="wishlist in Wishlists">
-            <template #cell(title)='{item}'>
-                {{wishlist.title}}
-            </template>
-            <template #cell(edit)='{item}' >
-                <b-button type="submit" variant="outline-primary">Show</b-button>
-                <b-button type="submit" variant="outline-danger">Delete</b-button>
-            </template>
+        <b-table :fields="fields">
         </b-table>
-
+        <div v-for="wishlist in Wishlists" :key="index" class="wishlist">
+            <b-row>
+                <b-col cols="7" class="text">
+                    {{wishlist.title}}
+                </b-col>
+                <b-col>
+                    <b-button type="submit" variant="outline-primary">Show</b-button>
+                    <b-button type="submit" variant="outline-danger">Delete</b-button>
+                </b-col>
+            </b-row>
+        </div>
         <h2>Other wishlists</h2>
-        <b-table :fields="fields" :items="items">
-            <template #cell(name)='{item}'>
-                <input v-model="item.name" class="circle">
-            </template>
-            <template #cell(edit)='{item}'>
-                <b-button type="submit" variant="outline-primary">Show</b-button>
-                <b-button type="submit" variant="outline-danger">Delete</b-button>
-            </template>
+        <b-table :fields="fields">
         </b-table>
+        <div class="wishlist">
+            <b-row>
+                <b-col cols="7" class="text">
+                </b-col>
+                <b-col>
+                    <b-button type="submit" variant="outline-primary">Show</b-button>
+                    <b-button type="submit" variant="outline-danger">Delete</b-button>
+                </b-col>
+            </b-row>
+        </div>
     </div>
 </template>
 
