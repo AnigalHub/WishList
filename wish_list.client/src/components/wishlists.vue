@@ -12,7 +12,7 @@
                         {{wishlist.title}}
                 </b-col>
                 <b-col>
-                    <b-button type="submit" variant="outline-primary">Show</b-button>
+                    <b-button type="submit" variant="outline-primary"  >Show</b-button>
                     <b-button type="submit" variant="outline-danger">Delete</b-button>
                 </b-col>
             </b-row>
@@ -65,7 +65,11 @@
                 return this.$store.getters['wishlists/Wishlists']
             },
         },
-       
+        methods:{
+            showModal(){
+                this.$refs['modalWishlist'].show()
+            },
+        }
     }
 </script>
 
