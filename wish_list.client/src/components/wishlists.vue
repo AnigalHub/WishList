@@ -3,10 +3,13 @@
         <h2>My wishlists</h2>
         <b-table :fields="fields">
         </b-table>
-        <div v-for="wishlist in Wishlists" :key="index" class="wishlist">
+        <div v-if="Wishlists.length == 0" class="wishlist emptyTable">
+            The table is empty. No wishlists have been created and saved.
+        </div>
+        <div v-else v-for="wishlist in Wishlists"  class="wishlist">
             <b-row>
                 <b-col cols="7" class="text">
-                    {{wishlist.title}}
+                        {{wishlist.title}}
                 </b-col>
                 <b-col>
                     <b-button type="submit" variant="outline-primary">Show</b-button>
@@ -17,6 +20,10 @@
         <h2>Other wishlists</h2>
         <b-table :fields="fields">
         </b-table>
+        <div class="wishlist emptyTable">
+            The table is empty. No wishlists have been created and saved.
+        </div>
+        <!--
         <div class="wishlist">
             <b-row>
                 <b-col cols="7" class="text">
@@ -27,6 +34,7 @@
                 </b-col>
             </b-row>
         </div>
+        -->
     </div>
 </template>
 
@@ -47,8 +55,13 @@
         },
         computed:{
             Wishlists:function () {
+                let array = this.$store.getters['wishlists/Wishlists']
+                console.log(array)
+                console.log(array.length)
+                console.log(array.title)
                 return this.$store.getters['wishlists/Wishlists']
             },
+
         },
     }
 </script>
