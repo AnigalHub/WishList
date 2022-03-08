@@ -78,10 +78,13 @@ export default {
     min-height: 84vh;
   }
   #signUp h2,#logIn h2,#account h2{text-align: center;}
-  .text{
+  .text, .emptyTable{
     font-size: 1.25rem ;
     display: block;
     font-family: 'Roboto Serif', sans-serif;
+  }
+  .emptyTable{
+    text-align: center;
   }
   #account .text{
     padding-top: 1.5%;
