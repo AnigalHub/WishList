@@ -32,8 +32,14 @@ export default {
     text-align: center !important;
   }
   #wishlists{
+    h2{
+      padding-top: 1%;
+    }
     thead th:first-child{
-      width: 60%;
+      width: 58.3333%;
+    }
+    table{
+      margin-bottom: 0 !important;
     }
   }
   .table > :not(:first-child) {border-top: none !important;}
@@ -171,7 +177,6 @@ export default {
   }
   /*таблица*/
   table{
-    margin-top: 2%;
     font-size: 1.25rem ;
     font-family: 'Roboto Serif', sans-serif;
     /*кнопки в таблице*/
@@ -220,6 +225,14 @@ export default {
     }
   }
   #createWishlist .row{padding-top: 1.5%;}
+  .wishlist{
+    box-shadow: 4px 4px 5px -5px rgba(34, 60, 80, 0.8);
+    padding: 1%;
+    button{
+      width: 48%;
+      margin: 0 1%;
+    }
+  }
   /*пункт из списка желаний*/
   #wishItem{
     display: flex;
