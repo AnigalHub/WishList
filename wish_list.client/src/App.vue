@@ -45,6 +45,24 @@ export default {
   .table > :not(:first-child) {border-top: none !important;}
 </style>
 <style lang="scss">
+  /*модальное окно*/
+  .modal-dialog:first-child{margin-top: 5% !important;}
+  /*заголовок модального окна*/
+  .modal-header{
+    border: none !important;
+    padding: 10px !important;
+  }
+  /*тело модального окна*/
+  .modal-body {
+    padding: 10px !important;
+    min-height: 100px;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Poiret One', cursive;
+    font-weight: 800 !important;
+  }
+  /*footer-модального окна*/
+  .modal-footer{display: none !important;}
   /*Компонент в котором вызываются все другие компоненты*/
   #app{
     height: 100%;
