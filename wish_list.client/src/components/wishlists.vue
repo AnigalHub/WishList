@@ -35,6 +35,9 @@
             </b-row>
         </div>
         -->
+        <b-modal ref="modalWishlist">
+
+        </b-modal>
     </div>
 </template>
 
@@ -61,8 +64,8 @@
                 console.log(array.title)
                 return this.$store.getters['wishlists/Wishlists']
             },
-
         },
+       
     }
 </script>
 
