@@ -3,7 +3,7 @@
         <b-input-group class="w-100" prepend="Wishlist Title" ><b-form-input v-model="title"></b-form-input></b-input-group>
         <b-table :fields="fields"></b-table>
         <div v-for="(wishItem, index) in WishItems" :key="index">
-            <WishItem />
+            <WishItem/>
         </div>
         <b-button class="add" @click="addProduct()" variant="outline-secondary">Add Product</b-button>
         <b-row>
@@ -12,7 +12,7 @@
             </b-col>
             <b-col>
                 <b-row>
-                    <b-col class="text" cols="12">
+                    <b-col class="text">
                         Who can see this wishlist:
                         <input class="custom-radio" type="radio" id="all" name="color" value="indigo">
                         <label for="all">All</label>
