@@ -38,13 +38,19 @@
         <b-modal ref="modalWishlist">
             <b-table :fields="fieldsWishlists">
             </b-table>
+            <div v-for="(wishlist, index) in Wishlists" :key="index">
+               <!-- <WishItem/> -->
+                <WishItem/>
+            </div>
         </b-modal>
     </div>
 </template>
 
 <script>
+    import WishItem from "@/components/WishItem";
     export default {
         name: "wishlists",
+        components: {WishItem},
         data(){
             return{
                 /**Столбцы таблицы */
@@ -65,10 +71,6 @@
         },
         computed:{
             Wishlists:function () {
-                let array = this.$store.getters['wishlists/Wishlists']
-                console.log(array)
-                console.log(array.length)
-                console.log(array.title)
                 return this.$store.getters['wishlists/Wishlists']
             },
         },
