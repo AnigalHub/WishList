@@ -27,7 +27,7 @@
                 this.file = e.target.files[0];
                 this.url = URL.createObjectURL(this.file);
                 //this.fileChanged(this.id, this.file)
-                this.$emit("fileChanged", this.id, this.file)
+                this.$emit("fileChanged", this.file)
             },
         },
         created() {
