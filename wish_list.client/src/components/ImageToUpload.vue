@@ -13,11 +13,11 @@
         data() {
             return {
                 id: 0,
-                file: null,
-                url: null,
+                file: this.img,
             }
         },
         props:{
+            img: File,
             fileChanged: Function,
         },
         methods: {
@@ -25,10 +25,15 @@
                 if(e.target.files.length <= 0)
                     return
                 this.file = e.target.files[0];
-                this.url = URL.createObjectURL(this.file);
-                //this.fileChanged(this.id, this.file)
                 this.$emit("fileChanged", this.file)
             },
+        },
+        computed:{
+            url(){
+                if(!this.file)
+                    return
+                return URL.createObjectURL(this.file)
+            }
         },
         created() {
             this.id = this._uid
