@@ -12,15 +12,14 @@ const getters = {
     },
 }
 const mutations ={
-    addWishlists:(state,name,array) =>{
+    addWishlist:(state,wishlist) =>{
        // state.Wishlists.push(name)
-        console.log( state.Wishlists.push(name,array))
-        console.log(state.Wishlists)
+        state.Wishlists.push(wishlist)
     },
 }
 const actions = {
-    addWishlist(context, name,array){
-        context.commit('addWishlists', name,array)
+    addWishlist(context, wishlist){
+        context.commit('addWishlist', wishlist)
     },
 }
 export default {
