@@ -6,13 +6,13 @@
         <div v-if="Wishlists.length == 0" class="wishlist emptyTable">
             The table is empty. No wishlists have been created and saved.
         </div>
-        <div v-else v-for="wishlist in Wishlists"  class="wishlist">
+        <div v-else v-for="(wishlist,index) in Wishlists" :key="index" class="wishlist">
             <b-row>
                 <b-col cols="7" class="text">
                         {{wishlist.title}}
                 </b-col>
                 <b-col>
-                    <b-button type="submit" variant="outline-primary" @click="showModal()" >Show</b-button>
+                    <b-button type="submit" variant="outline-primary" @click="showModal(index)" >Show</b-button>
                     <b-button type="submit" variant="outline-danger">Delete</b-button>
                 </b-col>
             </b-row>
@@ -38,9 +38,8 @@
         <b-modal ref="modalWishlist">
             <b-table :fields="fieldsWishlists">
             </b-table>
-            <div v-for="(wishlist, index) in Wishlists" :key="index">
-               <!-- <WishItem/> -->
-                <WishItem/>
+            <div v-for="(wishItem, index) in selectedWishlist.array" :key="index">
+                <WishItem v-model="selectedWishlist.array[index]"/>
             </div>
         </b-modal>
     </div>
@@ -66,7 +65,8 @@
                 ],
                 items: [
                    {name: ''},
-                ]
+                ],
+                selectedWishlist: {array: null},
             }
         },
         computed:{
@@ -75,7 +75,8 @@
             },
         },
         methods:{
-            showModal(){
+            showModal(index){
+                this.selectedWishlist = this.Wishlists[index]
                 this.$refs['modalWishlist'].show()
             },
         }
