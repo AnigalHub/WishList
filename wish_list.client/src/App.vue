@@ -368,8 +368,8 @@ export default {
       }
       /*подпись к элементу*/
       label{
-        padding-left: 42%;
-        padding-top: 25%;
+        left: 42%;
+        top: 25%;
         font-size: 2.5rem;
       }
     }
