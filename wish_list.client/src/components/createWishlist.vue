@@ -3,12 +3,12 @@
         <b-input-group class="w-100" prepend="Wishlist Title" ><b-form-input v-model="title"></b-form-input></b-input-group>
         <b-table :fields="fields"></b-table>
         <div v-for="(wishItem, index) in WishItems" :key="index">
-            <WishItem/>
+            <WishItem v-model="WishItems[index]"/>
         </div>
         <b-button class="add" @click="addProduct()" variant="outline-secondary">Add Product</b-button>
         <b-row>
             <b-col >
-                <b-button class="save" variant="outline-success" @click="saveProduct(title)">Save WishList</b-button>
+                <b-button class="save" variant="outline-success" @click="saveProduct(title,WishItems)">Save WishList</b-button>
             </b-col>
             <b-col>
                 <b-row>
@@ -47,10 +47,10 @@
                 console.log("Мы должны сохранить вот это", id, image)
             },
             addProduct(){
-                this.$store.dispatch('newWishlist/addProduct',{})
+                this.$store.dispatch('newWishlist/addProduct',{ id: 2, text:"", img:null})
             },
-            saveProduct(title){
-                this.$store.dispatch('wishlists/addWishlist',{title})
+            saveProduct(title,array){
+                this.$store.dispatch('wishlists/addWishlist',{title,array})
             }
         },
         computed:{
