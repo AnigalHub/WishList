@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 const state = () =>({
   title: "",
-  WishItems:[{}]
+  WishItems:[{ id: 1, text:"", img:null}]
 })
 const getters = {
   WishItems: (state) => {
