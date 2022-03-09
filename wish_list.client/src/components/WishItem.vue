@@ -1,6 +1,6 @@
 <template>
     <div id="wishItem">
-        <div><ImageToUpload @fileChanged="onFileChanged"/></div>
+        <div><ImageToUpload :img="value.img" @fileChanged="onFileChanged"/></div>
         <div><textarea v-model="value.text"/></div>
         <div>
             <b-button type="submit" variant="outline-success">✓</b-button>
