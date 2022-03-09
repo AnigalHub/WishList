@@ -1,7 +1,7 @@
 <template>
     <div id="wishItem">
-        <div><ImageToUpload/></div>
-        <div><textarea/></div>
+        <div><ImageToUpload @fileChanged="onFileChanged"/></div>
+        <div><textarea v-model="value.text"/></div>
         <div>
             <b-button type="submit" variant="outline-success">✓</b-button>
             <b-button type="submit" variant="outline-danger">X</b-button>
@@ -14,7 +14,16 @@
     import ImageToUpload from "@/components/ImageToUpload";
     export default {
         name: "WishItem",
-        components: {ImageToUpload}
+        props: {
+          value: Object,
+        },
+        components: {ImageToUpload},
+        methods:{
+            onFileChanged(file){
+                console .log(file)
+                this.value.img = file
+            }
+        }
     }
 </script>
 
