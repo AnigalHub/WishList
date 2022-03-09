@@ -36,7 +36,8 @@
         </div>
         -->
         <b-modal ref="modalWishlist">
-
+            <b-table :fields="fieldsWishlists">
+            </b-table>
         </b-modal>
     </div>
 </template>
@@ -50,6 +51,12 @@
                 fields:[
                     { key: "title", label: "Wishlist Title" },
                     { key: "edit", label: "Control buttons" },
+                ],
+                /**Столбцы таблицы */
+                fieldsWishlists:[
+                    { key: "name", label: "Product name" },
+                    { key: "description", label: "Description" },
+                    { key: "edit", label: "Edit | Delete" },
                 ],
                 items: [
                    {name: ''},
