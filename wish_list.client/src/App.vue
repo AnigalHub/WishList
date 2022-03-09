@@ -70,6 +70,12 @@ export default {
   }
   /*footer-модального окна*/
   .modal-footer{display: none !important;}
+  @media (min-width: 700px){
+    .modal-dialog {
+      max-width: 1300px !important;
+    }
+  }
+
   /*Компонент в котором вызываются все другие компоненты*/
   #app{
     height: 100%;
@@ -289,14 +295,16 @@ export default {
   }
   #imageToUpload{
     label{
-      padding-left: 45%;
-      padding-top: 30%;
+      left: 45%;
+      position: absolute;
+      top: 30%;
       font-weight: 400 !important;
       font-size: 3rem;
       font-family: 'Ubuntu Condensed', sans-serif;
     }
     /*Круг, где картинка (input) и подпись к элементу; картинка, которую загрузили*/
     .circle, img {
+      position: relative;
       border: 1px solid #bdc0c2 !important;
       background: #f7f9fc;
       background-size: cover;
