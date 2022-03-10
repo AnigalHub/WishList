@@ -41,6 +41,14 @@
             <div v-for="(wishItem, index) in selectedWishlist.array" :key="index">
                 <WishItem v-model="selectedWishlist.array[index]"/>
             </div>
+            <b-row class="buttons">
+                <b-col>
+                    <b-button class="add" @click="addProduct()" variant="outline-secondary">Add</b-button>
+                </b-col>
+                <b-col>
+                    <b-button class="save" variant="outline-success">Save</b-button>
+                </b-col>
+            </b-row>
         </b-modal>
     </div>
 </template>
@@ -78,6 +86,9 @@
             showModal(index){
                 this.selectedWishlist = this.Wishlists[index]
                 this.$refs['modalWishlist'].show()
+            },
+            addProduct(){
+                this.$store.dispatch('newWishlist/addProduct',{ id: 2, text:"", img:null})
             },
         }
     }
