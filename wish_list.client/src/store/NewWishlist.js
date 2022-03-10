@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 const state = () =>({
   title: "",
-  WishItems:[{ id: 1, text:"", img:null}]
+  WishItems:[{text:"", img:null}]
 })
 const getters = {
   WishItems: (state) => {
@@ -21,11 +21,23 @@ const mutations ={
   },
   setTitle:(state,payload) =>{
     state.title = payload
+  },
+  deleteWishItem:(state,id) =>{
+    state.WishItems.splice(id,1)
+  },
+  cleanWishItems:(state) =>{
+    state.WishItems = [{text:"", img:null}]
   }
 }
 const actions = {
   addProduct(context, payload){
     context.commit('addWishItem',payload)
+  },
+  deleteProduct(context,index) {
+    context.commit('deleteWishItem',index)
+  },
+  cleanWishItems(context){
+    context.commit('cleanWishItems')
   },
   setTitle(context,payload){
     context.commit('setTitle',payload)
