@@ -13,13 +13,18 @@ const getters = {
 }
 const mutations ={
     addWishlist:(state,wishlist) =>{
-       // state.Wishlists.push(name)
         state.Wishlists.push(wishlist)
     },
+    deleteWishlist:(state,id) =>{
+        state.Wishlists.splice(id,1)
+    }
 }
 const actions = {
     addWishlist(context, wishlist){
         context.commit('addWishlist', wishlist)
+    },
+   deleteWishlist(context,id){
+        context.commit('deleteWishlist',id)
     },
 }
 export default {
