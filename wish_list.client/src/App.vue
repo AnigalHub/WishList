@@ -285,13 +285,13 @@ export default {
     }
     button{
       width: 40%;
-      margin: 30% 2% 0;
+      margin: 30% 0 0 50%;
     }
     /*область, куда можно ввести текст с множеством строк*/
     textarea{
       resize: none;
       background: #f7f9fc;
-      width: 130%;
+      width: 165%;
       height: 125px !important;
       display: block;
       margin: 15% 0 auto -10%;
