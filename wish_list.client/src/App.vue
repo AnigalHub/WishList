@@ -27,30 +27,30 @@ export default {
     opacity: 0;
     z-index: -1;
   }
+  /*заголовки таблиц*/
   th{
     background: #e9ecef !important;
     text-align: center !important;
   }
+  /*компонент - СпискиЖеланий(wishlists)*/
   #wishlists{
-    h2{
-      padding-top: 1%;
-    }
-    thead th:first-child{
-      width: 58.3333%;
-    }
-    table{
-      margin-bottom: 0 !important;
-    }
+    /*заголовок*/
+    h2{padding-top: 1%;}
+    /*заголовок таблицы (первый)*/
+    thead th:first-child{width: 58.3333%;}
+    /*таблица*/
+    table{margin-bottom: 0 !important;}
   }
+  /*таблица - заголовки (без подчеркивания)*/
   .table > :not(:first-child) {border-top: none !important;}
 </style>
 <style lang="scss">
-  /*"крестик" (размер) - кнопка закрытия модального окна*/
+  /*"крестик в модальном окне" (размер)*/
   .close {
     border: none !important;
     background: none !important;
     box-shadow: none !important;
-    font-size: 30px;
+    font-size: 32px;
   }
   /*модальное окно*/
   .modal-dialog:first-child{margin-top: 5% !important;}
@@ -70,12 +70,12 @@ export default {
   }
   /*footer-модального окна*/
   .modal-footer{display: none !important;}
-  @media (min-width: 700px){
-    .modal-dialog {
-      max-width: 1300px !important;
-    }
-  }
 
+  /*Адаптивность по модальному окну*/
+  @media (min-width: 1300px){
+    /*модальное окно*/
+    .modal-dialog {max-width: 1300px !important;}
+  }
   /*Компонент в котором вызываются все другие компоненты*/
   #app{
     height: 100%;
@@ -96,9 +96,9 @@ export default {
     font-family: 'Roboto Serif', sans-serif;
   }
   h2{
-      font-size: 1.7rem !important;
-      font-family: 'Roboto Serif', sans-serif;
-      font-weight: 500;
+    font-size: 1.7rem !important;
+    font-family: 'Roboto Serif', sans-serif;
+    font-weight: 500;
   }
   /*контент - место где меняются компоненты*/
   #content{
@@ -108,18 +108,15 @@ export default {
     height: 100%;
     min-height: 84vh;
   }
+  /*заголовки у компонентов - */
   #signUp h2,#logIn h2,#account h2{text-align: center;}
-  .text, .emptyTable{
-    font-size: 1.25rem ;
+  .text,.emptyTable,#wishItem textarea{
+    font-size: 1.4rem ;
     display: block;
     font-family: 'Roboto Serif', sans-serif;
   }
-  .emptyTable{
-    text-align: center;
-  }
-  #account .text{
-    padding-top: 1.5%;
-  }
+  .emptyTable{text-align: center;}
+  #account .text{padding-top: 1.5%;}
   #logIn .text,#signUp .text{text-align: center;}
   /*создание списка желаний; списки желаний; аккаунт; регистрация*/
   #createWishlist, #wishlists, #account,#registration{
@@ -156,7 +153,7 @@ export default {
   }
   span{font-size: 1.4rem;}
   .menu-main a, .menu-main a:visited {color: #9d999d;}
-  .menu-main a.current, .menu-main a:hover{color: #e06565;}
+  .menu-main a.current,.menu-main a:hover{color: #e06565;}
   .menu-main a:before, .menu-main a:after {
     content: "";
     position: absolute;
@@ -168,8 +165,8 @@ export default {
     background: #e06565;
     transition: .8s;
   }
-  .menu-main a:hover:before, .menu-main .current:before {left: 0;}
-  .menu-main a:hover:after, .menu-main .current:after {right: 0;}
+  .menu-main a:hover:before,.menu-main .current:before {left: 0;}
+  .menu-main a:hover:after,.menu-main .current:after {right: 0;}
   .input-group-text{
     font-size: 1.25rem !important;
     font-family: 'Roboto Serif', sans-serif;
@@ -238,7 +235,8 @@ export default {
   #createWishlist button,
   #logIn button, #signUp button,
   #account button, #wishlists button,
-  #wishItem button {
+  #wishItem button,.buttons
+    .add,.buttons .save{
     font-size: 1.5rem;
     font-family: 'Ubuntu Condensed', sans-serif;
   }
@@ -266,6 +264,12 @@ export default {
       width: 48%;
       margin: 0 1%;
     }
+
+  }
+  .buttons{
+    .add,.save{width: 100%;}
+    .col:first-child{padding-right: 5px !important;}
+    .col:last-child{padding-left: 5px !important;}
   }
   /*пункт из списка желаний*/
   #wishItem{
