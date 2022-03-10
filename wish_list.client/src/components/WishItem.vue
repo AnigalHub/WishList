@@ -3,7 +3,7 @@
         <div><ImageToUpload :img="value.img" @fileChanged="onFileChanged"/></div>
         <div><textarea v-model="value.text"/></div>
         <div>
-            <b-button type="submit" variant="outline-danger">X</b-button>
+            <b-button type="submit" variant="outline-danger" @click="deleteProduct()">X</b-button>
         </div>
     </div>
 </template>
@@ -19,8 +19,11 @@
         components: {ImageToUpload},
         methods:{
             onFileChanged(file){
-                console .log(file)
+                console.log(file)
                 this.value.img = file
+            },
+            deleteProduct(){
+                this.$emit("delete")
             }
         }
     }
