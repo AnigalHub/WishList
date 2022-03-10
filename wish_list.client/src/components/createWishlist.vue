@@ -51,6 +51,10 @@
             },
             saveProduct(title,array){
                 this.$store.dispatch('wishlists/addWishlist',{title,array})
+                this.title = ''
+              // this.WishItem = [{ id: 1, text:"", img:null}]
+              //  array[0].text = ''
+              //  console.log(array[0].text)
             }
         },
         computed:{
