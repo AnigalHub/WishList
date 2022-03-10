@@ -12,8 +12,8 @@
                         {{wishlist.title}}
                 </b-col>
                 <b-col>
-                    <b-button type="submit" variant="outline-primary" @click="showModal(index)" >Show</b-button>
-                    <b-button type="submit" variant="outline-danger">Delete</b-button>
+                    <b-button type="submit" variant="outline-primary" @click="showModal(index)">Show</b-button>
+                    <b-button type="submit" variant="outline-danger" @click="deleteWishlist(index)">Delete</b-button>
                 </b-col>
             </b-row>
         </div>
@@ -41,6 +41,7 @@
             <div v-for="(wishItem, index) in selectedWishlist.array" :key="index">
                 <WishItem v-model="selectedWishlist.array[index]"/>
             </div>
+            {{selectedWishlist.array}}
             <b-row class="buttons">
                 <b-col>
                     <b-button class="add" @click="addProduct()" variant="outline-secondary">Add</b-button>
@@ -85,10 +86,14 @@
         methods:{
             showModal(index){
                 this.selectedWishlist = this.Wishlists[index]
+                console.log(this.selectedWishlist)
                 this.$refs['modalWishlist'].show()
             },
+            deleteWishlist(index){
+                this.$store.dispatch('wishlists/deleteWishlist',index)
+            },
             addProduct(){
-                this.$store.dispatch('newWishlist/addProduct',{ id: 2, text:"", img:null})
+              //  this.$store.dispatch('newWishlist/addProduct',{text:"", img:null})
             },
         }
     }
