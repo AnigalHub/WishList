@@ -4,11 +4,11 @@
         <b-table :fields="fields"></b-table>
         <div v-for="(wishItem, index) in WishItems" :key="index">
             {{index}}
-            <WishItem v-model="WishItems[index]"/>
+            <WishItem v-model="WishItems[index]" @delete="deleteProduct(index)"/>
         </div>
-        <b-button class="add" @click="addProduct(WishItems.index)" variant="outline-secondary">Add Product</b-button>
+        <b-button class="add" @click="addProduct()" variant="outline-secondary">Add Product</b-button>
         <b-row>
-            <b-col >
+            <b-col>
                 <b-button class="save" variant="outline-success" @click="saveProduct(title,WishItems)">Save WishList</b-button>
             </b-col>
             <b-col>
@@ -47,12 +47,17 @@
             onFileChange(id, image){
                 console.log("Мы должны сохранить вот это", id, image)
             },
-            addProduct(index){
-                this.$store.dispatch('newWishlist/addProduct',{ id: index+1, text:"", img:null})
+            addProduct(){
+                this.$store.dispatch('newWishlist/addProduct',{text:"", img:null})
             },
             saveProduct(title,array){
                 this.$store.dispatch('wishlists/addWishlist',{title,array})
                 this.title = ''
+                this.$store.dispatch('newWishlist/cleanWishItems')
+            },
+            deleteProduct(index){
+                if(this.WishItems.length != 1)
+                this.$store.dispatch('newWishlist/deleteProduct',index)
             }
         },
         computed:{
