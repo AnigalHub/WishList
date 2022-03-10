@@ -3,7 +3,6 @@
         <div><ImageToUpload :img="value.img" @fileChanged="onFileChanged"/></div>
         <div><textarea v-model="value.text"/></div>
         <div>
-            <b-button type="submit" variant="outline-success">✓</b-button>
             <b-button type="submit" variant="outline-danger">X</b-button>
         </div>
     </div>
