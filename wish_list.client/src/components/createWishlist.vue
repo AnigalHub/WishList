@@ -3,7 +3,7 @@
         <b-input-group class="w-100" prepend="Wishlist Title" ><b-form-input v-model="title"></b-form-input></b-input-group>
         <b-table :fields="fields"></b-table>
         <div v-for="(wishItem, index) in WishItems" :key="index">
-            {{index}}
+
             <WishItem v-model="WishItems[index]" @delete="deleteProduct(index)"/>
         </div>
         <b-button class="add" @click="addProduct()" variant="outline-secondary">Add Product</b-button>
@@ -51,7 +51,9 @@
                 this.$store.dispatch('newWishlist/addProduct',{text:"", img:null})
             },
             saveProduct(title,array){
-                this.$store.dispatch('wishlists/addWishlist',{title,array})
+               // if(this.title != ''){
+                    this.$store.dispatch('wishlists/addWishlist',{title,array})
+               // }
                 this.title = ''
                 this.$store.dispatch('newWishlist/cleanWishItems')
             },
