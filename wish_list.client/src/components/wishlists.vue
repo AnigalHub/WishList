@@ -9,7 +9,7 @@
         <div v-else v-for="(wishlist,index) in Wishlists" :key="index" class="wishlist">
             <b-row>
                 <b-col cols="7" class="text">
-                        {{wishlist.title}}
+                      <input v-model="wishlist.title">
                 </b-col>
                 <b-col>
                     <b-button type="submit" variant="outline-primary" @click="showModal(index)">Show</b-button>
@@ -23,18 +23,6 @@
         <div class="wishlist emptyTable">
             The table is empty. No wishlists have been created and saved.
         </div>
-        <!--
-        <div class="wishlist">
-            <b-row>
-                <b-col cols="7" class="text">
-                </b-col>
-                <b-col>
-                    <b-button type="submit" variant="outline-primary">Show</b-button>
-                    <b-button type="submit" variant="outline-danger">Delete</b-button>
-                </b-col>
-            </b-row>
-        </div>
-        -->
         <b-modal ref="modalWishlist">
             <b-table :fields="fieldsWishlists">
             </b-table>
@@ -71,10 +59,7 @@
                     { key: "description", label: "Description" },
                     { key: "edit", label: "Edit | Delete" },
                 ],
-                items: [
-                   {name: ''},
-                ],
-                selectedWishlist: {array: null},
+                selectedWishlist: {wishes: null},
             }
         },
         computed:{
@@ -88,7 +73,7 @@
         methods:{
             showModal(index){
                 this.selectedWishlist = this.Wishlists[index]
-                this.$store.dispatch('wishlists/copyArray',this.selectedWishlist.array)
+                this.$store.dispatch('wishlists/copyOfWishesInWishlists',this.selectedWishlist.wishes)
                 this.$refs['modalWishlist'].show()
             },
             deleteWishlist(index){
@@ -101,7 +86,7 @@
                 this.$store.dispatch('wishlists/addWishItem',{text:"", img:null})
             },
             saveWishlist(){
-                this.selectedWishlist.array = this.Wishlist
+                this.selectedWishlist.wishes = this.Wishlist
                 this.$refs['modalWishlist'].hide()
             }
         }
