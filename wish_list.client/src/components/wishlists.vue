@@ -39,7 +39,7 @@
             <b-table :fields="fieldsWishlists">
             </b-table>
             <div v-for="(wishItem, index) in Wishlist" :key="index">
-                <WishItem  v-model="Wishlist[index]"/>
+                <WishItem  v-model="Wishlist[index]" @delete="deleteProduct(index)" />
             </div>
             <b-row class="buttons">
                 <b-col>
@@ -93,6 +93,9 @@
             },
             deleteWishlist(index){
                 this.$store.dispatch('wishlists/deleteWishlist',index)
+            },
+            deleteProduct(index){
+                this.$store.dispatch('wishlists/deleteWishItem',index)
             },
             addProduct(){
                 this.$store.dispatch('wishlists/addWishItem',{text:"", img:null})
