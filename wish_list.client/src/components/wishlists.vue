@@ -38,16 +38,15 @@
         <b-modal ref="modalWishlist">
             <b-table :fields="fieldsWishlists">
             </b-table>
-            <div v-for="(wishItem, index) in selectedWishlist.array" :key="index">
-                <WishItem v-model="selectedWishlist.array[index]"/>
+            <div v-for="(wishItem, index) in Wishlist" :key="index">
+                <WishItem  v-model="Wishlist[index]"/>
             </div>
-            {{selectedWishlist.array}}
             <b-row class="buttons">
                 <b-col>
                     <b-button class="add" @click="addProduct()" variant="outline-secondary">Add</b-button>
                 </b-col>
                 <b-col>
-                    <b-button class="save" variant="outline-success">Save</b-button>
+                    <b-button class="save" variant="outline-success" @click="saveWishlist()">Save</b-button>
                 </b-col>
             </b-row>
         </b-modal>
@@ -82,19 +81,26 @@
             Wishlists:function () {
                 return this.$store.getters['wishlists/Wishlists']
             },
+            Wishlist:function () {
+                return this.$store.getters['wishlists/Wishlist']
+            },
         },
         methods:{
             showModal(index){
                 this.selectedWishlist = this.Wishlists[index]
-                console.log(this.selectedWishlist)
+                this.$store.dispatch('wishlists/copyArray',this.selectedWishlist.array)
                 this.$refs['modalWishlist'].show()
             },
             deleteWishlist(index){
                 this.$store.dispatch('wishlists/deleteWishlist',index)
             },
             addProduct(){
-              //  this.$store.dispatch('newWishlist/addProduct',{text:"", img:null})
+                this.$store.dispatch('wishlists/addWishItem',{text:"", img:null})
             },
+            saveWishlist(){
+                this.selectedWishlist.array = this.Wishlist
+                this.$refs['modalWishlist'].hide()
+            }
         }
     }
 </script>
