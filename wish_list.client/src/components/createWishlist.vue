@@ -3,7 +3,6 @@
         <b-input-group class="w-100" prepend="Wishlist Title" ><b-form-input v-model="title"></b-form-input></b-input-group>
         <b-table :fields="fields"></b-table>
         <div v-for="(wishItem, index) in WishItems" :key="index">
-
             <WishItem v-model="WishItems[index]" @delete="deleteProduct(index)"/>
         </div>
         <b-button class="add" @click="addProduct()" variant="outline-secondary">Add Product</b-button>
@@ -44,15 +43,12 @@
             }
         },
         methods:{
-            onFileChange(id, image){
-                console.log("Мы должны сохранить вот это", id, image)
-            },
             addProduct(){
                 this.$store.dispatch('newWishlist/addProduct',{text:"", img:null})
             },
-            saveProduct(title,array){
+            saveProduct(title,wishes){
                // if(this.title != ''){
-                    this.$store.dispatch('wishlists/addWishlist',{title,array})
+                    this.$store.dispatch('wishlists/addWishlist',{title,wishes})
                // }
                 this.title = ''
                 this.$store.dispatch('newWishlist/cleanWishItems')
