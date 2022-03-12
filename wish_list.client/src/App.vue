@@ -133,7 +133,8 @@ export default {
   #account .text{padding-top: 1.5%;}
   /*текст в компонентах Авторизация (logIn), Регистрация (signUp)*/
   #logIn .text,#signUp .text{text-align: center;}
-  /*Компоненты - СозданиеСпискаЖеланий(createWishlist); СпискиЖеланий(wishlists); УчетнаяЗапись(account); Регистрация(registration); переворотЭкрана(screenRotation)*/
+  /*Компоненты - СозданиеСпискаЖеланий(createWishlist); СпискиЖеланий(wishlists);
+   УчетнаяЗапись(account); Регистрация(registration); ПереворотЭкрана(screenRotation)*/
   #createWishlist, #wishlists, #account, #registration, #screenRotation{
     padding: 3%;
     min-height: 75vh;
@@ -141,6 +142,8 @@ export default {
     background: white;
     box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.35);
   }
+  /*Компонент - ПереворотЭкрана(screenRotation)*/
+  #screenRotation{display: none;}
   /*Компонент навигации - верхнее меню*/
   #nav{
     margin: 0 auto;
