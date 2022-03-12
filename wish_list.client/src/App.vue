@@ -6,6 +6,10 @@
     <div id="content">
       <b-container>
           <router-view></router-view>
+        <div id="screenRotation">
+          <h2>Flip the screen</h2>
+          <img src="../src/telephone.png" height="100%" width="82%"/>
+        </div>
       </b-container>
     </div>
   </div>
@@ -129,8 +133,8 @@ export default {
   #account .text{padding-top: 1.5%;}
   /*текст в компонентах Авторизация (logIn), Регистрация (signUp)*/
   #logIn .text,#signUp .text{text-align: center;}
-  /*создание списка желаний; списки желаний; аккаунт; регистрация*/
-  #createWishlist, #wishlists, #account,#registration{
+  /*Компоненты - СозданиеСпискаЖеланий(createWishlist); СпискиЖеланий(wishlists); УчетнаяЗапись(account); Регистрация(registration); переворотЭкрана(screenRotation)*/
+  #createWishlist, #wishlists, #account, #registration, #screenRotation{
     padding: 3%;
     min-height: 75vh;
     height: 100%;
