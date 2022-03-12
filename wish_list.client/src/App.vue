@@ -75,9 +75,13 @@ export default {
   .modal-footer{display: none !important;}
 
   /*Адаптивность по модальному окну*/
-  @media (min-width: 1300px){
+  @media (min-width: 1100px){
     /*модальное окно*/
-    .modal-dialog {max-width: 1300px !important;}
+    .modal-dialog {max-width: 1100px !important;}
+  }
+  @media screen and (min-width: 600px) and (max-width: 1100px){
+    /*модальное окно*/
+    .modal-dialog {max-width: 850px !important;}
   }
   /*Компонент в котором вызываются все другие компоненты*/
   #app{
