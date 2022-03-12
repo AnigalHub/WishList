@@ -379,7 +379,10 @@ export default {
   #wishlists input{border: none !important;}
 
   /*Адаптивность*/
-  @media (max-width: 500px) {
+  @media (max-width: 500px)
+  {
+    /*Компонент - ПереворотЭкрана(screenRotation)*/
+    #screenRotation{display: block;}
     /*с чего начинаем и заканчиваем рисовать полосочки при наведении на ссылки в навигации*/
     .menu-main a:before, .menu-main a:after {display: none;}
   }
