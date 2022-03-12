@@ -16,31 +16,51 @@ const getters = {
     },
 }
 const mutations ={
-    copyArray:(state,array) =>{
-       state.Wishlist = array.slice()
+    copyOfWishesInWishlists:(state,wishes) =>{
+       state.Wishlist = wishes.slice()
     },
     addWishItem:(state,wishItem)=>{
         state.Wishlist.push(wishItem)
+    },
+    deleteWishItem:(state,id) =>{
+        state.Wishlist.splice(id,1)
     },
     addWishlist:(state,wishlist) =>{
         state.Wishlists.push(wishlist)
     },
     deleteWishlist:(state,id) =>{
         state.Wishlists.splice(id,1)
+    },
+    setSavedWishlists(state,savedWishlists){
+        state.Wishlists = savedWishlists
+    },
+    setSavedWishlist(state,savedWishlist){
+        state.Wishlist = savedWishlist
     }
 }
 const actions = {
-    copyArray(context, array){
-        context.commit('copyArray', array)
+    refreshSavedState(context){
+        let newWishlist = JSON.parse(localStorage.getItem('wishlists'))
+        if(newWishlist){
+            context.commit('setSavedWishlists',newWishlist)
+        }
+    },
+    copyOfWishesInWishlists(context, wishes){
+        context.commit('copyOfWishesInWishlists', wishes)
     },
     addWishItem(context, wishItem){
         context.commit('addWishItem', wishItem)
     },
+    deleteWishItem(context,id){
+        context.commit('deleteWishItem',id)
+    },
     addWishlist(context, wishlist){
         context.commit('addWishlist', wishlist)
+        localStorage.setItem('wishlists',JSON.stringify(context.getters.Wishlists))
     },
    deleteWishlist(context,id){
         context.commit('deleteWishlist',id)
+       localStorage.setItem('wishlists',JSON.stringify(context.getters.Wishlists))
     },
 }
 export default {
