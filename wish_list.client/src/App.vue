@@ -111,15 +111,19 @@ export default {
     height: 100%;
     min-height: 84vh;
   }
-  /*заголовки у компонентов - */
+  /*заголовки у компонентов - Регистрация (signUp), Учетная запись (account)*/
   #signUp h2,#logIn h2,#account h2{text-align: center;}
+  /*текст, текст когда в таблице ничего нет, многострочный ввод текста*/
   .text,.emptyTable,#wishItem textarea{
     font-size: 1.4rem ;
     display: block;
     font-family: 'Roboto Serif', sans-serif;
   }
+  /*текст когда в таблице ничего нет*/
   .emptyTable{text-align: center;}
+  /*текст в компоненте Учетная запись (account)*/
   #account .text{padding-top: 1.5%;}
+  /*текст в компонентах Авторизация (logIn), Регистрация (signUp)*/
   #logIn .text,#signUp .text{text-align: center;}
   /*создание списка желаний; списки желаний; аккаунт; регистрация*/
   #createWishlist, #wishlists, #account,#registration{
@@ -129,23 +133,29 @@ export default {
     background: white;
     box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.35);
   }
-  #nav {
+  /*Компонент навигации - верхнее меню*/
+  #nav{
     margin: 0 auto;
     box-shadow: 0 8px 5px -5px rgba(99, 101, 102, 0.6);
   }
+  /*Компонент навигации - верхнее меню, Компонент навигации - меню на Авторизацию и Регистрацию*/
   #nav,#navbarLogInAndSignUp{
     width: 100%;
     height: 48px;
   }
+  /*Компонент навигации - меню на Авторизацию и Регистрацию*/
   #navbarLogInAndSignUp {margin: 1% auto;}
+  /*список в навигации*/
   .menu-main {
     text-align: center;
     background: white;
+    /*ссылки*/
     a{
       text-decoration: none;
       font-family: 'Ubuntu Condensed', sans-serif;
       letter-spacing: 2px;
       position: relative;
+      color: #9d999d;
       padding-bottom: 10px;
       margin: 0 10px;
       font-size: 1.5rem;
@@ -154,9 +164,11 @@ export default {
       transition: color .2s;
     }
   }
+  /*строчный элемент - под разделитель "/"*/
   span{font-size: 1.4rem;}
-  .menu-main a, .menu-main a:visited {color: #9d999d;}
+  /*ссылки в навигации при наведении*/
   .menu-main a.current,.menu-main a:hover{color: #e06565;}
+  /*полосочка при наведении на ссылки в навигации*/
   .menu-main a:before, .menu-main a:after {
     content: "";
     position: absolute;
@@ -168,14 +180,17 @@ export default {
     background: #e06565;
     transition: .8s;
   }
+  /*с чего начинаем и заканчиваем рисовать полосочки при наведении на ссылки в навигации*/
   .menu-main a:hover:before,.menu-main .current:before {left: 0;}
   .menu-main a:hover:after,.menu-main .current:after {right: 0;}
+  /*название в input - куда вбиваем название таблицы */
   .input-group-text{
     font-size: 1.25rem !important;
     font-family: 'Roboto Serif', sans-serif;
     font-weight: 600;
     height: 50px;
   }
+  /*input - куда вбиваем название таблицы*/
   .input-group{margin-bottom: 3%;}
   /* для элемента input c type="radio" */
   .custom-radio {
@@ -219,8 +234,9 @@ export default {
       margin-right: 3%;
     }
   }
-  /*кнопки, таблица*/
+  /*кнопки, таблица, input - куда вбиваем название таблицы, место под Авторизацию/Регистрацию/Учетную запись*/
   button, table,.input-group, #worksheet{box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.8);}
+  /*место под Авторизацию/Регистрацию/Учетную запись*/
   #worksheet{
     border: 1px solid #bdc0c2 !important;
     background: #f7f9fc;
@@ -228,22 +244,31 @@ export default {
     max-width: 780px;
     margin: 0 auto;
   }
+  /*подпись к элементу(метка) в компонентах - Авторизация, Регистрация, Учетная запись*/
   #logIn label, #signUp label,#account label{padding-top: 1%;}
+  /*input - элемент формы*/
   input{
     width: 100%;
     height: auto;
     font-size: 1.5rem !important;
   }
+  /*input - элемент формы в компонентах Авторизация/Регистрация*/
   #logIn input, #signUp input{height: 35px;}
+  /*кнопки в компонентах - СозданиеСпискаЖеланий(createWishlist), Авторизация (logIn), Регистрация (SignIn)
+  УчетнаяЗапись(account), СпискиЖеланий (wishlists), ПунктВСпискеЖеланий(WishItem), кнопки Добавить (add) и Сохранить(save)
+  которые в классе buttons*/
   #createWishlist button,
   #logIn button, #signUp button,
   #account button, #wishlists button,
-  #wishItem button,.buttons
-    .add,.buttons .save{
+  #wishItem button,.buttons .add,.buttons .save{
     font-size: 1.5rem;
     font-family: 'Ubuntu Condensed', sans-serif;
   }
+  /*кнопка Выход(exit) в компоненте УчетнаяЗапись(account)*/
   #account .exit{margin-top: 3%;}
+  /*кнопка Сохранить (save) и Добавить (add) в компоненте СозданиеСпискаЖеланий(createWishlist)
+  кнопки Добавить (add), Выход (exit) и Сохранить (save) в компоненте УчетнаяЗапись(account)
+  кнопки в компонентах Авторизация/Регистрация*/
   #createWishlist .save, #createWishlist .add,
   #account .add, #account .exit{width: 100%;}
   #account .save, #logIn .send, #signUp .send{
@@ -251,30 +276,39 @@ export default {
     width: 50%;
     margin: 0 auto;
   }
+  /*Кнопки в компонентах Авторизация(logIn)/Регистрация(signIn)*/
   #logIn .send, #signUp .send{margin-top: 3%;}
+  /*Компонент - УчетнаяЗапись(account)*/
   #account{
+    /*параметр сетки бутстрап*/
     .row{padding-bottom: 3%;}
-    .circle{
-      background: white !important;
-      margin: 0 auto 4% !important;
-    }
-  }
+    /*Круг, где картинка (input) и подпись к элементу*/
+   .circle{
+     background: white !important;
+     margin: 0 auto 4% !important;
+   }
+ }
+ /*СозданиеСпискаЖеланий(createWishlist) - параметр сетки бутстрап*/
   #createWishlist .row{padding-top: 1.5%;}
+  /*пункт в таблице - один списокЖеланий*/
   .wishlist{
     box-shadow: 4px 4px 5px -5px rgba(34, 60, 80, 0.8);
     padding: 1%;
+    /*кнопки*/
     button{
       width: 48%;
       margin: 0 1%;
     }
-
   }
+  /*класс кнопок*/
   .buttons{
+    /*кнопки Добавить(add) и Сохранить (save)*/
     .add,.save{width: 100%;}
+    /*параметр сетки бутстрап*/
     .col:first-child{padding-right: 5px !important;}
     .col:last-child{padding-left: 5px !important;}
   }
-  /*пункт из списка желаний*/
+  /*Компонент -ПунктИзСпискаЖеланий*/
   #wishItem{
     display: flex;
     box-shadow: 4px 4px 5px -5px rgba(34, 60, 80, 0.8);
@@ -286,6 +320,7 @@ export default {
       /*последний элемент*/
       &:last-child{padding-left: 10%;}
     }
+    /*кнопки*/
     button{
       width: 40%;
       margin: 30% 0 0 50%;
@@ -300,7 +335,9 @@ export default {
       margin: 15% 0 auto -10%;
     }
   }
+  /*Компонент - ЗагрузкаИзображения(imageToUpload)*/
   #imageToUpload{
+    /*подпись к элементу(метка) в форме*/
     label{
       left: 45%;
       position: absolute;
@@ -323,57 +360,77 @@ export default {
     /*Круг, где картинка (input) и подпись к элементу*/
     .circle{margin: 4% auto 4%;}
   }
+  /* Компонент - ЗагрузкаИзображения(imageToUpload) - Круг, где картинка (input) и подпись к элементу
+  Компонент -ПунктИзСпискаЖеланий - область, куда можно ввести текст с множеством строк,
+  место под Авторизацию/Регистрацию/Учетную запись - input*/
   #imageToUpload .circle,#wishItem textarea,#worksheet input{border: 1px solid #bdc0c2 !important;}
+  /*Компонент - СпискиЖеланий (wishlists)*/
   #wishlists input{border: none !important;}
+
+  /*Адаптивность*/
   @media (max-width: 500px) {
-    .menu-main a:before, .menu-main a:after {
-      display: none;
-    }
+    /*с чего начинаем и заканчиваем рисовать полосочки при наведении на ссылки в навигации*/
+    .menu-main a:before, .menu-main a:after {display: none;}
   }
   @media (max-width: 768px) {
+    /*заголовок*/
     h1{margin-bottom: 0 !important;}
+    /*список в навигации*/
     .menu-main {padding-top: 0;}
+    /*элемнты в списке навигации*/
     .menu-main li {display: block;}
     .menu-main li:after {content: none;}
+    /*ссылки в списке навигации*/
     .menu-main a {
       font-size: 1.25rem;
       letter-spacing: .5px;
       padding: 4px 0 10px;
       margin: 0 6px;
     }
+    /*строчный элемент - под разделитель "/"*/
     span{font-size: 1rem;}
+    /*список*/
     ul{padding-left: 0 !important;}
-    .navbarLogInAndSignUp a,.navbarLogInAndSignUp span  {
-      font-size: 1.3rem;
-    }
+    /*Компонент навигации - меню на Авторизацию и Регистрацию - ссылки и строчный элемент (/)*/
+    .navbarLogInAndSignUp a,.navbarLogInAndSignUp span  {font-size: 1.3rem;}
   }
   @media (max-width: 992px) {
+    /*таблица,название в input - куда вбиваем название таблицы */
     table,.input-group-text{font-size: 1rem !important;}
+    /*заголовки*/
     h1{font-size: 2.2rem !important;}
     h2{font-size: 1.5rem !important;}
   }
   @media screen and (min-width: 500px) and (max-width: 768px) {
+    /*input - элемент формы*/
     input{height: auto;}
+    /*текст*/
     .text{font-size: 1rem ;}
+    /*кнопки*/
     button{
       font-size: 1.1rem !important;
       height: auto;
     }
+    /*Компонент -ПунктИзСпискаЖеланий*/
     #wishItem{
+      /*область, куда можно ввести текст с множеством строк*/
       textarea{
         width: 125%;
         margin: 10% 0 auto 2%;
       }
+      /*кнопки*/
       button {margin: 45% 2% 0;}
     }
+    /*таблица,название в input - куда вбиваем название таблицы */
     table,.input-group-text{font-size: 1.05rem !important;}
+    /*Компонент - ЗагрузкаИзображения(imageToUpload)*/
     #imageToUpload{
       /*Круг, где картинка (input) и подпись к элементу; картинка, которую загрузили*/
       .circle, img {
         width: 135px;
         height: 135px;
       }
-      /*подпись к элементу*/
+      /*подпись к элементу (метка)*/
       label{
         left: 42%;
         top: 25%;
@@ -382,8 +439,9 @@ export default {
     }
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
-    /*область, куда можно ввести текст с множеством строк*/
+    /*Компонент -ПунктИзСпискаЖеланий - область, куда можно ввести текст с множеством строк*/
     #wishItem textarea{margin: 10% 0 auto -6%;}
+    /*Компонент - ЗагрузкаИзображения(imageToUpload)*/
     #imageToUpload{
       /*Круг, где картинка (input) и подпись к элементу; картинка, которую загрузили*/
       .circle, img {
@@ -399,6 +457,7 @@ export default {
     }
   }
   @media screen and (min-width: 992px) and (max-width: 1200px) {
+    /*Компонент - ЗагрузкаИзображения(imageToUpload)*/
     #imageToUpload{
       /*Круг, где картинка (input) и подпись к элементу; картинка, которую загрузили*/
       .circle, img {
