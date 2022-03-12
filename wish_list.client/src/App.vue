@@ -17,7 +17,10 @@
 import Navbar from "@/components/navbar";
 export default {
   name: 'App',
-  components: {Navbar}
+  components: {Navbar},
+  created:function(){
+    this.$store.dispatch('wishlists/refreshSavedState')
+  }
 }
 </script>
 
@@ -222,7 +225,7 @@ export default {
     border: 1px solid #bdc0c2 !important;
     background: #f7f9fc;
     padding: 4% 4% 5%;
-    max-width: 750px;
+    max-width: 780px;
     margin: 0 auto;
   }
   #logIn label, #signUp label,#account label{padding-top: 1%;}
@@ -321,7 +324,7 @@ export default {
     .circle{margin: 4% auto 4%;}
   }
   #imageToUpload .circle,#wishItem textarea,#worksheet input{border: 1px solid #bdc0c2 !important;}
-
+  #wishlists input{border: none !important;}
   @media (max-width: 500px) {
     .menu-main a:before, .menu-main a:after {
       display: none;
