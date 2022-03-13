@@ -8,6 +8,19 @@
     </div>
 </template>
 <script>
+
+    const toBase64 = file => new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+    });
+
+    const fromBase64 = async(base64) => {
+        const blob = await (await fetch(base64)).blob()
+        return new File([blob], "test")
+    }
+
     export default {
         name: 'ImageToUpload',
         data() {
@@ -20,15 +33,18 @@
             img: File,
         },
         methods: {
-            onFileChange(e){
+            async onFileChange(e){
                 if(e.target.files.length <= 0)
                     return
-                this.file = e.target.files[0];
+                let b64 = await toBase64(e.target.files[0])
+                this.file = await fromBase64(b64)
+                //this.file = e.target.files[0];
                 this.$emit("fileChanged", this.file)
+                console.log(this.file)
             },
         },
         watch: {
-            img(newVal, oldVal){
+            img(newVal){
                 this.$refs.fileupload.value=null;
                 this.file = newVal
             }
