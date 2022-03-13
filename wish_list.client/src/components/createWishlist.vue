@@ -54,7 +54,6 @@
                 this.$store.dispatch('newWishlist/cleanWishItems')
             },
             deleteProduct(index){
-                if(this.WishItems.length != 1)
                 this.$store.dispatch('newWishlist/deleteProduct',index)
             }
         },
