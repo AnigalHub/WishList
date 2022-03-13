@@ -34,9 +34,6 @@ const mutations ={
     setSavedWishlists(state,savedWishlists){
         state.Wishlists = savedWishlists
     },
-    setSavedWishlist(state,savedWishlist){
-        state.Wishlist = savedWishlist
-    }
 }
 const actions = {
     refreshSavedState(context){
@@ -60,7 +57,7 @@ const actions = {
     },
    deleteWishlist(context,id){
         context.commit('deleteWishlist',id)
-       localStorage.setItem('wishlists',JSON.stringify(context.getters.Wishlists))
+        localStorage.setItem('wishlists',JSON.stringify(context.getters.Wishlists))
     },
 }
 export default {
