@@ -379,13 +379,10 @@ export default {
   #wishlists input{border: none !important;}
 
   /*Адаптивность*/
-  @media (max-width: 500px)
-  {
+  @media (max-width: 500px) {
     /*Компоненты - СозданиеСпискаЖеланий(createWishlist); СпискиЖеланий(wishlists);
    УчетнаяЗапись(account); Регистрация(registration);*/
-    #createWishlist, #wishlists, #account, #registration{
-      display: none;
-    }
+    #createWishlist, #wishlists, #account, #registration,#nav{display: none;}
     /*Компонент - ПереворотЭкрана(screenRotation)*/
     #screenRotation{display: block;}
     /*с чего начинаем и заканчиваем рисовать полосочки при наведении на ссылки в навигации*/
