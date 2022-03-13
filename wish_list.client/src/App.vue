@@ -5,10 +5,10 @@
     <navbar/>
     <div id="content">
       <b-container>
-          <router-view></router-view>
+        <router-view></router-view>
         <div id="screenRotation">
           <h2>Flip the screen</h2>
-          <img src="../src/telephone.png" height="100%" width="82%"/>
+          <img src="../src/telephone.png" height="110%" width="82%"/>
         </div>
       </b-container>
     </div>
@@ -143,7 +143,19 @@ export default {
     box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.35);
   }
   /*Компонент - ПереворотЭкрана(screenRotation)*/
-  #screenRotation{display: none;}
+  #screenRotation{
+    display: none;
+    /*заголовок*/
+    h2{
+      padding-top: 5%;
+      text-align: center;
+    }
+    /*картинка*/
+    img{
+      display: block;
+      margin: 5% auto 0;
+    }
+  }
   /*Компонент навигации - верхнее меню*/
   #nav{
     margin: 0 auto;
