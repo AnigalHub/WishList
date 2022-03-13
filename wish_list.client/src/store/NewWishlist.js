@@ -34,7 +34,12 @@ const actions = {
     context.commit('addWishItem',payload)
   },
   deleteProduct(context,index) {
-    context.commit('deleteWishItem',index)
+    if(context.state.WishItems.length == 1){
+      context.commit('cleanWishItems')
+    }
+    else {
+      context.commit('deleteWishItem',index)
+    }
   },
   cleanWishItems(context){
     context.commit('cleanWishItems')
