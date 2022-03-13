@@ -2,8 +2,8 @@
     <div id="imageToUpload">
         <div class="circle">
             <img v-if="file" :src="url"/>
-            <label  :for="'upload-file-'+id">+</label>
-            <input class="upload-photo" type="file" :id="'upload-file-'+id" @change="onFileChange">
+            <label :for="'upload-file-'+id">+</label>
+            <input ref="fileupload" class="upload-photo" type="file" :id="'upload-file-'+id" @change="onFileChange">
         </div>
     </div>
 </template>
@@ -18,7 +18,6 @@
         },
         props:{
             img: File,
-            fileChanged: Function,
         },
         methods: {
             onFileChange(e){
@@ -28,10 +27,16 @@
                 this.$emit("fileChanged", this.file)
             },
         },
+        watch: {
+            img(newVal, oldVal){
+                this.$refs.fileupload.value=null;
+                this.file = newVal
+            }
+        },
         computed:{
             url(){
                 if(!this.file)
-                    return
+                    return null
                 return URL.createObjectURL(this.file)
             }
         },
