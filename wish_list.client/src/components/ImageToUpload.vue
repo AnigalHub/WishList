@@ -3,7 +3,7 @@
         <div class="circle">
             <img v-if="file" :src="url"/>
             <label :for="'upload-file-'+id">+</label>
-            <input ref="fileupload" class="upload-photo" type="file" :id="'upload-file-'+id" @change="onFileChange">
+            <input ref="fileupload" class="upload-photo" type="file" :id="'upload-file-'+id" @change="onFileChange" accept=".jpg, .jpeg, .png" >
         </div>
     </div>
 </template>
