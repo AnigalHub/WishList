@@ -287,6 +287,15 @@ export default {
     font-size: 1.5rem;
     font-family: 'Ubuntu Condensed', sans-serif;
   }
+  #logIn button[disabled],#signUp button[disabled]{
+    background: #5c5c5c;
+    border: 1px solid black;
+  }
+  #logIn button,#signUp button{
+    background: #198754;
+    color: white;
+    border: 1px solid #0f653d;
+  }
   /*кнопка Выход(exit) в компоненте УчетнаяЗапись(account)*/
   #account .exit{margin-top: 3%;}
   /*кнопка Сохранить (save) и Добавить (add) в компоненте СозданиеСпискаЖеланий(createWishlist)
