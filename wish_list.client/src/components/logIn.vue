@@ -2,9 +2,9 @@
     <div id="logIn">
         <h2>Log In</h2>
         <label class="text" for="nickname" v-model="FormLogIn.nickname">Nickname</label>
-        <input id="nickname">
+        <input id="nickname" required type="text">
         <label class="text" for="password" v-model="FormLogIn.password">Password</label>
-        <input id="password">
+        <input id="password" required type="password">
         <b-button class="send" variant="outline-success" @click.prevent="sendForm" :disabled="buttonDisabled" >Log In</b-button>
     </div>
 </template>
