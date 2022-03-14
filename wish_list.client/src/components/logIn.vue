@@ -1,17 +1,43 @@
 <template>
     <div id="logIn">
         <h2>Log In</h2>
-        <label class="text" for="nickname">Nickname</label>
+        <label class="text" for="nickname" v-model="FormLogIn.nickname">Nickname</label>
         <input id="nickname">
-        <label class="text" for="password">Password</label>
+        <label class="text" for="password" v-model="FormLogIn.password">Password</label>
         <input id="password">
-        <b-button class="send" variant="outline-success">Log In</b-button>
+        <b-button class="send" variant="outline-success" @click.prevent="sendForm" :disabled="buttonDisabled" >Log In</b-button>
     </div>
 </template>
 
 <script>
     export default {
-        name: "logIn"
+        name: "logIn",
+        data(){
+            return{
+                FormLogIn:{
+                    nickname:'',
+                    password:''
+                }
+            }
+        },
+        computed:{
+            buttonDisabled(){
+                if(this.FormLogIn.nickname && this.FormLogIn.password){
+                    return false
+                }
+                else {
+                    return true
+                }
+            }
+        },
+        methods:{
+            sendForm:function () {
+                if(this.FormLogIn.nickname && this.FormLogIn.password){
+
+                }
+            }
+        }
+
     }
 </script>
 
