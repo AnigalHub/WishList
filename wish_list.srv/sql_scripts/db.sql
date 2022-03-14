@@ -13,3 +13,11 @@ CREATE TABLE wishlist(
 	title text not null
 )
 SELECT *FROM wishlist
+
+CREATE TABLE wish(
+	id uuid PRIMARY KEY DEFAULT (uuid_generate_v4()),
+	idWishlist uuid not null,
+	text text,
+	img bytea
+)
+SELECT *FROM wish
