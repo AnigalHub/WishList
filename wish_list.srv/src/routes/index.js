@@ -6,7 +6,7 @@ const { asyncHandler, errorCatcher } = require("../middlewares")
 const db = require("./../db")
 
 //Добавить в базу
-api.get('/all', asyncHandler(async (req, res) => {
+api.get('/users', asyncHandler(async (req, res) => {
     const result = await db.query('SELECT * FROM users')
     console.log(result)
     res.end("test")
