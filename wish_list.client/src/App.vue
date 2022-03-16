@@ -283,7 +283,7 @@ export default {
   #createWishlist button,
   #logIn button, #signUp button,
   #account button, #wishlists button,
-  #wishItem button,.buttons .add,.buttons .save{
+  #wishItem button,.buttons .add,.buttons .save, #account a{
     font-size: 1.5rem;
     font-family: 'Ubuntu Condensed', sans-serif;
   }

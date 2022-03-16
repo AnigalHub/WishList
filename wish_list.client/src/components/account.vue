@@ -18,10 +18,9 @@
                 </b-col>
            </b-row>
             <b-button class="save" variant="outline-success">Save</b-button>
-
-           <b-button class="exit" variant="secondary">
-               <router-link :to="{name: 'LogIn'}" tag="a">Exit</router-link>
-           </b-button>
+            <b-button class="exit" variant="secondary" href="/logIn">
+               Exit
+            </b-button>
         </div>
     </div>
 </template>
@@ -42,6 +41,7 @@
     }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+
 
 </style>
