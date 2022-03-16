@@ -20,7 +20,7 @@
             <b-button class="save" variant="outline-success">Save</b-button>
 
            <b-button class="exit" variant="secondary">
-               <router-link :to="{name: 'SignUp'}" tag="a">Exit</router-link>
+               <router-link :to="{name: 'LogIn'}" tag="a">Exit</router-link>
            </b-button>
         </div>
     </div>
