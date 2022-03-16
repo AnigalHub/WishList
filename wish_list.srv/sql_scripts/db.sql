@@ -23,3 +23,4 @@ CREATE TABLE wish(
 SELECT *FROM wish
 
 GRANT ALL ON users TO lang_user
+GRANT ALL ON wishlist TO lang_user
