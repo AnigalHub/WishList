@@ -127,6 +127,7 @@ export default {
     display: block;
     font-family: 'Roboto Serif', sans-serif;
   }
+  /*текст, где выводится сообщение об ошибке*/
   .error{
     margin-bottom: 2%;
     color: red;
@@ -283,7 +284,7 @@ export default {
   #logIn input, #signUp input{height: 35px;}
   /*кнопки в компонентах - СозданиеСпискаЖеланий(createWishlist), Авторизация (logIn), Регистрация (SignIn)
   УчетнаяЗапись(account), СпискиЖеланий (wishlists), ПунктВСпискеЖеланий(WishItem), кнопки Добавить (add) и Сохранить(save)
-  которые в классе buttons*/
+  которые в классе buttons, ссылка в УчетнойЗаписи(account)*/
   #createWishlist button,
   #logIn button, #signUp button,
   #account button, #wishlists button,
@@ -291,10 +292,12 @@ export default {
     font-size: 1.5rem;
     font-family: 'Ubuntu Condensed', sans-serif;
   }
+  /*отключенные кнопки в компонентах - Авторизация (logIn), Регистрация (signUp*/
   #logIn button[disabled],#signUp button[disabled]{
     background: #5c5c5c;
     border: 1px solid black;
   }
+  /*кнопки в компонентах - Авторизация (logIn), Регистрация (signUp)*/
   #logIn button,#signUp button{
     background: #198754;
     color: white;
