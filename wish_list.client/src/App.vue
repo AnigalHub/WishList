@@ -127,6 +127,10 @@ export default {
     display: block;
     font-family: 'Roboto Serif', sans-serif;
   }
+  .error{
+    margin-bottom: 2%;
+    color: red;
+  }
   /*текст когда в таблице ничего нет*/
   .emptyTable{text-align: center;}
   /*текст в компоненте Учетная запись (account)*/
