@@ -5,9 +5,15 @@ const { asyncHandler, errorCatcher } = require("../middlewares")
 // База
 const db = require("./../db")
 
-//Добавить в базу
+//Вывести таблицу
 api.get('/users', asyncHandler(async (req, res) => {
     const result = await db.query('SELECT * FROM users')
+    console.log(result)
+    res.end("test")
+}))
+
+api.get('/wishlist', asyncHandler(async (req, res) => {
+    const result = await db.query('SELECT * FROM wishlist')
     console.log(result)
     res.end("test")
 }))
