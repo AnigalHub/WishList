@@ -1,7 +1,7 @@
 <template>
     <div id="createWishlist">
         <b-input-group class="w-100" prepend="Wishlist Title" ><b-form-input v-model="title"></b-form-input></b-input-group>
-        {{error}}
+        {{errorMessage}}
         <b-table :fields="fields"></b-table>
         <div v-for="(wishItem, index) in WishItems" :key="index">
             <WishItem v-model="WishItems[index]" @delete="deleteProduct(index)"/>
@@ -36,7 +36,7 @@
         components: {WishItem, ImageToUpload},
         data(){
             return{
-                error:'',
+                errorMessage:'',
                 /**Столбцы таблицы */
                 fields:[
                     { key: "name", label: "Product name" },
@@ -51,11 +51,11 @@
             },
             saveProduct(title,wishes){
                if(this.title != ''){
-                   this.error = ''
+                   this.errorMessage = ''
                     this.$store.dispatch('wishlists/addWishlist',{title,wishes})
                }
                else{
-                   this.error = 'Table name not specified. You can\'t find it on your wishlist'
+                   this.errorMessage = 'Table name not specified. You can\'t find it on your wishlist'
                }
                 this.title = ''
                 this.$store.dispatch('newWishlist/cleanWishItems')
