@@ -18,9 +18,7 @@
                 </b-col>
            </b-row>
             <b-button class="save" variant="outline-success">Save</b-button>
-            <b-button class="exit" variant="secondary" href="/logIn">
-               Exit
-            </b-button>
+            <b-button class="exit" variant="secondary" href="/logIn">Exit</b-button>
         </div>
     </div>
 </template>
