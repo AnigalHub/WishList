@@ -12,7 +12,7 @@ CREATE TABLE wishlist(
 	idUser uuid,
 	title text not null
 )
-SELECT *FROM wishlist
+SELECT * FROM wishlist
 
 CREATE TABLE wish(
 	id uuid PRIMARY KEY DEFAULT (uuid_generate_v4()),
@@ -21,3 +21,5 @@ CREATE TABLE wish(
 	img bytea
 )
 SELECT *FROM wish
+
+GRANT ALL ON users TO lang_user
