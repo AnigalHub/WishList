@@ -1,7 +1,7 @@
 <template>
     <div id="createWishlist">
         <b-input-group class="w-100" prepend="Wishlist Title" ><b-form-input v-model="title"></b-form-input></b-input-group>
-        {{errorMessage}}
+        <div class="text error">{{errorMessage}}</div>
         <b-table :fields="fields"></b-table>
         <div v-for="(wishItem, index) in WishItems" :key="index">
             <WishItem v-model="WishItems[index]" @delete="deleteProduct(index)"/>
