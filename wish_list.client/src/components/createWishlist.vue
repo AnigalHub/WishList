@@ -15,9 +15,9 @@
                 <b-row>
                     <b-col class="text">
                         Who can see this wishlist:
-                        <input class="custom-radio" type="radio" id="all" name="color" value="indigo">
+                        <input class="custom-radio" type="radio" id="all" name="color" value="indigo" v-model="all">
                         <label for="all">All</label>
-                        <input class="custom-radio" type="radio" id="me" name="color" value="indigo">
+                        <input class="custom-radio" type="radio" id="me" name="color" value="indigo" v-model="me">
                         <label for="me">Me</label>
                     </b-col>
                 </b-row>
@@ -36,6 +36,8 @@
         components: {WishItem, ImageToUpload},
         data(){
             return{
+                all:false,
+                me:false,
                 errorMessage:'',
                 /**Столбцы таблицы */
                 fields:[
