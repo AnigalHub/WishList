@@ -17,7 +17,11 @@ api.get('/wishlist', asyncHandler(async (req, res) => {
     console.log(result)
     res.end("test")
 }))
-
+api.get('/wish', asyncHandler(async (req, res) => {
+    const result = await db.query('SELECT * FROM wish')
+    console.log(result)
+    res.end("test")
+}))
 
 // Обработчик ошибок
 api.use(errorCatcher)
