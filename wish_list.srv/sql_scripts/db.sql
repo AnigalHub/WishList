@@ -28,3 +28,6 @@ GRANT ALL ON wish TO lang_user
 
 INSERT INTO users (loginUser,passwordUser) values ('Anna','757394757')
 INSERT INTO wishlist (idUser,title) values ('0b8c0121-d9ba-43c3-ae4c-eb270a3c5e6c','New Year')
+
+SELECT *FROM users, wishlist
+WHERE users.id = wishlist.idUser
