@@ -25,3 +25,5 @@ SELECT *FROM wish
 GRANT ALL ON users TO lang_user
 GRANT ALL ON wishlist TO lang_user
 GRANT ALL ON wish TO lang_user
+
+INSERT INTO users (loginUser,passwordUser) values ('Anna','757394757')
