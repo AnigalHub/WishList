@@ -43,6 +43,7 @@
 
 <script>
     import WishItem from "@/components/WishItem";
+
     import axios from 'axios'
 
     export default {
@@ -63,6 +64,10 @@
                 ],
                 selectedWishlist: {wishes: null},
             }
+        },
+        async created() {
+            console.log("created", axios.defaults.baseURL)
+            await axios.get('wishlist')
         },
         computed:{
             Wishlists:function () {
