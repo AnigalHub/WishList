@@ -24,7 +24,7 @@ api.get('/wish', asyncHandler(async (req, res) => {
     res.end("test")
 }))
 
-api.get('/AddUsers', asyncHandler(async (req, res) => {
+api.post('/addUsers', asyncHandler(async (req, res) => {
     const data = req.body
     const result = await db.query('INSERT INTO users (loginUser,passwordUser) values ($1,$2)',[data.loginUser,data.passwordUser])
     console.log(result)
