@@ -34,5 +34,9 @@ const router = new VueRouter(
 new Vue({
     router,
     store,
+    async created() {
+        let config = await fetch('config.json')
+
+    },
     render: function (h) { return h(App) }
 }).$mount('#app')
