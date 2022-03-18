@@ -37,6 +37,10 @@ INSERT INTO wish (idWishlist,text) values ('d27a40a1-c2c0-4c11-9da0-0fde59a15174
 SELECT users.id, users.loginUser, users.passwordUser,  wishlist.title FROM users, wishlist
 WHERE users.id = wishlist.idUser AND wishlist.idUser = '3f6bdfb8-e112-456b-adb9-36cd4770719a'
 
+select u.id, u.loginUser, u.passwordUser
+FROM users u
+INNER JOIN wishlist wl ON wl.idUser = u.id
+
 DELETE FROM users WHERE users.id = '3f6bdfb8-e112-456b-adb9-36cd4770719a'
 
 
