@@ -9,7 +9,6 @@ class WishlistsRepo {
     async GetAllWishlists(){
         // 1. получить все wishlists
         const wishlists = (await this.db.query('select * FROM wishlist')).rows
-       // const wishItem = (await this.db.query('select * FROM wish')).rows
         // 2. получить все wishitems
         let result = []
         for(let i=0; i<wishlists.length;i++){
