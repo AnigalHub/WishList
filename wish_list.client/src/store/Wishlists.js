@@ -17,7 +17,7 @@ const getters = {
 }
 const mutations ={
     copyOfWishesInWishlists:(state,wishes) =>{
-       state.Wishlist = wishes.slice()
+        state.Wishlist = wishes.slice()
     },
     addWishItem:(state,wishItem)=>{
         state.Wishlist.push(wishItem)

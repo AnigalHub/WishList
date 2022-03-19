@@ -19,10 +19,8 @@ api.get('/users', asyncHandler(async (req, res) => {
 api.get('/wishlist', asyncHandler(async (req, res) => {
     const result = await wishlist.GetAllWishlists()
     res.json(result)
-    //const result = await db.query('select wishlist.title, wish.text FROM wishlist INNER JOIN wish ON wishlist.id=wish.idWishlist')
-    //console.log(result.rows)
-
 }))
+
 api.get('/wish', asyncHandler(async (req, res) => {
     const data = req.body
     const result = await db.query('SELECT * FROM wish')

@@ -21,7 +21,6 @@ class WishlistsRepo {
                 wish.read(wishItem[j])
                 wishlist.WishItems.push(wish)
             }
-
         }
         // 3. соединить wishlist с его wishItems
         return result
