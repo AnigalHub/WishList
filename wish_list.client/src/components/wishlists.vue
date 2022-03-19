@@ -62,12 +62,12 @@
                     { key: "description", label: "Description" },
                     { key: "edit", label: "Edit | Delete" },
                 ],
-                selectedWishlist: {wishes: null},
+                selectedWishlist: {WishItems: null},
             }
         },
         async created() {
-            console.log("created", axios.defaults.baseURL)
-            await axios.get('wishlist')
+            const result = await axios.get('wishlist')
+            this.$store.commit("wishlists/setSavedWishlists", result.data)
         },
         computed:{
             Wishlists:function () {
@@ -80,7 +80,8 @@
         methods:{
             showModal(index){
                 this.selectedWishlist = this.Wishlists[index]
-                this.$store.dispatch('wishlists/copyOfWishesInWishlists',this.selectedWishlist.wishes)
+                console.log(this.selectedWishlist)
+                this.$store.dispatch('wishlists/copyOfWishesInWishlists',this.selectedWishlist.WishItems)
                 this.$refs['modalWishlist'].show()
             },
             deleteWishlist(index){
