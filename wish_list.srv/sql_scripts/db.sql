@@ -18,8 +18,11 @@ CREATE TABLE wish(
 	id uuid PRIMARY KEY DEFAULT (uuid_generate_v4()),
 	idWishlist uuid not null,
 	text text,
-	img bytea
+	img text
 )
+
+--ALTER TABLE wish
+--	ALTER COLUMN img TYPE text;
 SELECT *FROM wish
 
 GRANT ALL ON users TO lang_user
