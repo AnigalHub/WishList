@@ -44,7 +44,7 @@
             },
         },
         watch: {
-            async img(newVal, oldval){
+            async img(newVal){
                 this.$refs.fileupload.value=null;
                 console.log("newval", newVal)
                 this.file = await fromBase64(newVal)
@@ -54,7 +54,6 @@
              url(){
                 if(!this.file)
                     return null
-                console.log("URL", this.file)
                 return URL.createObjectURL(this.file)
             }
         },
