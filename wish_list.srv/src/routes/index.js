@@ -7,30 +7,21 @@ const db = require("./../db")
 
 const wishlistsRepo = require("../repositories/WishlistsRepo.js")
 
-let wishlist = new wishlistsRepo(db)
+let wishlistRepo = new wishlistsRepo(db)
 
 //Вывести таблицу
 api.get('/wishlist', asyncHandler(async (req, res) => {
-    const result = await wishlist.GetAllWishlists()
+    const result = await wishlistRepo.GetAllWishlists()
     res.json(result)
 }))
 
-
-api.get('/users', asyncHandler(async (req, res) => {
-    const result = await db.query('SELECT * FROM users')
-    console.log(result)
-    res.end("test")
-}))
-api.get('/wish', asyncHandler(async (req, res) => {
-    const result = await db.query('SELECT * FROM wish')
-    console.log(result)
-    res.end("test")
-}))
-api.post('/addUsers', asyncHandler(async (req, res) => {
-    const data = req.body
-    const result = await db.query('INSERT INTO users (loginUser,passwordUser) values ($1,$2)',[data.loginUser,data.passwordUser])
-    console.log(result)
-    res.end("test")
+api.post('/addwishlist', asyncHandler(async (req, res) => {
+    const result = await db.query('INSERT INTO wishlist (title) values ($1) RETURNING *;',[req.body.title])
+    const wishlistId = result.rows[0].id
+    for (const x of req.body.wishItems) {
+       await db.query('INSERT INTO wish (text,idwishlist,img) values ($1,$2,$3) RETURNING *;',[x.text,wishlistId,x.img])
+    }
+    res.end()
 }))
 
 // Обработчик ошибок
