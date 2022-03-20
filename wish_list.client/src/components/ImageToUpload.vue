@@ -40,7 +40,6 @@
                     return
                 let b64 = await toBase64(e.target.files[0])
                 this.file = await fromBase64(b64)
-                //this.file = e.target.files[0];
                 this.$emit("fileChanged", b64)
                 console.log(this.file)
             },

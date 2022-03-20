@@ -54,9 +54,7 @@ const actions = {
         context.commit('deleteWishItem',id)
     },
     addWishlist(context, wishlist){
-        //context.commit('addWishlist', wishlist)
         axios.post("addwishlist", wishlist)
-        //localStorage.setItem('wishlists',JSON.stringify(context.getters.Wishlists))
     },
    deleteWishlist(context,id){
         context.commit('deleteWishlist',id)
