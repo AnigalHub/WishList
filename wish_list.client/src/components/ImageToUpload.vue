@@ -17,6 +17,8 @@
     });
 
     const fromBase64 = async(base64) => {
+        if(!base64)
+            return null
         const blob = await (await fetch(base64)).blob()
         return new File([blob], "test")
     }
@@ -30,7 +32,7 @@
             }
         },
         props:{
-            img: File,
+            img: String,
         },
         methods: {
             async onFileChange(e){
@@ -39,18 +41,18 @@
                 let b64 = await toBase64(e.target.files[0])
                 this.file = await fromBase64(b64)
                 //this.file = e.target.files[0];
-                this.$emit("fileChanged", this.file)
+                this.$emit("fileChanged", b64)
                 console.log(this.file)
             },
         },
         watch: {
-            img(newVal){
+            async img(newVal){
                 this.$refs.fileupload.value=null;
-                this.file = newVal
+                this.file = await fromBase64(newVal)
             }
         },
         computed:{
-            url(){
+             url(){
                 if(!this.file)
                     return null
                 return URL.createObjectURL(this.file)
