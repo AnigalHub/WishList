@@ -41,12 +41,12 @@
                 let b64 = await toBase64(e.target.files[0])
                 this.file = await fromBase64(b64)
                 this.$emit("fileChanged", b64)
-                console.log(this.file)
             },
         },
         watch: {
-            async img(newVal){
+            async img(newVal, oldval){
                 this.$refs.fileupload.value=null;
+                console.log("newval", newVal)
                 this.file = await fromBase64(newVal)
             }
         },
@@ -54,11 +54,15 @@
              url(){
                 if(!this.file)
                     return null
+                console.log("URL", this.file)
                 return URL.createObjectURL(this.file)
             }
         },
-        created() {
+        async created() {
             this.id = this._uid
+        },
+        async mounted() {
+            this.file = await fromBase64(this.img)
         }
     }
 </script>
