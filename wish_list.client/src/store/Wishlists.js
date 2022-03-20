@@ -3,6 +3,8 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+import axios from "axios";
+
 const state = () =>({
     Wishlists: [],
     Wishlist:[]
@@ -52,8 +54,9 @@ const actions = {
         context.commit('deleteWishItem',id)
     },
     addWishlist(context, wishlist){
-        context.commit('addWishlist', wishlist)
-        localStorage.setItem('wishlists',JSON.stringify(context.getters.Wishlists))
+        //context.commit('addWishlist', wishlist)
+        axios.post("addwishlist", wishlist)
+        //localStorage.setItem('wishlists',JSON.stringify(context.getters.Wishlists))
     },
    deleteWishlist(context,id){
         context.commit('deleteWishlist',id)
