@@ -51,13 +51,13 @@
             addProduct(){
                 this.$store.dispatch('newWishlist/addProduct',{text:"", img:null})
             },
-            saveProduct(title,wishes){
+            saveProduct(title,wishItems){
                if(this.title != ''){
                    this.errorMessage = ''
-                    this.$store.dispatch('wishlists/addWishlist',{title,wishes})
+                    this.$store.dispatch('wishlists/addWishlist',{title,wishItems})
                }
                else{
-                   this.errorMessage = 'Table name not specified. You can\'t find it on your wishlist'
+                   this.errorMessage = 'Table name is not specified. You can\'t find it on your wishlist'
                }
                 this.title = ''
                 this.$store.dispatch('newWishlist/cleanWishItems')
