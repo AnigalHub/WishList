@@ -24,9 +24,7 @@ const actions = {
     loadConfig:async (ctx)=>{
         const res = (await fetch(`${process.env.BASE_URL}config.json`))
         const resp = await res.json()
-        console.log("before", axios.defaults.baseURL)
         axios.defaults.baseURL = resp.url
-        console.log("after", axios.defaults.baseURL)
         ctx.commit("setUrl",resp.url)
     },
 }
