@@ -80,7 +80,6 @@
         methods:{
             showModal(index){
                 this.selectedWishlist = this.Wishlists[index]
-                console.log(this.selectedWishlist)
                 this.$store.dispatch('wishlists/copyOfWishesInWishlists',this.selectedWishlist.WishItems)
                 this.$refs['modalWishlist'].show()
             },
