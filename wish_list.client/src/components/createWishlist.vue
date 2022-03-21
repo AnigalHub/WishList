@@ -68,7 +68,7 @@
         },
         computed:{
             WishItems:function () {
-                return this.$store.getters['newWishlist/WishItems']
+                return this.$store.getters['newWishlist/wishItems']
             },
             title: {
                 get(){
