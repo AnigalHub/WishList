@@ -8,7 +8,7 @@ const state = () =>({
   wishItems:[{text:"", img:null}]
 })
 const getters = {
-  WishItems: (state) => {
+  wishItems: (state) => {
     return state.wishItems
   },
   title: (state) => {
