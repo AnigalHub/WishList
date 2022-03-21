@@ -1,21 +1,20 @@
 <template>
     <div id="logIn">
         <h2>Log In</h2>
-        <label class="text" for="nickname" v-model="FormLogIn.nickname">Nickname</label>
+        <label class="text" for="nickname" v-model="formLogIn.nickname">Nickname</label>
         <input id="nickname" required type="text">
-        <label class="text" for="password" v-model="FormLogIn.password">Password</label>
+        <label class="text" for="password" v-model="formLogIn.password">Password</label>
         <input id="password" required type="password">
         <b-button class="send" variant="outline-success" @click.prevent="sendForm" :disabled="buttonDisabled" >Log In</b-button>
     </div>
 </template>
 
 <script>
-    import axios from 'axios'
     export default {
         name: "logIn",
         data(){
             return{
-                FormLogIn:{
+                formLogIn:{
                     nickname:'',
                     password:''
                 }
@@ -23,7 +22,7 @@
         },
         computed:{
             buttonDisabled(){
-                if(this.FormLogIn.nickname && this.FormLogIn.password){
+                if(this.formLogIn.nickname && this.formLogIn.password){
                     return false
                 }
                 else {
@@ -33,7 +32,7 @@
         },
         methods:{
             sendForm:function () {
-                if(this.FormLogIn.nickname && this.FormLogIn.password){
+                if(this.formLogIn.nickname && this.formLogIn.password){
 
                 }
             }
