@@ -6,35 +6,35 @@ Vue.use(Vuex)
 import axios from "axios";
 
 const state = () =>({
-    Wishlists: [],
-    Wishlist:[]
+    wishlists: [],
+    wishlist:[]
 })
 const getters = {
-    Wishlists: (state) => {
-        return state.Wishlists
+    wishlists: (state) => {
+        return state.wishlists
     },
-    Wishlist: (state) => {
-        return state.Wishlist
+    wishlist: (state) => {
+        return state.wishlist
     },
 }
 const mutations ={
     copyOfWishesInWishlists:(state,wishes) =>{
-        state.Wishlist = wishes.slice()
+        state.wishlist = wishes.slice()
     },
     addWishItem:(state,wishItem)=>{
-        state.Wishlist.push(wishItem)
+        state.wishlist.push(wishItem)
     },
     deleteWishItem:(state,id) =>{
-        state.Wishlist.splice(id,1)
+        state.wishlist.splice(id,1)
     },
     addWishlist:(state,wishlist) =>{
-        state.Wishlists.push(wishlist)
+        state.wishlists.push(wishlist)
     },
     deleteWishlist:(state,id) =>{
-        state.Wishlists.splice(id,1)
+        state.wishlists.splice(id,1)
     },
     setSavedWishlists(state,savedWishlists){
-        state.Wishlists = savedWishlists
+        state.wishlists = savedWishlists
     },
 }
 const actions = {
@@ -54,11 +54,11 @@ const actions = {
         context.commit('deleteWishItem',id)
     },
     addWishlist(context, wishlist){
-        axios.post("addwishlist", wishlist)
+        axios.post("addWishlist", wishlist)
     },
    deleteWishlist(context,id){
         context.commit('deleteWishlist',id)
-        localStorage.setItem('wishlists',JSON.stringify(context.getters.Wishlists))
+        localStorage.setItem('wishlists',JSON.stringify(context.getters.wishlists))
     },
 }
 export default {
