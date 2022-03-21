@@ -5,11 +5,11 @@ Vue.use(Vuex)
 
 const state = () =>({
   title: "",
-  WishItems:[{text:"", img:null}]
+  wishItems:[{text:"", img:null}]
 })
 const getters = {
   WishItems: (state) => {
-    return state.WishItems
+    return state.wishItems
   },
   title: (state) => {
     return state.title
@@ -17,16 +17,16 @@ const getters = {
 }
 const mutations ={
   addWishItem:(state,payload) =>{
-    state.WishItems.push(payload)
+    state.wishItems.push(payload)
   },
   setTitle:(state,payload) =>{
     state.title = payload
   },
   deleteWishItem:(state,id) =>{
-    state.WishItems.splice(id,1)
+    state.wishItems.splice(id,1)
   },
   cleanWishItems:(state) =>{
-    state.WishItems = [{text:"", img:null}]
+    state.wishItems = [{text:"", img:null}]
   }
 }
 const actions = {
@@ -34,7 +34,7 @@ const actions = {
     context.commit('addWishItem',payload)
   },
   deleteProduct(context,index) {
-    if(context.state.WishItems.length == 1){
+    if(context.state.wishItems.length == 1){
       context.commit('cleanWishItems')
     }
     else {
