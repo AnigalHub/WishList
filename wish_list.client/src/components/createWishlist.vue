@@ -3,13 +3,13 @@
         <b-input-group class="w-100" prepend="Wishlist Title" ><b-form-input v-model="title"></b-form-input></b-input-group>
         <div class="text error">{{errorMessage}}</div>
         <b-table :fields="fields"></b-table>
-        <div v-for="(wishItem, index) in WishItems" :key="index">
-            <WishItem v-model="WishItems[index]" @delete="deleteProduct(index)"/>
+        <div v-for="(wishItem, index) in wishItems" :key="index">
+            <WishItem v-model="wishItems[index]" @delete="deleteProduct(index)"/>
         </div>
         <b-button class="add" @click="addProduct()" variant="outline-secondary">Add Product</b-button>
         <b-row>
             <b-col>
-                <b-button class="save" variant="outline-success" @click="saveProduct(title,WishItems)">Save WishList</b-button>
+                <b-button class="save" variant="outline-success" @click="saveProduct(title,wishItems)">Save WishList</b-button>
             </b-col>
             <b-col>
                 <b-row>
@@ -67,7 +67,7 @@
             }
         },
         computed:{
-            WishItems:function () {
+            wishItems:function () {
                 return this.$store.getters['newWishlist/wishItems']
             },
             title: {
