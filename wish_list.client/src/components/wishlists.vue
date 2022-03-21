@@ -69,10 +69,10 @@
         },
         computed:{
             Wishlists:function () {
-                return this.$store.getters['wishlists/Wishlists']
+                return this.$store.getters['wishlists/wishlists']
             },
             Wishlist:function () {
-                return this.$store.getters['wishlists/Wishlist']
+                return this.$store.getters['wishlists/wishlist']
             },
         },
         methods:{
