@@ -27,8 +27,8 @@
 </template>
 
 <script>
-    import WishItem from "@/components/WishItem";
-    import ImageToUpload from "@/components/ImageToUpload";
+    import WishItem from "@/components/wishItem";
+    import ImageToUpload from "@/components/imageToUpload";
     import axios from 'axios'
 
     export default {
@@ -54,7 +54,7 @@
             saveProduct(title,wishItems){
                if(this.title != ''){
                    this.errorMessage = ''
-                    this.$store.dispatch('wishlists/addWishlist',{title,wishItems})
+                    this.$store.dispatch('wishlists/addWishlist',{title,wishtems})
                }
                else{
                    this.errorMessage = 'Table name is not specified. You can\'t find it on your wishlist'

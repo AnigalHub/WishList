@@ -42,10 +42,8 @@
 </template>
 
 <script>
-    import WishItem from "@/components/WishItem";
-
+    import WishItem from "@/components/wishItem";
     import axios from 'axios'
-
     export default {
         name: "wishlists",
         components: {WishItem},

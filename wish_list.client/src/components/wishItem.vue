@@ -10,7 +10,7 @@
 
 
 <script>
-    import ImageToUpload from "@/components/ImageToUpload";
+    import ImageToUpload from "@/components/imageToUpload";
     export default {
         name: "wishItem",
         props: {
