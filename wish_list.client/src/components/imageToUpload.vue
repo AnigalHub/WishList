@@ -24,7 +24,7 @@
     }
 
     export default {
-        name: 'ImageToUpload',
+        name: 'imageToUpload',
         data() {
             return {
                 id: 0,
