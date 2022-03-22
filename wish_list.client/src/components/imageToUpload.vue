@@ -8,7 +8,7 @@
     </div>
 </template>
 <script>
-    import base64converter from "../base64Converter";
+    import base64Сonverter from "../base64Сonverter";
     export default {
         name: 'imageToUpload',
         data() {
@@ -24,8 +24,8 @@
             async onFileChange(e){
                 if(e.target.files.length <= 0)
                     return
-                let b64 = await base64converter.toBase64(e.target.files[0])
-                this.file = await base64converter.fromBase64(b64)
+                let b64 = await base64Сonverter.toBase64(e.target.files[0])
+                this.file = await base64Сonverter.fromBase64(b64)
                 this.$emit("fileChanged", b64)
             },
             dataURLToBlob(dataurl) {
@@ -43,7 +43,7 @@
         watch: {
             async img(newVal){
                 this.$refs.fileupload.value=null;
-                this.file = await base64converter.fromBase64(newVal)
+                this.file = await base64Сonverter.fromBase64(newVal)
             }
         },
         computed:{
@@ -58,7 +58,7 @@
             this.id = this._uid
         },
         async mounted() {
-            this.file = await base64converter.fromBase64(this.img)
+            this.file = await base64Сonverter.fromBase64(this.img)
         }
     }
 </script>
