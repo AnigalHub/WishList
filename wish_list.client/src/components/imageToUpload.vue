@@ -63,8 +63,9 @@
         computed:{
              url(){
                 if(!this.file)
-                    return
-                return URL.createObjectURL(this.dataURLToBlob(this.file))
+                    this.img = ''
+                    return this.img
+                return URL.createObjectURL(this.dataURLToBlob(this.img))
             }
         },
         async created() {
