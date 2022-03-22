@@ -48,6 +48,7 @@ INNER JOIN wishlist wl ON wl.idUser = u.id
 SELECT * FROM wishlist
 SELECT * FROM wish
 
-DELETE FROM wishlist WHERE wishlist.id = '0ebcb4f1-02ff-41c0-9daa-60b549c3f541'
-DELETE FROM wish WHERE wish.idwishlist = '0ebcb4f1-02ff-41c0-9daa-60b549c3f541'
+DELETE FROM wishlist WHERE wishlist.id = 'de8fd34f-31b9-4cda-a021-5c33053f814e'
+DELETE FROM wish WHERE wish.text = ''
+
 
