@@ -13,6 +13,7 @@ CREATE TABLE wishlist(
 	title text not null
 )
 SELECT * FROM wishlist
+SELECT * FROM wish
 
 CREATE TABLE wish(
 	id uuid PRIMARY KEY DEFAULT (uuid_generate_v4()),
@@ -44,6 +45,6 @@ select u.id, u.loginUser, u.passwordUser,wl.title
 FROM users u
 INNER JOIN wishlist wl ON wl.idUser = u.id
 
-DELETE FROM users WHERE users.id = '3f6bdfb8-e112-456b-adb9-36cd4770719a'
+DELETE FROM wishlist WHERE wishlist.id = 'c969e01a-c811-4a5a-ba8e-f9640a94d81c'
 
 
