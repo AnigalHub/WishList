@@ -45,6 +45,9 @@ select u.id, u.loginUser, u.passwordUser,wl.title
 FROM users u
 INNER JOIN wishlist wl ON wl.idUser = u.id
 
-DELETE FROM wishlist WHERE wishlist.id = 'c969e01a-c811-4a5a-ba8e-f9640a94d81c'
+SELECT * FROM wishlist
+SELECT * FROM wish
 
+DELETE FROM wishlist WHERE wishlist.id = '0ebcb4f1-02ff-41c0-9daa-60b549c3f541'
+DELETE FROM wish WHERE wish.idwishlist = '0ebcb4f1-02ff-41c0-9daa-60b549c3f541'
 
