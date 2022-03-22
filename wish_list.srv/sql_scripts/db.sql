@@ -52,3 +52,6 @@ DELETE FROM wishlist WHERE wishlist.id = '44c622b1-87c4-42b1-8fc9-d5fbfdf9f553'
 DELETE FROM wish WHERE wish.text = ''
 
 
+
+
+
