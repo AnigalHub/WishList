@@ -3,10 +3,10 @@
         <h2>My wishlists</h2>
         <b-table :fields="fields">
         </b-table>
-        <div v-if="Wishlists.length == 0" class="wishlist emptyTable">
+        <div v-if="wishlists.length == 0" class="wishlist emptyTable">
             The table is empty. No wishlists have been created and saved.
         </div>
-        <div v-else v-for="(wishlist,index) in Wishlists" :key="index" class="wishlist">
+        <div v-else v-for="(wishlist,index) in wishlists" :key="index" class="wishlist">
             <b-row>
                 <b-col cols="7" class="text">
                       <input v-model="wishlist.title">
@@ -26,8 +26,8 @@
         <b-modal ref="modalWishlist">
             <b-table :fields="fieldsWishlists">
             </b-table>
-            <div v-for="(wishItem, index) in Wishlist" :key="index">
-                <WishItem  v-model="Wishlist[index]" @delete="deleteProduct(index)" />
+            <div v-for="(wishItem, index) in wishlist" :key="index">
+                <WishItem  v-model="wishlist[index]" @delete="deleteProduct(index)" />
             </div>
             <b-row class="buttons">
                 <b-col>
@@ -68,16 +68,16 @@
             this.$store.commit("wishlists/setSavedWishlists", result.data)
         },
         computed:{
-            Wishlists:function () {
+            wishlists:function () {
                 return this.$store.getters['wishlists/wishlists']
             },
-            Wishlist:function () {
+            wishlist:function () {
                 return this.$store.getters['wishlists/wishlist']
             },
         },
         methods:{
             showModal(index){
-                this.selectedWishlist = this.Wishlists[index]
+                this.selectedWishlist = this.wishlists[index]
                 this.$store.dispatch('wishlists/copyOfWishesInWishlists',this.selectedWishlist.WishItems)
                 this.$refs['modalWishlist'].show()
             },
