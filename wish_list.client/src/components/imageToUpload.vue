@@ -8,7 +8,7 @@
     </div>
 </template>
 <script>
-    import base64Сonverter from "../base64Сonverter";
+    import base64Сonverter from "../base64Converter";
     export default {
         name: 'imageToUpload',
         data() {
