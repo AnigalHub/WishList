@@ -6,6 +6,8 @@ const toBase64 = file => new Promise((resolve, reject) => {
 });
 
 const fromBase64 = async(base64) => {
+    if(!base64)
+        return null
     const blob = await (await fetch(base64)).blob()
     return new File([blob], "test")
 }
