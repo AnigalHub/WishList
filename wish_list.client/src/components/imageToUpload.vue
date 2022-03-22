@@ -42,19 +42,29 @@
                 this.file = await fromBase64(b64)
                 this.$emit("fileChanged", b64)
             },
+            dataURLToBlob(dataurl) {
+                let arr = dataurl.split(',');
+                let mime = arr[0].match(/:(.*?);/)[1];
+                let bstr = atob(arr[1]);
+                let n = bstr.length;
+                let u8arr = new Uint8Array(n);
+                while (n--) {
+                    u8arr[n] = bstr.charCodeAt(n);
+                }
+                return new Blob([u8arr], { type: mime });
+            }
         },
         watch: {
             async img(newVal){
                 this.$refs.fileupload.value=null;
-                console.log("newval", newVal)
                 this.file = await fromBase64(newVal)
             }
         },
         computed:{
              url(){
                 if(!this.file)
-                    return null
-                return URL.createObjectURL(this.file)
+                    return
+                return URL.createObjectURL(this.dataURLToBlob(this.file))
             }
         },
         async created() {
