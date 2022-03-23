@@ -29,7 +29,6 @@
 <script>
     import WishItem from "@/components/wishItem";
     import ImageToUpload from "@/components/imageToUpload";
-    import axios from 'axios'
 
     export default {
         name: "createWishlist",
