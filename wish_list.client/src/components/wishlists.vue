@@ -82,8 +82,8 @@
                 this.$refs['modalWishlist'].show()
             },
             deleteWishlist(index){
-                console.log(this.wishlists[index])
-                this.$store.dispatch('wishlists/deleteWishlist',index)
+             console.log(this.wishlists[index])
+                this.$store.dispatch('wishlists/deleteWishlist',this.wishlists[index])
             },
             deleteProduct(index){
                 this.$store.dispatch('wishlists/deleteWishItem',index)
