@@ -60,7 +60,7 @@
                     { key: "description", label: "Description" },
                     { key: "edit", label: "Edit | Delete" },
                 ],
-                selectedWishlist: {WishItems: null},
+                selectedWishlist: {wishItems: null},
             }
         },
         async created() {
@@ -78,11 +78,10 @@
         methods:{
             showModal(index){
                 this.selectedWishlist = this.wishlists[index]
-                this.$store.dispatch('wishlists/copyOfWishesInWishlists',this.selectedWishlist.WishItems)
+                this.$store.dispatch('wishlists/copyOfWishesInWishlists',this.selectedWishlist.wishItems)
                 this.$refs['modalWishlist'].show()
             },
             deleteWishlist(index){
-             console.log(this.wishlists[index])
                 this.$store.dispatch('wishlists/deleteWishlist',this.wishlists[index])
             },
             deleteProduct(index){
