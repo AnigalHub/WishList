@@ -82,6 +82,7 @@
                 this.$refs['modalWishlist'].show()
             },
             deleteWishlist(index){
+                console.log(this.wishlists[index])
                 this.$store.dispatch('wishlists/deleteWishlist',index)
             },
             deleteProduct(index){
