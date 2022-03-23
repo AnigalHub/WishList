@@ -15,9 +15,9 @@ import routes from './routes';
 
 import vuex from 'vuex'
 Vue.use(vuex)
-import newWishList from './store/NewWishlist'
-import wishlists from './store/Wishlists'
-import config from './store/ConfigStore'
+import newWishList from './store/newWishlist'
+import wishlists from './store/wishlists'
+import config from './store/configStore'
 
 const store = new vuex.Store({
     modules:{
