@@ -18,8 +18,8 @@ const getters = {
     },
 }
 const mutations ={
-    copyOfWishesInWishlists:(state,wishes) =>{
-        state.wishlist = wishes.slice()
+    copyOfWishesInWishlists:(state,wishItems) =>{
+        state.wishlist = wishItems.slice()
     },
     addWishItem:(state,wishItem)=>{
         state.wishlist.push(wishItem)
@@ -57,9 +57,7 @@ const actions = {
         axios.post("addWishlist", wishlist)
     },
    deleteWishlist(context,id){
-       // context.commit('deleteWishlist',id)
        axios.post("deleteWishlist", id)
-       // localStorage.setItem('wishlists',JSON.stringify(context.getters.wishlists))
     },
 }
 export default {
