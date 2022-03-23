@@ -19,7 +19,7 @@ class WishlistsRepo {
             for (let j=0;j<wishItem.length;j++){
                 let wish = new WishItem()
                 wish.read(wishItem[j])
-                wishlist.WishItems.push(wish)
+                wishlist.wishItems.push(wish)
             }
         }
         // 3. соединить wishlist с его wishItems
