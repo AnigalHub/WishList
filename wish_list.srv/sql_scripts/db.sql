@@ -24,6 +24,9 @@ CREATE TABLE wish(
 
 --ALTER TABLE wish
 --	ALTER COLUMN img TYPE text;
+
+ALTER TABLE wishlist
+ADD everyone boolean
 SELECT *FROM wish
 
 GRANT ALL ON users TO lang_user
@@ -48,7 +51,7 @@ INNER JOIN wishlist wl ON wl.idUser = u.id
 SELECT * FROM wishlist
 SELECT * FROM wish
 
-DELETE FROM wishlist WHERE wishlist.id = '44c622b1-87c4-42b1-8fc9-d5fbfdf9f553'
+DELETE FROM wish WHERE wish.id = '67633d0a-3e15-40b0-9d01-8343077aa39f'
 DELETE FROM wish WHERE wish.text = ''
 
 
