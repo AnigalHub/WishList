@@ -7,7 +7,9 @@
         <input id="password-1" required type="password">
         <label class="text" for="password-2" v-model="formSignUp.password2">Password again</label>
         <input id="password-2" required type="password">
-        <b-button class="send" variant="outline-success" type="submit" @click.prevent="sendForm" :disabled="buttonDisabled">Sign Up</b-button>
+        <b-button class="send" variant="outline-success" type="submit" @click.prevent="sendForm()" :disabled="buttonDisabled">Sign Up</b-button>
+        <br>
+        <div class="text">{{errorMessage}}</div>
     </div>
 </template>
 
@@ -20,23 +22,27 @@
                     nickname:'',
                     password1:'',
                     password2:''
-                }
+                },
+                errorMessage:''
             }
         },
         computed:{
             buttonDisabled(){
-                if(this.formSignUp.nickname && this.formSignUp.password1 && this.formSignUp.password2 && (this.formSignUp.password1 == this.formSignUp.password2)){
-                    return false
+                if(this.formSignUp.nickname && this.formSignUp.password1 && this.formSignUp.password2){
+                 // return false
                 }
-                else {
-                   return true
-                }
+              // return true
             }
         },
         methods:{
             sendForm:function () {
                 if(this.formSignUp.nickname && this.formSignUp.password1 && this.formSignUp.password2){
-
+                    if(this.formSignUp.password1 != this.formSignUp.password2){
+                        this.errorMessage = 'Password mismatch'
+                    }
+                    else {
+                        this.errorMessage = ''
+                    }
                 }
             }
         }
