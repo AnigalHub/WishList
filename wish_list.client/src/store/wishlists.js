@@ -50,13 +50,14 @@ const actions = {
     addWishItem(context, wishItem){
         context.commit('addWishItem', wishItem)
     },
-    deleteWishItem(context,id){
-        context.commit('deleteWishItem',id)
+    async deleteWishItem(context,id){
+     //   context.commit('deleteWishItem',id)
+      await axios.post('deleteWishItem',id)
     },
     addWishlist(context, wishlist){
         axios.post("addWishlist", wishlist)
     },
-   async deleteWishlist(context,id){
+   async deleteWishlist(context, id){
      await  axios.post("deleteWishlist", id)
     },
 }
