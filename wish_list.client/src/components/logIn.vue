@@ -5,7 +5,7 @@
         <input id="nickname" required type="text">
         <label class="text" for="password" v-model="formLogIn.password">Password</label>
         <input id="password" required type="password">
-        <b-button class="send" variant="outline-success" @click.prevent="sendForm" :disabled="buttonDisabled" >Log In</b-button>
+        <b-button class="send" variant="outline-success" @click.prevent="sendForm()" :disabled="buttonDisabled" type="submit">Log In</b-button>
     </div>
 </template>
 
