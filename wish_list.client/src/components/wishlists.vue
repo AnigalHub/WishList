@@ -86,8 +86,10 @@
                 const result = await axios.get('wishlist')
                 this.$store.commit("wishlists/setSavedWishlists", result.data)
             },
-            deleteProduct(index){
-                this.$store.dispatch('wishlists/deleteWishItem',index)
+           async deleteProduct(index){
+                this.$store.dispatch('wishlists/deleteWishItem',this.wishlist[index])
+                console.log(index)
+                console.log(this.wishlist[index])
             },
             addProduct(){
                 this.$store.dispatch('wishlists/addWishItem',{text:"", img:null})
