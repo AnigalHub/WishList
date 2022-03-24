@@ -7,7 +7,7 @@
         <input id="password-1" required type="password">
         <label class="text" for="password-2" v-model="formSignUp.password2">Password again</label>
         <input id="password-2" required type="password">
-        <b-button class="send" variant="outline-success"  @click.prevent="sendForm" :disabled="buttonDisabled">Sign Up</b-button>
+        <b-button class="send" variant="outline-success" type="submit" @click.prevent="sendForm" :disabled="buttonDisabled">Sign Up</b-button>
     </div>
 </template>
 
@@ -25,7 +25,7 @@
         },
         computed:{
             buttonDisabled(){
-                if(this.formSignUp.nickname && this.formSignUp.password1 && this.formSignUp.password2){
+                if(this.formSignUp.nickname && this.formSignUp.password1 && this.formSignUp.password2 &&){
                     return false
                 }
                 else {
