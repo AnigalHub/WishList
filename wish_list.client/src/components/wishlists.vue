@@ -81,8 +81,10 @@
                 this.$store.dispatch('wishlists/copyOfWishesInWishlists',this.selectedWishlist.wishItems)
                 this.$refs['modalWishlist'].show()
             },
-            deleteWishlist(index){
-                this.$store.dispatch('wishlists/deleteWishlist',this.wishlists[index])
+           async deleteWishlist(index){
+                await this.$store.dispatch('wishlists/deleteWishlist',this.wishlists[index])
+                const result = await axios.get('wishlist')
+                this.$store.commit("wishlists/setSavedWishlists", result.data)
             },
             deleteProduct(index){
                 this.$store.dispatch('wishlists/deleteWishItem',index)
