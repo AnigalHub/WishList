@@ -26,7 +26,7 @@ CREATE TABLE wish(
 --	ALTER COLUMN img TYPE text;
 
 ALTER TABLE wishlist
-ADD everyone boolean
+ADD me boolean
 SELECT *FROM wish
 
 GRANT ALL ON users TO lang_user
