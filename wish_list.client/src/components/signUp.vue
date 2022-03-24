@@ -25,7 +25,7 @@
         },
         computed:{
             buttonDisabled(){
-                if(this.formSignUp.nickname && this.formSignUp.password1 && this.formSignUp.password2 &&){
+                if(this.formSignUp.nickname && this.formSignUp.password1 && this.formSignUp.password2 && (this.formSignUp.password1 == this.formSignUp.password2)){
                     return false
                 }
                 else {
