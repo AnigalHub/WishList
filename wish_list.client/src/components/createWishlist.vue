@@ -53,7 +53,8 @@
             saveProduct(title,wishItems){
                if(this.title != ''){
                    this.errorMessage = ''
-                    this.$store.dispatch('wishlists/addWishlist',{title,wishItems})
+                   this.$store.dispatch('wishlists/addWishlist',{title,wishItems})
+                   this.me = true
                }
                else{
                    this.errorMessage = 'Table name is not specified. You can\'t find it on your wishlist'
