@@ -32,6 +32,13 @@ class WishlistsRepo {
             await this.db.query('INSERT INTO wish (text,idwishlist,img) values ($1,$2,$3) RETURNING *;',[x.text,wishlistId,x.img])
         }
     }
+    async DeleteWishlist(reqBody){
+        await this.db.query('DELETE FROM wishlist WHERE wishlist.id = ($1) RETURNING *;',[reqBody.id])
+        for (let j=0;j<reqBody.wishItems.length;j++){
+            console.log(reqBody.wishItems[j].id)
+            await this.db.query('DELETE FROM wish WHERE wish.id = ($1) RETURNING *;',[reqBody.wishItems[j].id])
+        }
+    }
 }
 
 module.exports = WishlistsRepo
