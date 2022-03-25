@@ -1,10 +1,10 @@
 <template>
     <div id="logIn">
         <h2>Log In</h2>
-        <label class="text" for="nickname" v-model="formLogIn.nickname">Nickname</label>
-        <input id="nickname" required type="text">
-        <label class="text" for="password" v-model="formLogIn.password">Password</label>
-        <input id="password" required type="password">
+        <label class="text" for="nickname">Nickname</label>
+        <input id="nickname" required type="text"  v-model="formLogIn.nickname">
+        <label class="text" for="password">Password</label>
+        <input id="password" required type="password"  v-model="formLogIn.password">
         <b-button class="send" variant="outline-success" @click.prevent="sendForm()" :disabled="buttonDisabled" type="submit">Log In</b-button>
     </div>
 </template>
