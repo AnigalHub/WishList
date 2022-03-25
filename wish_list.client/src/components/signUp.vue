@@ -1,13 +1,13 @@
 <template>
     <div id="signUp">
         <h2>Sign Up</h2>
-        <label class="text" for="nickname" v-model="formSignUp.nickname">Nickname</label>
-        <input id="nickname" required type="text">
-        <label class="text" for="password-1" v-model="formSignUp.password1">Password</label>
-        <input id="password-1" required type="password">
-        <label class="text" for="password-2" v-model="formSignUp.password2">Password again</label>
-        <input id="password-2" required type="password">
-        <b-button class="send" variant="outline-success" type="submit" @click.prevent="sendForm()" :disabled="buttonDisabled">Sign Up</b-button>
+        <label class="text" for="nickname">Nickname</label>
+        <input id="nickname" required type="text" v-model="formSignUp.nickname">
+        <label class="text" for="password-1">Password</label>
+        <input id="password-1" required type="password" v-model="formSignUp.password1">
+        <label class="text" for="password-2">Password again</label>
+        <input id="password-2" required type="password" v-model="formSignUp.password2">
+        <b-button class="send" variant="outline-success" type="submit" @click="sendForm()" :disabled="buttonDisabled">Sign Up</b-button>
         <br>
         <div class="text">{{errorMessage}}</div>
     </div>
@@ -28,10 +28,10 @@
         },
         computed:{
             buttonDisabled(){
-                if(this.formSignUp.nickname && this.formSignUp.password1 && this.formSignUp.password2){
-                 // return false
-                }
-              // return true
+               if(this.formSignUp.nickname && this.formSignUp.password1 && this.formSignUp.password2){
+                 return false
+               }
+               return true
             }
         },
         methods:{
