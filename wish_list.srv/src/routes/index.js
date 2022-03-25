@@ -21,11 +21,12 @@ api.post('/addWishlist', asyncHandler(async (req, res) => {
 }))
 
 api.post('/deleteWishlist', asyncHandler(async (req, res) => {
-    await db.query('DELETE FROM wishlist WHERE wishlist.id = ($1) RETURNING *;',[req.body.id])
-    for (let j=0;j<req.body.wishItems.length;j++){
-        console.log(req.body.wishItems[j].id)
-        await db.query('DELETE FROM wish WHERE wish.id = ($1) RETURNING *;',[req.body.wishItems[j].id])
-    }
+    //await db.query('DELETE FROM wishlist WHERE wishlist.id = ($1) RETURNING *;',[req.body.id])
+   // for (let j=0;j<req.body.wishItems.length;j++){
+      //  console.log(req.body.wishItems[j].id)
+       // await db.query('DELETE FROM wish WHERE wish.id = ($1) RETURNING *;',[req.body.wishItems[j].id])
+    //}
+    await wishlistRepo.DeleteWishlist(req.body)
    res.end()
 }))
 
