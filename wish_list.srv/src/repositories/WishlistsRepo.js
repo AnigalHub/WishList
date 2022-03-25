@@ -25,6 +25,13 @@ class WishlistsRepo {
         // 3. соединить wishlist с его wishItems
         return result
     }
+    async AddWishlist(reqBody){
+        const addToWishlist = await this.db.query('INSERT INTO wishlist (title) values ($1) RETURNING *;',[reqBody.title])
+        const wishlistId = addToWishlist.rows[0].id
+        for (const x of reqBody.wishItems) {
+            await this.db.query('INSERT INTO wish (text,idwishlist,img) values ($1,$2,$3) RETURNING *;',[x.text,wishlistId,x.img])
+        }
+    }
 }
 
 module.exports = WishlistsRepo
