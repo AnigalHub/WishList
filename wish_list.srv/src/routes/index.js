@@ -16,11 +16,7 @@ api.get('/wishlist', asyncHandler(async (req, res) => {
 }))
 
 api.post('/addWishlist', asyncHandler(async (req, res) => {
-    const result = await db.query('INSERT INTO wishlist (title) values ($1) RETURNING *;',[req.body.title])
-    const wishlistId = result.rows[0].id
-    for (const x of req.body.wishItems) {
-       await db.query('INSERT INTO wish (text,idwishlist,img) values ($1,$2,$3) RETURNING *;',[x.text,wishlistId,x.img])
-    }
+   await wishlistRepo.AddWishlist(req.body)
     res.end()
 }))
 
