@@ -38,6 +38,9 @@ class WishlistsRepo {
             await this.db.query('DELETE FROM wish WHERE wish.id = ($1) RETURNING *;',[reqBody.wishItems[j].id])
         }
     }
+    async DeleteWishItem(reqBody){
+        await this.db.query('DELETE FROM wish WHERE wish.id = ($1) RETURNING *;',[reqBody.id])
+    }
 }
 
 module.exports = WishlistsRepo
