@@ -29,6 +29,9 @@
         computed:{
             buttonDisabled(){
                if(this.formSignUp.nickname && this.formSignUp.password1 && this.formSignUp.password2){
+                   if(this.formSignUp.password1 != this.formSignUp.password2){
+                       this.errorMessage = 'Password mismatch'
+                   }
                  return false
                }
                return true
@@ -37,12 +40,7 @@
         methods:{
             sendForm:function () {
                 if(this.formSignUp.nickname && this.formSignUp.password1 && this.formSignUp.password2){
-                    if(this.formSignUp.password1 != this.formSignUp.password2){
-                        this.errorMessage = 'Password mismatch'
-                    }
-                    else {
-                        this.errorMessage = ''
-                    }
+
                 }
             }
         }
