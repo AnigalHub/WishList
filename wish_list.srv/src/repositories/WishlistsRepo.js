@@ -41,7 +41,7 @@ class WishlistsRepo {
     async DeleteWishItem(reqBody){
         console.log(reqBody)
         for (let j=0;j<reqBody.wishesToDelete.length;j++){
-            await this.db.query('DELETE FROM wish WHERE wish.id = ($1) RETURNING *;',[reqBody.wishesToDelete[j]])
+            await this.db.query('DELETE FROM wish WHERE wish.id = ($1);',[reqBody.wishesToDelete[j]])
         }
        // await this.db.query('DELETE FROM wish WHERE wish.id = ($1) RETURNING *;',[reqBody.id])
     }
