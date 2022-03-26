@@ -40,7 +40,7 @@ class WishlistsRepo {
     }
     async DeleteWishItem(wishesToDelete){
         for (let j=0;j<wishesToDelete.length;j++){
-            await this.db.query('DELETE FROM wish WHERE wish.id = ($1);',[reqBody.wishesToDelete[j]])
+            await this.db.query('DELETE FROM wish WHERE wish.id = ($1);',[wishesToDelete[j]])
         }
     }
 }
