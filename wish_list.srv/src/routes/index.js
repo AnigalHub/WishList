@@ -26,7 +26,7 @@ api.post('/deleteWishlist', asyncHandler(async (req, res) => {
 }))
 
 api.post('/deleteWishItem', asyncHandler(async (req, res) => {
-    await db.query('DELETE FROM wish WHERE wish.id = ($1) RETURNING *;',[req.body.id])
+ await wishlistRepo.DeleteWishItem(req.body)
     res.end()
 }))
 // Обработчик ошибок
