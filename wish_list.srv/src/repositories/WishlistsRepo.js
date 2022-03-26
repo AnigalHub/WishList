@@ -29,7 +29,7 @@ class WishlistsRepo {
         const addToWishlist = await this.db.query('INSERT INTO wishlist (title) values ($1) RETURNING *;',[reqBody.title])
         const wishlistId = addToWishlist.rows[0].id
         for (const x of reqBody.wishItems) {
-            await this.db.query('INSERT INTO wish (text,idwishlist,img) values ($1,$2,$3) RETURNING *;',[x.text,wishlistId,x.img])
+            await this.db.query('INSERT INTO wish (text,idwishlist,img) values ($1,$2,$3);',[x.text,wishlistId,x.img])
         }
     }
     async DeleteWishlist(reqBody){
