@@ -50,10 +50,10 @@
             addProduct(){
                 this.$store.dispatch('newWishlist/addProduct',{text:"", img:null})
             },
-            saveProduct(title,wishItems){
+           async saveProduct(title,wishItems){
                if(this.title != ''){
                    this.errorMessage = ''
-                   this.$store.dispatch('wishlists/addWishlist',{title,wishItems})
+                 await this.$store.dispatch('wishlists/addWishlist',{title,wishItems})
                    this.me = true
                }
                else{

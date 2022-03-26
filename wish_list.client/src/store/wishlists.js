@@ -57,8 +57,8 @@ const actions = {
     async deleteWishItem(context,id){
       await axios.post('deleteWishItem',id)
     },
-    addWishlist(context, wishlist){
-        axios.post("addWishlist", wishlist)
+   async addWishlist(context, wishlist){
+       await axios.post("addWishlist", wishlist)
     },
     async deleteWishlist(context, id){
      await axios.post("deleteWishlist", id)
