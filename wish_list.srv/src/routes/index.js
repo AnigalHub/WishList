@@ -26,7 +26,7 @@ api.post('/deleteWishlist', asyncHandler(async (req, res) => {
 }))
 
 api.post('/deleteWishItem', asyncHandler(async (req, res) => {
- await wishlistRepo.DeleteWishItem(req.body)
+ await wishlistRepo.DeleteWishItem(req.body.wishesToDelete)
     res.end()
 }))
 // Обработчик ошибок
