@@ -18,8 +18,12 @@ const getters = {
     },
 }
 const mutations ={
-    copyOfWishesInWishlists:(state,wishItems) =>{
-        state.wishlist = wishItems.slice()
+    copyOfWishesInWishlists:(state, wishlist) =>{
+        state.wishlist = {
+            id: wishlist.id,
+            title: wishlist.title,
+            wishItems: wishlist.wishItems.slice()
+        }
     },
     addWishItem:(state,wishItem)=>{
         state.wishlist.push(wishItem)
@@ -44,8 +48,8 @@ const actions = {
             context.commit('setSavedWishlists',newWishlist)
         }
     },
-    copyOfWishesInWishlists(context, wishes){
-        context.commit('copyOfWishesInWishlists', wishes)
+    copyOfWishesInWishlists(context, wishlist){
+        context.commit('copyOfWishesInWishlists', wishlist)
     },
     addWishItem(context, wishItem){
         context.commit('addWishItem', wishItem)
@@ -56,7 +60,7 @@ const actions = {
     addWishlist(context, wishlist){
         axios.post("addWishlist", wishlist)
     },
-   async deleteWishlist(context, id){
+    async deleteWishlist(context, id){
      await axios.post("deleteWishlist", id)
     },
 }
