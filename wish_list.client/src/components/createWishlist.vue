@@ -51,16 +51,13 @@
                 this.$store.dispatch('newWishlist/addProduct',{text:"", img:null})
             },
            async saveProduct(title,wishItems){
-               if(this.title != ''){
-                   this.errorMessage = ''
-                 await this.$store.dispatch('wishlists/addWishlist',{title,wishItems})
-                   this.me = true
-               }
-               else{
+               if(this.title == ''){
                    this.errorMessage = 'Table name is not specified. You can\'t find it on your wishlist'
+                   return
                }
-                this.title = ''
-                this.$store.dispatch('newWishlist/cleanWishItems')
+               await this.$store.dispatch('wishlists/addWishlist',{title,wishItems})
+               this.me = true
+               await this.$store.dispatch('newWishlist/cleanWishItems')
             },
             deleteProduct(index){
                 this.$store.dispatch('newWishlist/deleteProduct',index)
