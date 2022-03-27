@@ -10,7 +10,7 @@ const wishlistsRepo = require("../repositories/WishlistsRepo.js")
 let wishlistRepo = new wishlistsRepo(db)
 
 //Вывести таблицу
-api.get('/wishlist', asyncHandler(async (req, res) => {
+api.get('/allWishlists', asyncHandler(async (req, res) => {
     const result = await wishlistRepo.GetAllWishlists()
     res.json(result)
 }))
