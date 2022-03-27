@@ -25,11 +25,10 @@ class WishlistsRepo {
         // 3. соединить wishlist с его wishItems
         return result
     }
-    async AddWishlist(reqBody){
-        const addToWishlist = await this.db.query('INSERT INTO wishlist (title) values ($1) RETURNING *;',[reqBody.title])
-        const wishlistId = addToWishlist.rows[0].id
-        for (const x of reqBody.wishItems) {
-            await this.db.query('INSERT INTO wish (text,idwishlist,img) values ($1,$2,$3);',[x.text,wishlistId,x.img])
+    async AddWishlist(wishlist){
+        await this.db.query('INSERT INTO wishlist (id,title) values ($1,$2);',[wishlist.id,wishlist.title])
+        for (const x of wishlist.wishItems) {
+            await this.db.query('INSERT INTO wish (id,idwishlist,text,img) values ($1,$2,$3,$4);',[x.id,x.idWishlist,x.text,x.img])
         }
     }
     async DeleteWishlist(reqBody){
