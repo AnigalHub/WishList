@@ -1,7 +1,6 @@
 export default [
     {
         path:'/',
-        name:'Registration',
         component:() => import('./components/registration'),
         children:[
             {
