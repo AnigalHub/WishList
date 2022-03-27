@@ -9,6 +9,8 @@ const wishlistsRepo = require("../repositories/WishlistsRepo.js")
 
 let wishlistRepo = new wishlistsRepo(db)
 
+const Wishlist = require("../models/Wishlist")
+
 //Вывести таблицу
 api.get('/allWishlists', asyncHandler(async (req, res) => {
     const result = await wishlistRepo.GetAllWishlists()
@@ -16,7 +18,10 @@ api.get('/allWishlists', asyncHandler(async (req, res) => {
 }))
 
 api.post('/addWishlist', asyncHandler(async (req, res) => {
-   await wishlistRepo.AddWishlist(req.body)
+    const wishlist = new Wishlist()
+    wishlist.readFromBody(req.body)
+    await wishlistRepo.AddWishlist(wishlist)
+    console.log(wishlist)
     res.end()
 }))
 
