@@ -58,6 +58,7 @@
                await this.$store.dispatch('wishlists/addWishlist',{title,wishItems})
                this.me = true
                await this.$store.dispatch('newWishlist/cleanWishItems')
+               this.title = ''
             },
             deleteProduct(index){
                 this.$store.dispatch('newWishlist/deleteProduct',index)
