@@ -1,3 +1,5 @@
+const uuid = require('uuid')
+
 class WishItem {
     constructor() {
         this.id = ""
@@ -11,6 +13,17 @@ class WishItem {
         this.idWishlist = row.idWishlist
         this.text = row.text;
         this.img = row.img
+    }
+    readFromBody(body, idWishlist){
+        if(body.id){
+            this.id = body.id
+        }
+        else {
+            this.id = uuid.v4();
+        }
+        this.idWishlist = idWishlist
+        this.text = body.text;
+        this.img = body.img
     }
 }
 
