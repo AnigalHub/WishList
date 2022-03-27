@@ -26,10 +26,10 @@ const mutations ={
         }
     },
     addWishItem:(state,wishItem)=>{
-        state.wishlist.wishItems.push(wishItem)
+        state.selectedWishlist.wishItems.push(wishItem)
     },
     deleteWishItem:(state,id) =>{
-        state.wishlist.wishItems.splice(id,1)
+        state.selectedWishlist.wishItems.splice(id,1)
     },
     addWishlist:(state,wishlist) =>{
         state.wishlists.push(wishlist)
