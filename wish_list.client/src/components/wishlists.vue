@@ -26,8 +26,8 @@
         <b-modal ref="modalWishlist">
             <b-table :fields="fieldsWishlists">
             </b-table>
-            <div v-for="(wishItem, index) in wishlist.wishItems" :key="index">
-                <WishItem  v-model="wishlist.wishItems[index]" @delete="deleteProduct(index)" />
+            <div v-for="(wishItem, index) in selectedWishlist.wishItems" :key="index">
+                <WishItem  v-model="selectedWishlist.wishItems[index]" @delete="deleteProduct(index)" />
             </div>
             <b-row class="buttons">
                 <b-col>
@@ -64,15 +64,15 @@
             }
         },
         async created() {
-            const result = await axios.get('wishlist')
+            const result = await axios.get('allWishlists')
             this.$store.commit("wishlists/setSavedWishlists", result.data)
         },
         computed:{
             wishlists:function () {
                 return this.$store.getters['wishlists/wishlists']
             },
-            wishlist:function () {
-                return this.$store.getters['wishlists/wishlist']
+            selectedWishlist:function () {
+                return this.$store.getters['wishlists/selectedWishlist']
             },
         },
         methods:{
@@ -82,13 +82,13 @@
             },
            async deleteWishlist(index){
                 await this.$store.dispatch('wishlists/deleteWishlist',this.wishlists[index])
-                const result = await axios.get('wishlist')
+                const result = await axios.get('allWishlists')
                 this.$store.commit("wishlists/setSavedWishlists", result.data)
             },
            async deleteProduct(index){
-                if(this.wishlist.wishItems[index].id){
-                    this.wishesToDelete.push(this.wishlist.wishItems[index].id)
-                    this.wishlist.wishItems.splice(index, 1)
+                if(this.selectedWishlist.wishItems[index].id){
+                    this.wishesToDelete.push(this.selectedWishlist.wishItems[index].id)
+                    this.selectedWishlist.wishItems.splice(index, 1)
                 }
             },
             addProduct(){
@@ -96,9 +96,9 @@
             },
            async saveWishlist(){
                 await axios.post("deleteWishItem", {wishesToDelete: this.wishesToDelete})
-                const indexWishlist = this.wishlists.findIndex(x => x.id == this.wishlist.id)
+                const indexWishlist = this.wishlists.findIndex(x => x.id == this.selectedWishlist.id)
                 console.log(indexWishlist )
-                this.wishlists[indexWishlist] = this.wishlist
+                this.wishlists[indexWishlist] = this.selectedWishlist
                 this.$refs['modalWishlist'].hide()
                 this.wishesToDelete = []
 

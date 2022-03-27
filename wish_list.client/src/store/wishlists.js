@@ -7,29 +7,29 @@ import axios from "axios";
 
 const state = () =>({
     wishlists: [],
-    wishlist:[]
+    selectedWishlist:[]
 })
 const getters = {
     wishlists: (state) => {
         return state.wishlists
     },
-    wishlist: (state) => {
-        return state.wishlist
+    selectedWishlist: (state) => {
+        return state.selectedWishlist
     },
 }
 const mutations ={
-    copyOfWishesInWishlists:(state, wishlist) =>{
+    copyOfWishesInWishlists:(state, selectedWishlist) =>{
         state.wishlist = {
-            id: wishlist.id,
-            title: wishlist.title,
-            wishItems: wishlist.wishItems.slice()
+            id: selectedWishlist.id,
+            title: selectedWishlist.title,
+            wishItems: selectedWishlist.wishItems.slice()
         }
     },
     addWishItem:(state,wishItem)=>{
-        state.wishlist.push(wishItem)
+        state.wishlist.wishItems.push(wishItem)
     },
     deleteWishItem:(state,id) =>{
-        state.wishlist.splice(id,1)
+        state.wishlist.wishItems.splice(id,1)
     },
     addWishlist:(state,wishlist) =>{
         state.wishlists.push(wishlist)
@@ -48,8 +48,8 @@ const actions = {
             context.commit('setSavedWishlists',newWishlist)
         }
     },
-    copyOfWishesInWishlists(context, wishlist){
-        context.commit('copyOfWishesInWishlists', wishlist)
+    copyOfWishesInWishlists(context, selectedWishlist){
+        context.commit('copyOfWishesInWishlists', selectedWishlist)
     },
     addWishItem(context, wishItem){
         context.commit('addWishItem', wishItem)
