@@ -6,6 +6,7 @@ CREATE TABLE users(
 	passwordUser text
 )
 SELECT *FROM users
+INSERT INTO users (loginUser,passwordUser) values ('Varya','987654') 
 
 CREATE TABLE wishlist(
 	id uuid PRIMARY KEY DEFAULT (uuid_generate_v4()),
