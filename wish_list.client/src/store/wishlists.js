@@ -22,6 +22,7 @@ const mutations ={
         state.selectedWishlist = {
             id: selectedWishlist.id,
             title: selectedWishlist.title,
+            everyone: selectedWishlist.everyone,
             wishItems: selectedWishlist.wishItems.slice()
         }
     },
