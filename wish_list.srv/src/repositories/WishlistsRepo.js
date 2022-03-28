@@ -26,7 +26,7 @@ class WishlistsRepo {
         return result
     }
     async AddWishlist(wishlist){
-        await this.db.query('INSERT INTO wishlist (id,title) values ($1,$2) ON CONFLICT (id) DO UPDATE SET title = ($2);',[wishlist.id,wishlist.title])
+        await this.db.query('INSERT INTO wishlist (id,title,everyone) values ($1,$2,$3) ON CONFLICT (id) DO UPDATE SET title = ($2);',[wishlist.id,wishlist.title, wishlist.everyone])
         for (const x of wishlist.wishItems) {
             await this.db.query('INSERT INTO wish (id,idwishlist,text,img) values ($1,$2,$3,$4) ON CONFLICT (id) DO UPDATE SET idwishlist = ($2), text = ($3), img = ($4);',[x.id,x.idWishlist,x.text,x.img])
         }
