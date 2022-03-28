@@ -51,10 +51,12 @@ INNER JOIN wishlist wl ON wl.idUser = u.id
 SELECT * FROM wishlist
 SELECT * FROM wish
 
+ALTER TABLE wishlist DROP COLUMN me
+
 DELETE FROM wish WHERE wish.id = '67633d0a-3e15-40b0-9d01-8343077aa39f'
 DELETE FROM wish WHERE wish.text = ''
 
+DELETE FROM wish WHERE wish.id in ('63633d4c-8f13-489d-b248-b0839ee7d744', '02e33c3e-3169-4e16-88c1-bf19d055f704')
 
-
-
+SELECT * FROM wish WHERE id in ('63633d4c-8f13-489d-b248-b0839ee7d744', '02e33c3e-3169-4e16-88c1-bf19d055f704')
 
