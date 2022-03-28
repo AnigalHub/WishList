@@ -5,6 +5,7 @@ class Wishlist {
     constructor() {
         this.id = ''
         this.title = ""
+        this.everyone = false
         this.wishItems = []
     }
 
@@ -21,6 +22,7 @@ class Wishlist {
             this.id = uuid.v4();
         }
         this.title = body.title;
+        this.everyone = body.everyone
 
         for(let i=0; i<body.wishItems.length; i++ ){
             const wishItem = new WishItem()
