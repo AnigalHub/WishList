@@ -220,34 +220,44 @@ export default {
   }
   /*input - куда вбиваем название таблицы*/
   .input-group{margin-bottom: 3%;}
-  /* для элемента input c type="radio" */
-  .custom-radio {
+  /* для элемента input c type="checkbox" */
+  .custom-checkbox {
     display: contents;
     z-index: -1;
     opacity: 0;
   }
-  /* для элемента label связанного с .custom-radio */
-  .custom-radio+label {
+  /* для элемента label, связанного с .custom-checkbox */
+  .custom-checkbox+label {
     display: inline-flex;
     align-items: center;
-    margin-right: 5%;
+    user-select: none;
   }
-  /* создание в label псевдоэлемента  before со следующими стилями */
-  .custom-radio+label::before {
+  /* создание в label псевдоэлемента before со следующими стилями */
+  .custom-checkbox+label::before {
     content: '';
     display: inline-block;
-    width: 1.4em;
-    height: 1.4em;
+    width: 1.8rem;
+    height: 1.8rem;
     flex-shrink: 0;
     flex-grow: 0;
-    border: 1px solid #bdc0c2;
+    border: 1px solid #adb5bd;
+    border-radius: 0.25em;
     margin-right: 0.5em;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 50% 50%;
   }
-  /* стили для радиокнопки, находящейся в состоянии checked */
-  .custom-radio:checked+label::before {
+  /* стили для активного чекбокса (при нажатии на него) */
+  .custom-checkbox:not(:disabled):active+label::before {
+    background-color: #b3d7ff;
+    border-color: #b3d7ff;
+  }
+  /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+  .custom-checkbox:focus:not(:checked)+label::before {
+    border-color: #80bdff;
+  }
+  /* стили для чекбокса, находящегося в состоянии checked */
+  .custom-checkbox:checked+label::before {
     border-color: #0b76ef;
     background-color: #0b76ef;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
