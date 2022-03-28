@@ -14,9 +14,8 @@
             <b-col>
                 <b-row>
                     <b-col class="text">
-                        Wishlist is visible to all users:
                         <input class="custom-checkbox" type="checkbox" id="everyone" v-model="everyone" >
-                        <label for="everyone"></label>
+                        <label for="everyone"> Wishlist is visible to all users</label>
                     </b-col>
                 </b-row>
             </b-col>
