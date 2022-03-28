@@ -14,11 +14,9 @@
             <b-col>
                 <b-row>
                     <b-col class="text">
-                        Who can see this wishlist:
-                        <input class="custom-radio" type="radio" id="all" name="color" value="indigo" v-model="all">
-                        <label for="all">All</label>
-                        <input class="custom-radio" type="radio" id="me" name="color" value="indigo" v-model="me">
-                        <label for="me">Me</label>
+                        Wishlist is visible to all users:
+                        <input class="custom-checkbox" type="checkbox" id="all" v-model="all" >
+                        <label for="all"></label>
                     </b-col>
                 </b-row>
             </b-col>
