@@ -96,8 +96,8 @@
             },
            async saveWishlist(){
                 await axios.post("deleteWishItem", {wishesToDelete: this.wishesToDelete})
+                await axios.post("addWishlist", this.selectedWishlist)
                 const indexWishlist = this.wishlists.findIndex(x => x.id == this.selectedWishlist.id)
-                console.log(indexWishlist )
                 this.wishlists[indexWishlist] = this.selectedWishlist
                 this.$refs['modalWishlist'].hide()
                 this.wishesToDelete = []
