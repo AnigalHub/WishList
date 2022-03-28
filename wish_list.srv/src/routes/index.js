@@ -21,7 +21,6 @@ api.post('/addWishlist', asyncHandler(async (req, res) => {
     const wishlist = new Wishlist()
     wishlist.readFromBody(req.body)
     await wishlistRepo.AddWishlist(wishlist)
-    console.log(wishlist)
     res.end()
 }))
 
