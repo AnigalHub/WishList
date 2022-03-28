@@ -34,7 +34,6 @@
         data(){
             return{
                 all:false,
-                me:false,
                 errorMessage:'',
                 /**Столбцы таблицы */
                 fields:[
@@ -54,7 +53,6 @@
                    return
                }
                await this.$store.dispatch('wishlists/addWishlist',{title,wishItems})
-               this.me = true
                await this.$store.dispatch('newWishlist/cleanWishItems')
                this.title = ''
             },
