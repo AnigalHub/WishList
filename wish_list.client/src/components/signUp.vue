@@ -2,11 +2,11 @@
     <div id="signUp">
         <h2>Sign Up</h2>
         <label class="text" for="nickname">Nickname</label>
-        <input id="nickname" required type="text" v-model="formSignUp.loginUser">
+        <input id="nickname" required type="text" v-model="user.loginUser">
         <label class="text" for="password-1">Password</label>
-        <input id="password-1" required type="password" v-model="formSignUp.passwordUser">
+        <input id="password-1" required type="password" v-model="user.passwordUser">
         <label class="text" for="password-2">Password again</label>
-        <input id="password-2" required type="password" v-model="formSignUp.passwordUserCopy">
+        <input id="password-2" required type="password" v-model="user.passwordUserCopy">
         <b-button class="send" variant="outline-success" type="submit" @click="sendForm()" :disabled="buttonDisabled">Sign Up</b-button>
         <br>
         <div class="text">{{errorMessage}}</div>
@@ -20,7 +20,7 @@
         name: "signUp",
         data(){
             return{
-                formSignUp:{
+                user:{
                     loginUser:'',
                     passwordUser:'',
                     passwordUserCopy:''
@@ -30,8 +30,8 @@
         },
         computed:{
             buttonDisabled(){
-               if(this.formSignUp.loginUser && this.formSignUp.passwordUser && this.formSignUp.passwordUserCopy){
-                   if(this.formSignUp.passwordUser != this.formSignUp.passwordUserCopy){
+               if(this.user.loginUser && this.user.passwordUser && this.user.passwordUserCopy){
+                   if(this.user.passwordUser != this.user.passwordUserCopy){
                        this.errorMessage = 'Password mismatch'
                    }
                  return false
@@ -41,9 +41,9 @@
         },
         methods:{
            async sendForm() {
-                if(this.formSignUp.loginUser && this.formSignUp.passwordUser && this.formSignUp.passwordUserCopy){
-                    console.log(this.formSignUp)
-                    await axios.post("addUser", this.formSignUp)
+                if(this.user.loginUser && this.user.passwordUser && this.user.passwordUserCopy){
+                    console.log(this.user)
+                    await axios.post("addUser", this.user)
                 }
             }
         }
