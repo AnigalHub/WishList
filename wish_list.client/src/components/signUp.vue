@@ -42,7 +42,6 @@
         methods:{
            async sendForm() {
                 if(this.user.loginUser && this.user.passwordUser && this.user.passwordUserCopy){
-                    console.log(this.user)
                     await axios.post("addUser", this.user)
                 }
             }
