@@ -1,10 +1,10 @@
 <template>
     <div id="logIn">
         <h2>Log In</h2>
-        <label class="text" for="nickname">Nickname</label>
-        <input id="nickname" required type="text"  v-model="formLogIn.nickname">
-        <label class="text" for="password">Password</label>
-        <input id="password" required type="password"  v-model="formLogIn.password">
+        <label class="text" for="loginUser">loginUser</label>
+        <input id="loginUser" required type="text"  v-model="user.loginUser">
+        <label class="text" for="password">passwordUser</label>
+        <input id="password" required type="password"  v-model="user.passwordUser">
         <b-button class="send" variant="outline-success" @click.prevent="sendForm()" :disabled="buttonDisabled" type="submit">Log In</b-button>
     </div>
 </template>
@@ -14,15 +14,15 @@
         name: "logIn",
         data(){
             return{
-                formLogIn:{
-                    nickname:'',
-                    password:''
+                user:{
+                    loginUser:'',
+                    passwordUser:''
                 }
             }
         },
         computed:{
             buttonDisabled(){
-                if(this.formLogIn.nickname && this.formLogIn.password){
+                if(this.user.loginUser && this.user.passwordUser){
                     return false
                 }
                 else {
@@ -32,7 +32,7 @@
         },
         methods:{
             sendForm:function () {
-                if(this.formLogIn.nickname && this.formLogIn.password){
+                if(this.user.loginUser && this.user.passwordUser){
 
                 }
             }
