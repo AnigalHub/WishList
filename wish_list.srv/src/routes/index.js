@@ -6,12 +6,13 @@ const { asyncHandler, errorCatcher } = require("../middlewares")
 const db = require("./../db")
 
 const wishlistsRepo = require("../repositories/WishlistsRepo.js")
+const usersRepo = require("../repositories/UsersRepo.js")
 
 let wishlistRepo = new wishlistsRepo(db)
+let userRepo = new usersRepo(db)
 
 const Wishlist = require("../models/Wishlist")
 
-//Вывести таблицу
 api.get('/allWishlists', asyncHandler(async (req, res) => {
     const result = await wishlistRepo.GetAllWishlists()
     res.json(result)
@@ -32,6 +33,10 @@ api.post('/deleteWishlist', asyncHandler(async (req, res) => {
 api.post('/deleteWishItem', asyncHandler(async (req, res) => {
  await wishlistRepo.DeleteWishItem(req.body.wishesToDelete)
     res.end()
+}))
+
+api.post('/addUser',asyncHandler(async (req,res) =>{
+
 }))
 // Обработчик ошибок
 api.use(errorCatcher)
