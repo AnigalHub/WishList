@@ -27,16 +27,17 @@ api.post('/addWishlist', asyncHandler(async (req, res) => {
 
 api.post('/deleteWishlist', asyncHandler(async (req, res) => {
     await wishlistRepo.DeleteWishlist(req.body)
-   res.end()
+    res.end()
 }))
 
 api.post('/deleteWishItem', asyncHandler(async (req, res) => {
- await wishlistRepo.DeleteWishItem(req.body.wishesToDelete)
+    await wishlistRepo.DeleteWishItem(req.body.wishesToDelete)
     res.end()
 }))
 
 api.post('/addUser',asyncHandler(async (req,res) =>{
-
+    await userRepo.AddUser(req.body)
+    res.end()
 }))
 // Обработчик ошибок
 api.use(errorCatcher)
