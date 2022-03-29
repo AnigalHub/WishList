@@ -18,12 +18,14 @@ Vue.use(vuex)
 import newWishList from './store/newWishlist'
 import wishlists from './store/wishlists'
 import config from './store/configStore'
+import users from './store/users'
 
 const store = new vuex.Store({
     modules:{
         newWishlist: newWishList,
         wishlists:wishlists,
         config:config,
+        users:users
     }
 })
 
