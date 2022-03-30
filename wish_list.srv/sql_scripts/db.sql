@@ -19,7 +19,7 @@ CREATE TABLE wish(
 
 --вывод таблиц
 SELECT *FROM users
-SELECT * FROM wishlist
+SELECT *FROM wishlist
 SELECT *FROM wish
 
 --права
@@ -29,7 +29,6 @@ GRANT ALL ON wish TO lang_user
 
 --добавление в таблицы
 INSERT INTO users (loginUser,passwordUser) values ('Varya','987654') 
-INSERT INTO users (loginUser,passwordUser) values ('Anna','757394757')
 INSERT INTO wishlist (idUser,title) values ('0b8c0121-d9ba-43c3-ae4c-eb270a3c5e6c','New Year')
 INSERT INTO wish (idWishlist,text) values ('d27a40a1-c2c0-4c11-9da0-0fde59a15174','buy cat')
 
