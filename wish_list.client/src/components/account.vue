@@ -14,7 +14,7 @@
                <b-col cols="2"><b-button class="save" variant="outline-success" v-if="user.passwordUser != ''">✓</b-button></b-col>
            </b-row>
            <b-row>
-                <b-col class="text" cols="6">Wishlists from other users: {{wishlists}}</b-col>
+                <b-col class="text" cols="6">Wishlists from other users: {{user.wishlists}}</b-col>
                 <b-col>
                     <b-button class="add" variant="outline-primary">Add to Wishlists</b-button>
                 </b-col>
@@ -35,9 +35,8 @@
                 user:{
                     loginUser:'',
                     passwordUser:'',
-
+                    wishlists:0
                 },
-                wishlists:0
             }
         }
 
