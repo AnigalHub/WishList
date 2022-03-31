@@ -8,14 +8,24 @@ CREATE TABLE users(
 CREATE TABLE wishlist(
 	id uuid PRIMARY KEY DEFAULT (uuid_generate_v4()),
 	idUser uuid,
-	title text not null
+	title text not null,
+	everyone boolean
 )
 CREATE TABLE wish(
 	id uuid PRIMARY KEY DEFAULT (uuid_generate_v4()),
 	idWishlist uuid not null,
 	text text,
-	img text
+	img text,
+	FOREIGN KEY (idWishlist) REFERENCES wishlist (id) ON DELETE CASCADE
 )
+ALTER TABLE wish
+DROP CONSTRAINT wishlist
+
+--удаление таблиц
+DROP TABLE wish
+DROP TABLE wishlist
+
+DELETE FROM wishlist WHERE wishlist.id = '18edee65-0483-4881-b05e-989e10fce98b'
 
 --вывод таблиц
 SELECT *FROM users
