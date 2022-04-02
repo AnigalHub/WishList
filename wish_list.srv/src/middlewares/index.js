@@ -5,7 +5,7 @@ const asyncHandler = fn => (req, res, next) => {
 }
 
 function errorCatcher(err, req, res, next){
-    res.status(500).json({code: 500, msg: err.toString(), stack: err.stack})
+    res.status(500).json({code: 500, msg: err.toString()})
 }
 
 module.exports = { asyncHandler, errorCatcher }
